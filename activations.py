@@ -201,30 +201,36 @@ def main():
                 # Iterate through batch samples
                 for sample_i in range(batch_size):
                     positions = positions_list[sample_i]
-                    original_sample = full_hidden_state_batch[sample_i, positions, :]  # [num_positions, hidden_dim]
-                    decoded_sample = decoded_batch[sample_i, positions, :]             # [num_positions, hidden_dim]
-                    sae_acts_sample = sae_acts_full_batch[sample_i, positions, :]     # [num_positions, latent_dim]
-
-                    # Compute reconstruction metrics
-                    mse = ((original_sample - decoded_sample) ** 2).mean(dim=-1).cpu().tolist()
-                    l0 = (sae_acts_sample != 0).sum(dim=-1).cpu().tolist()
-                    l1 = sae_acts_sample.abs().sum(dim=-1).cpu().tolist()
-
-                    # Store metrics by token position
-                    for pos_idx, pos in enumerate(positions):
-                        pos_str = f"pos_{pos}"
-                        if pos_str not in batch_metrics[sample_i]:
-                            batch_metrics[sample_i][pos_str] = {}
-                        batch_metrics[sample_i][pos_str][f"layer_{layer}"] = {
-                            'mse': mse[pos_idx],
-                            'l0': l0[pos_idx],
-                            'l1': l1[pos_idx]
-                        }
-
-                    # Accumulate activations
-                    model_acts_accum[layer].append(original_sample.cpu())
-                    sae_acts_accum[layer].append(sae_acts_sample.cpu())
-                    #logger.info(f"Metrics computed for sample {sample_i+1}/{batch_size} batch {batch_idx + 1} layer {layer}.")
+                    if positions is not None and len(positions) > 0:
+                        original_sample = full_hidden_state_batch[sample_i, positions, :]  # [num_positions, hidden_dim]
+                        #print(decoded_batch.shape, sample_i, positions)
+                        decoded_sample = decoded_batch[sample_i, positions, :]             # [num_positions, hidden_dim]
+                        sae_acts_sample = sae_acts_full_batch[sample_i, positions, :]     # [num_positions, latent_dim]
+    
+                        # Compute reconstruction metrics
+                        mse = ((original_sample - decoded_sample) ** 2).mean(dim=-1).cpu().tolist()
+                        l0 = (sae_acts_sample != 0).sum(dim=-1).cpu().tolist()
+                        l1 = sae_acts_sample.abs().sum(dim=-1).cpu().tolist()
+    
+                        # Store metrics by token position
+                        for pos_idx, pos in enumerate(positions):
+                            pos_str = f"pos_{pos}"
+                            if pos_str not in batch_metrics[sample_i]:
+                                batch_metrics[sample_i][pos_str] = {}
+                            batch_metrics[sample_i][pos_str][f"layer_{layer}"] = {
+                                'mse': mse[pos_idx],
+                                'l0': l0[pos_idx],
+                                'l1': l1[pos_idx]
+                            }
+    
+                        # Accumulate activations
+                        model_acts_accum[layer].append(original_sample.cpu())
+                        sae_acts_accum[layer].append(sae_acts_sample.to_sparse().cpu())
+                        #logger.info(f"Metrics computed for sample {sample_i+1}/{batch_size} batch {batch_idx + 1} layer {layer}.")
+                    else:
+                        #add dummy
+                        model_acts_accum[layer].append(None)
+                        sae_acts_accum[layer].append(None)
 
             # Append batch metrics
             reconstruction_metrics_accum.extend(batch_metrics)

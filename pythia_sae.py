@@ -4,9 +4,10 @@ from typing import List
 from sparsify.sparsify import Sae
 import einops
 import re
+from sparse_tensor import SparseTensor
 
 class SAE:
-    def __init__(self, device, sae_layer_template):
+    def __init__(self, device, sae_layer_template='layers.<layer>'):
         # Initialize encoder and decoder as empty modules.
         self.encoder = None
         self.decoder = None
@@ -45,8 +46,18 @@ class SAE:
             fwd = sae.forward(x_mod)
             sae_latents = torch.zeros(fwd.latent_acts.shape[0], sae.cfg.num_latents, device=fwd.latent_acts.device, dtype=fwd.latent_acts.dtype)
             sae_latents.scatter_(1, fwd.latent_indices, fwd.latent_acts)
-            y_og = einops.rearrange(fwd.sae_out, "(b s) e -> b s e", b = batch)
             sae_latents = einops.rearrange(sae_latents, "(b s) e -> b s e", b = batch)
+            #latent_indices = einops.rearrange(fwd.latent_indices, "(b s) e -> b s e", b = batch)
+            #latent_acts = einops.rearrange(fwd.latent_acts, "(b s) e -> b s e", b = batch)
+            #latent_indices = einops.rearrange(fwd.latent_indices, "(b s) e -> b s e", b = batch)
+            #st = SparseTensor(
+            #    latent_acts,
+            #    latent_indices,
+            #    (latent_acts.shape[0], latent_acts.shape[1], sae.cfg.num_latents),
+            #    2
+            #)
+            y_og = einops.rearrange(fwd.sae_out, "(b s) e -> b s e", b = batch)
+            
         return y_og, sae_latents
             
             

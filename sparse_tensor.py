@@ -15,10 +15,10 @@ class SparseTensor:
 
     def decompress(self) -> torch.Tensor:
         dense_tensor = torch.zeros(self.uncompressed_shape, device=self.activation_tensor.device, dtype=self.activation_tensor.dtype)
-        print('Dense Tensor Created:',dense_tensor.shape)
-        print(self.uncompressed_dim_idx)
-        print(self.index_tensor)
-        print(self.activation_tensor)
+        #print('Dense Tensor Created:',dense_tensor.shape)
+        #print(self.uncompressed_dim_idx)
+        #print(self.index_tensor)
+        #print(self.activation_tensor)
         dense_tensor.scatter_(self.uncompressed_dim_idx, self.index_tensor, self.activation_tensor)
         return dense_tensor
 
@@ -34,6 +34,9 @@ class SparseTensor:
             "uncompressed_shape": self.uncompressed_shape,
         }
         return state
+
+        
+        
 
     @staticmethod
     def deserialize(state: dict) -> "SparseTensor":
