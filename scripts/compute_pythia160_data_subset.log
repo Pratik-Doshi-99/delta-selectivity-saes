@@ -1,0 +1,2033 @@
+2025-03-11 01:32:11 [INFO] Validating Arguments...
+2025-03-11 01:32:11 [INFO] Computing activations with the following arguments:
+2025-03-11 01:32:11 [INFO] Namespace(model_name='EleutherAI/pythia-160m', sae_name='EleutherAI/sae-pythia-160m-32k', dataset_idx=1, start_index=0, n_samples=None, device='cuda:0', batch_size=64, layers='0,1,2,3,4,5,6,7,8,9,10,11', output_size=1024, output_directory='activations_pythia_160m/data_subset', num_workers=2, model_hook_template='blocks.<layer>.hook_resid_post', sae_layer_template='layers.<layer>')
+2025-03-11 01:32:11 [INFO] Configured Model Hook Points:
+2025-03-11 01:32:11 [INFO] ['blocks.0.hook_resid_post', 'blocks.1.hook_resid_post', 'blocks.2.hook_resid_post', 'blocks.3.hook_resid_post', 'blocks.4.hook_resid_post', 'blocks.5.hook_resid_post', 'blocks.6.hook_resid_post', 'blocks.7.hook_resid_post', 'blocks.8.hook_resid_post', 'blocks.9.hook_resid_post', 'blocks.10.hook_resid_post', 'blocks.11.hook_resid_post']
+2025-03-11 01:32:11 [INFO] Configured SAEs:
+2025-03-11 01:32:11 [INFO] ['layers.0', 'layers.1', 'layers.2', 'layers.3', 'layers.4', 'layers.5', 'layers.6', 'layers.7', 'layers.8', 'layers.9', 'layers.10', 'layers.11']
+2025-03-11 01:32:11 [INFO] Loading Dataset...
+2025-03-11 01:32:11 [INFO] Loading Model...
+Loaded pretrained model EleutherAI/pythia-160m into HookedTransformer
+Moving model to device:  cuda:0
+2025-03-11 01:32:31 [INFO] Loading SAE...
+Loading SAEs
+Fetching 50 files:   0%|          | 0/50 [00:00<?, ?it/s]Fetching 50 files:   2%|▏         | 1/50 [00:00<00:27,  1.79it/s]Fetching 50 files:   8%|▊         | 4/50 [00:02<00:23,  1.98it/s]Fetching 50 files:  12%|█▏        | 6/50 [00:02<00:17,  2.49it/s]Fetching 50 files:  20%|██        | 10/50 [00:02<00:08,  4.98it/s]Fetching 50 files:  40%|████      | 20/50 [00:03<00:02, 10.88it/s]Fetching 50 files:  44%|████▍     | 22/50 [00:03<00:02, 10.11it/s]Fetching 50 files:  48%|████▊     | 24/50 [00:03<00:02,  9.17it/s]Fetching 50 files:  52%|█████▏    | 26/50 [00:04<00:02,  8.26it/s]Fetching 50 files:  56%|█████▌    | 28/50 [00:04<00:02,  8.74it/s]Fetching 50 files:  60%|██████    | 30/50 [00:05<00:04,  4.16it/s]Fetching 50 files:  84%|████████▍ | 42/50 [00:06<00:00,  9.06it/s]Fetching 50 files:  92%|█████████▏| 46/50 [00:11<00:01,  2.54it/s]Fetching 50 files: 100%|██████████| 50/50 [00:11<00:00,  4.50it/s]
+2025-03-11 01:32:43 [WARNING] Dropping extra args {'signed': False}
+2025-03-11 01:32:43 [WARNING] Dropping extra args {'signed': False}
+2025-03-11 01:32:43 [WARNING] Dropping extra args {'signed': False}
+2025-03-11 01:32:43 [WARNING] Dropping extra args {'signed': False}
+2025-03-11 01:32:43 [WARNING] Dropping extra args {'signed': False}
+2025-03-11 01:32:43 [WARNING] Dropping extra args {'signed': False}
+2025-03-11 01:32:43 [WARNING] Dropping extra args {'signed': False}
+2025-03-11 01:32:43 [WARNING] Dropping extra args {'signed': False}
+2025-03-11 01:32:43 [WARNING] Dropping extra args {'signed': False}
+2025-03-11 01:32:43 [WARNING] Dropping extra args {'signed': False}
+2025-03-11 01:32:43 [WARNING] Dropping extra args {'signed': False}
+2025-03-11 01:32:43 [WARNING] Dropping extra args {'signed': False}
+2025-03-11 01:32:43 [WARNING] Dropping extra args {'signed': False}
+2025-03-11 01:32:43 [WARNING] Dropping extra args {'signed': False}
+2025-03-11 01:32:43 [WARNING] Dropping extra args {'signed': False}
+2025-03-11 01:32:43 [WARNING] Dropping extra args {'signed': False}
+2025-03-11 01:32:43 [WARNING] Dropping extra args {'signed': False}
+2025-03-11 01:32:43 [WARNING] Dropping extra args {'signed': False}
+2025-03-11 01:32:43 [WARNING] Dropping extra args {'signed': False}
+2025-03-11 01:32:43 [WARNING] Dropping extra args {'signed': False}
+2025-03-11 01:32:43 [WARNING] Dropping extra args {'signed': False}
+2025-03-11 01:32:43 [WARNING] Dropping extra args {'signed': False}
+2025-03-11 01:32:44 [WARNING] Dropping extra args {'signed': False}
+2025-03-11 01:32:44 [WARNING] Dropping extra args {'signed': False}
+Finished Loading SAEs
+Layer 0 laoded
+Layer 1 laoded
+Layer 2 laoded
+Layer 3 laoded
+Layer 4 laoded
+Layer 5 laoded
+Layer 6 laoded
+Layer 7 laoded
+Layer 8 laoded
+Layer 9 laoded
+Layer 10 laoded
+Layer 11 laoded
+2025-03-11 01:32:44 [INFO] Starting Inference...
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+2025-03-11 01:32:44 [INFO] Processing batch 1/132...
+2025-03-11 01:32:44 [INFO] Forward pass completed for batch 1.
+2025-03-11 01:32:46 [INFO] SAE activations computed for layer 0 in batch 1.
+2025-03-11 01:32:46 [INFO] SAE activations computed for layer 1 in batch 1.
+2025-03-11 01:32:46 [INFO] SAE activations computed for layer 2 in batch 1.
+2025-03-11 01:32:46 [INFO] SAE activations computed for layer 3 in batch 1.
+2025-03-11 01:32:46 [INFO] SAE activations computed for layer 4 in batch 1.
+2025-03-11 01:32:46 [INFO] SAE activations computed for layer 5 in batch 1.
+2025-03-11 01:32:47 [INFO] SAE activations computed for layer 6 in batch 1.
+2025-03-11 01:32:47 [INFO] SAE activations computed for layer 7 in batch 1.
+2025-03-11 01:32:47 [INFO] SAE activations computed for layer 8 in batch 1.
+2025-03-11 01:32:47 [INFO] SAE activations computed for layer 9 in batch 1.
+2025-03-11 01:32:47 [INFO] SAE activations computed for layer 10 in batch 1.
+2025-03-11 01:32:47 [INFO] SAE activations computed for layer 11 in batch 1.
+2025-03-11 01:32:47 [INFO] Processing batch 2/132...
+2025-03-11 01:32:47 [INFO] Forward pass completed for batch 2.
+2025-03-11 01:32:48 [INFO] SAE activations computed for layer 0 in batch 2.
+2025-03-11 01:32:48 [INFO] SAE activations computed for layer 1 in batch 2.
+2025-03-11 01:32:48 [INFO] SAE activations computed for layer 2 in batch 2.
+2025-03-11 01:32:48 [INFO] SAE activations computed for layer 3 in batch 2.
+2025-03-11 01:32:48 [INFO] SAE activations computed for layer 4 in batch 2.
+2025-03-11 01:32:48 [INFO] SAE activations computed for layer 5 in batch 2.
+2025-03-11 01:32:48 [INFO] SAE activations computed for layer 6 in batch 2.
+2025-03-11 01:32:48 [INFO] SAE activations computed for layer 7 in batch 2.
+2025-03-11 01:32:48 [INFO] SAE activations computed for layer 8 in batch 2.
+2025-03-11 01:32:48 [INFO] SAE activations computed for layer 9 in batch 2.
+2025-03-11 01:32:48 [INFO] SAE activations computed for layer 10 in batch 2.
+2025-03-11 01:32:48 [INFO] SAE activations computed for layer 11 in batch 2.
+2025-03-11 01:32:48 [INFO] Processing batch 3/132...
+2025-03-11 01:32:48 [INFO] Forward pass completed for batch 3.
+2025-03-11 01:32:49 [INFO] SAE activations computed for layer 0 in batch 3.
+2025-03-11 01:32:49 [INFO] SAE activations computed for layer 1 in batch 3.
+2025-03-11 01:32:49 [INFO] SAE activations computed for layer 2 in batch 3.
+2025-03-11 01:32:49 [INFO] SAE activations computed for layer 3 in batch 3.
+2025-03-11 01:32:49 [INFO] SAE activations computed for layer 4 in batch 3.
+2025-03-11 01:32:49 [INFO] SAE activations computed for layer 5 in batch 3.
+2025-03-11 01:32:50 [INFO] SAE activations computed for layer 6 in batch 3.
+2025-03-11 01:32:50 [INFO] SAE activations computed for layer 7 in batch 3.
+2025-03-11 01:32:50 [INFO] SAE activations computed for layer 8 in batch 3.
+2025-03-11 01:32:50 [INFO] SAE activations computed for layer 9 in batch 3.
+2025-03-11 01:32:50 [INFO] SAE activations computed for layer 10 in batch 3.
+2025-03-11 01:32:50 [INFO] SAE activations computed for layer 11 in batch 3.
+2025-03-11 01:32:50 [INFO] Processing batch 4/132...
+2025-03-11 01:32:50 [INFO] Forward pass completed for batch 4.
+2025-03-11 01:32:51 [INFO] SAE activations computed for layer 0 in batch 4.
+2025-03-11 01:32:51 [INFO] SAE activations computed for layer 1 in batch 4.
+2025-03-11 01:32:51 [INFO] SAE activations computed for layer 2 in batch 4.
+2025-03-11 01:32:51 [INFO] SAE activations computed for layer 3 in batch 4.
+2025-03-11 01:32:51 [INFO] SAE activations computed for layer 4 in batch 4.
+2025-03-11 01:32:51 [INFO] SAE activations computed for layer 5 in batch 4.
+2025-03-11 01:32:51 [INFO] SAE activations computed for layer 6 in batch 4.
+2025-03-11 01:32:51 [INFO] SAE activations computed for layer 7 in batch 4.
+2025-03-11 01:32:51 [INFO] SAE activations computed for layer 8 in batch 4.
+2025-03-11 01:32:51 [INFO] SAE activations computed for layer 9 in batch 4.
+2025-03-11 01:32:51 [INFO] SAE activations computed for layer 10 in batch 4.
+2025-03-11 01:32:51 [INFO] SAE activations computed for layer 11 in batch 4.
+2025-03-11 01:32:51 [INFO] Processing batch 5/132...
+2025-03-11 01:32:51 [INFO] Forward pass completed for batch 5.
+2025-03-11 01:32:52 [INFO] SAE activations computed for layer 0 in batch 5.
+2025-03-11 01:32:52 [INFO] SAE activations computed for layer 1 in batch 5.
+2025-03-11 01:32:52 [INFO] SAE activations computed for layer 2 in batch 5.
+2025-03-11 01:32:52 [INFO] SAE activations computed for layer 3 in batch 5.
+2025-03-11 01:32:52 [INFO] SAE activations computed for layer 4 in batch 5.
+2025-03-11 01:32:52 [INFO] SAE activations computed for layer 5 in batch 5.
+2025-03-11 01:32:52 [INFO] SAE activations computed for layer 6 in batch 5.
+2025-03-11 01:32:53 [INFO] SAE activations computed for layer 7 in batch 5.
+2025-03-11 01:32:53 [INFO] SAE activations computed for layer 8 in batch 5.
+2025-03-11 01:32:53 [INFO] SAE activations computed for layer 9 in batch 5.
+2025-03-11 01:32:53 [INFO] SAE activations computed for layer 10 in batch 5.
+2025-03-11 01:32:53 [INFO] SAE activations computed for layer 11 in batch 5.
+2025-03-11 01:32:53 [INFO] Processing batch 6/132...
+2025-03-11 01:32:53 [INFO] Forward pass completed for batch 6.
+2025-03-11 01:32:54 [INFO] SAE activations computed for layer 0 in batch 6.
+2025-03-11 01:32:54 [INFO] SAE activations computed for layer 1 in batch 6.
+2025-03-11 01:32:54 [INFO] SAE activations computed for layer 2 in batch 6.
+2025-03-11 01:32:54 [INFO] SAE activations computed for layer 3 in batch 6.
+2025-03-11 01:32:54 [INFO] SAE activations computed for layer 4 in batch 6.
+2025-03-11 01:32:54 [INFO] SAE activations computed for layer 5 in batch 6.
+2025-03-11 01:32:54 [INFO] SAE activations computed for layer 6 in batch 6.
+2025-03-11 01:32:54 [INFO] SAE activations computed for layer 7 in batch 6.
+2025-03-11 01:32:54 [INFO] SAE activations computed for layer 8 in batch 6.
+2025-03-11 01:32:54 [INFO] SAE activations computed for layer 9 in batch 6.
+2025-03-11 01:32:54 [INFO] SAE activations computed for layer 10 in batch 6.
+2025-03-11 01:32:54 [INFO] SAE activations computed for layer 11 in batch 6.
+2025-03-11 01:32:54 [INFO] Processing batch 7/132...
+2025-03-11 01:32:54 [INFO] Forward pass completed for batch 7.
+2025-03-11 01:32:55 [INFO] SAE activations computed for layer 0 in batch 7.
+2025-03-11 01:32:55 [INFO] SAE activations computed for layer 1 in batch 7.
+2025-03-11 01:32:55 [INFO] SAE activations computed for layer 2 in batch 7.
+2025-03-11 01:32:55 [INFO] SAE activations computed for layer 3 in batch 7.
+2025-03-11 01:32:55 [INFO] SAE activations computed for layer 4 in batch 7.
+2025-03-11 01:32:55 [INFO] SAE activations computed for layer 5 in batch 7.
+2025-03-11 01:32:55 [INFO] SAE activations computed for layer 6 in batch 7.
+2025-03-11 01:32:56 [INFO] SAE activations computed for layer 7 in batch 7.
+2025-03-11 01:32:56 [INFO] SAE activations computed for layer 8 in batch 7.
+2025-03-11 01:32:56 [INFO] SAE activations computed for layer 9 in batch 7.
+2025-03-11 01:32:56 [INFO] SAE activations computed for layer 10 in batch 7.
+2025-03-11 01:32:56 [INFO] SAE activations computed for layer 11 in batch 7.
+2025-03-11 01:32:56 [INFO] Processing batch 8/132...
+2025-03-11 01:32:56 [INFO] Forward pass completed for batch 8.
+2025-03-11 01:32:57 [INFO] SAE activations computed for layer 0 in batch 8.
+2025-03-11 01:32:57 [INFO] SAE activations computed for layer 1 in batch 8.
+2025-03-11 01:32:57 [INFO] SAE activations computed for layer 2 in batch 8.
+2025-03-11 01:32:57 [INFO] SAE activations computed for layer 3 in batch 8.
+2025-03-11 01:32:57 [INFO] SAE activations computed for layer 4 in batch 8.
+2025-03-11 01:32:57 [INFO] SAE activations computed for layer 5 in batch 8.
+2025-03-11 01:32:57 [INFO] SAE activations computed for layer 6 in batch 8.
+2025-03-11 01:32:57 [INFO] SAE activations computed for layer 7 in batch 8.
+2025-03-11 01:32:57 [INFO] SAE activations computed for layer 8 in batch 8.
+2025-03-11 01:32:57 [INFO] SAE activations computed for layer 9 in batch 8.
+2025-03-11 01:32:57 [INFO] SAE activations computed for layer 10 in batch 8.
+2025-03-11 01:32:57 [INFO] SAE activations computed for layer 11 in batch 8.
+2025-03-11 01:32:57 [INFO] Processing batch 9/132...
+2025-03-11 01:32:57 [INFO] Forward pass completed for batch 9.
+2025-03-11 01:32:58 [INFO] SAE activations computed for layer 0 in batch 9.
+2025-03-11 01:32:58 [INFO] SAE activations computed for layer 1 in batch 9.
+2025-03-11 01:32:58 [INFO] SAE activations computed for layer 2 in batch 9.
+2025-03-11 01:32:58 [INFO] SAE activations computed for layer 3 in batch 9.
+2025-03-11 01:32:58 [INFO] SAE activations computed for layer 4 in batch 9.
+2025-03-11 01:32:58 [INFO] SAE activations computed for layer 5 in batch 9.
+2025-03-11 01:32:58 [INFO] SAE activations computed for layer 6 in batch 9.
+2025-03-11 01:32:59 [INFO] SAE activations computed for layer 7 in batch 9.
+2025-03-11 01:32:59 [INFO] SAE activations computed for layer 8 in batch 9.
+2025-03-11 01:32:59 [INFO] SAE activations computed for layer 9 in batch 9.
+2025-03-11 01:32:59 [INFO] SAE activations computed for layer 10 in batch 9.
+2025-03-11 01:32:59 [INFO] SAE activations computed for layer 11 in batch 9.
+2025-03-11 01:32:59 [INFO] Processing batch 10/132...
+2025-03-11 01:32:59 [INFO] Forward pass completed for batch 10.
+2025-03-11 01:33:00 [INFO] SAE activations computed for layer 0 in batch 10.
+2025-03-11 01:33:00 [INFO] SAE activations computed for layer 1 in batch 10.
+2025-03-11 01:33:00 [INFO] SAE activations computed for layer 2 in batch 10.
+2025-03-11 01:33:00 [INFO] SAE activations computed for layer 3 in batch 10.
+2025-03-11 01:33:00 [INFO] SAE activations computed for layer 4 in batch 10.
+2025-03-11 01:33:00 [INFO] SAE activations computed for layer 5 in batch 10.
+2025-03-11 01:33:00 [INFO] SAE activations computed for layer 6 in batch 10.
+2025-03-11 01:33:00 [INFO] SAE activations computed for layer 7 in batch 10.
+2025-03-11 01:33:00 [INFO] SAE activations computed for layer 8 in batch 10.
+2025-03-11 01:33:00 [INFO] SAE activations computed for layer 9 in batch 10.
+2025-03-11 01:33:00 [INFO] SAE activations computed for layer 10 in batch 10.
+2025-03-11 01:33:00 [INFO] SAE activations computed for layer 11 in batch 10.
+2025-03-11 01:33:00 [INFO] Processing batch 11/132...
+2025-03-11 01:33:00 [INFO] Forward pass completed for batch 11.
+2025-03-11 01:33:01 [INFO] SAE activations computed for layer 0 in batch 11.
+2025-03-11 01:33:01 [INFO] SAE activations computed for layer 1 in batch 11.
+2025-03-11 01:33:01 [INFO] SAE activations computed for layer 2 in batch 11.
+2025-03-11 01:33:01 [INFO] SAE activations computed for layer 3 in batch 11.
+2025-03-11 01:33:01 [INFO] SAE activations computed for layer 4 in batch 11.
+2025-03-11 01:33:01 [INFO] SAE activations computed for layer 5 in batch 11.
+2025-03-11 01:33:01 [INFO] SAE activations computed for layer 6 in batch 11.
+2025-03-11 01:33:01 [INFO] SAE activations computed for layer 7 in batch 11.
+2025-03-11 01:33:02 [INFO] SAE activations computed for layer 8 in batch 11.
+2025-03-11 01:33:02 [INFO] SAE activations computed for layer 9 in batch 11.
+2025-03-11 01:33:02 [INFO] SAE activations computed for layer 10 in batch 11.
+2025-03-11 01:33:02 [INFO] SAE activations computed for layer 11 in batch 11.
+2025-03-11 01:33:02 [INFO] Processing batch 12/132...
+2025-03-11 01:33:02 [INFO] Forward pass completed for batch 12.
+2025-03-11 01:33:02 [INFO] SAE activations computed for layer 0 in batch 12.
+2025-03-11 01:33:03 [INFO] SAE activations computed for layer 1 in batch 12.
+2025-03-11 01:33:03 [INFO] SAE activations computed for layer 2 in batch 12.
+2025-03-11 01:33:03 [INFO] SAE activations computed for layer 3 in batch 12.
+2025-03-11 01:33:03 [INFO] SAE activations computed for layer 4 in batch 12.
+2025-03-11 01:33:03 [INFO] SAE activations computed for layer 5 in batch 12.
+2025-03-11 01:33:03 [INFO] SAE activations computed for layer 6 in batch 12.
+2025-03-11 01:33:03 [INFO] SAE activations computed for layer 7 in batch 12.
+2025-03-11 01:33:03 [INFO] SAE activations computed for layer 8 in batch 12.
+2025-03-11 01:33:03 [INFO] SAE activations computed for layer 9 in batch 12.
+2025-03-11 01:33:03 [INFO] SAE activations computed for layer 10 in batch 12.
+2025-03-11 01:33:03 [INFO] SAE activations computed for layer 11 in batch 12.
+2025-03-11 01:33:03 [INFO] Processing batch 13/132...
+2025-03-11 01:33:03 [INFO] Forward pass completed for batch 13.
+2025-03-11 01:33:04 [INFO] SAE activations computed for layer 0 in batch 13.
+2025-03-11 01:33:04 [INFO] SAE activations computed for layer 1 in batch 13.
+2025-03-11 01:33:04 [INFO] SAE activations computed for layer 2 in batch 13.
+2025-03-11 01:33:04 [INFO] SAE activations computed for layer 3 in batch 13.
+2025-03-11 01:33:04 [INFO] SAE activations computed for layer 4 in batch 13.
+2025-03-11 01:33:04 [INFO] SAE activations computed for layer 5 in batch 13.
+2025-03-11 01:33:04 [INFO] SAE activations computed for layer 6 in batch 13.
+2025-03-11 01:33:04 [INFO] SAE activations computed for layer 7 in batch 13.
+2025-03-11 01:33:04 [INFO] SAE activations computed for layer 8 in batch 13.
+2025-03-11 01:33:05 [INFO] SAE activations computed for layer 9 in batch 13.
+2025-03-11 01:33:05 [INFO] SAE activations computed for layer 10 in batch 13.
+2025-03-11 01:33:05 [INFO] SAE activations computed for layer 11 in batch 13.
+2025-03-11 01:33:05 [INFO] Processing batch 14/132...
+2025-03-11 01:33:05 [INFO] Forward pass completed for batch 14.
+2025-03-11 01:33:05 [INFO] SAE activations computed for layer 0 in batch 14.
+2025-03-11 01:33:05 [INFO] SAE activations computed for layer 1 in batch 14.
+2025-03-11 01:33:06 [INFO] SAE activations computed for layer 2 in batch 14.
+2025-03-11 01:33:06 [INFO] SAE activations computed for layer 3 in batch 14.
+2025-03-11 01:33:06 [INFO] SAE activations computed for layer 4 in batch 14.
+2025-03-11 01:33:06 [INFO] SAE activations computed for layer 5 in batch 14.
+2025-03-11 01:33:06 [INFO] SAE activations computed for layer 6 in batch 14.
+2025-03-11 01:33:06 [INFO] SAE activations computed for layer 7 in batch 14.
+2025-03-11 01:33:06 [INFO] SAE activations computed for layer 8 in batch 14.
+2025-03-11 01:33:06 [INFO] SAE activations computed for layer 9 in batch 14.
+2025-03-11 01:33:06 [INFO] SAE activations computed for layer 10 in batch 14.
+2025-03-11 01:33:06 [INFO] SAE activations computed for layer 11 in batch 14.
+2025-03-11 01:33:06 [INFO] Processing batch 15/132...
+2025-03-11 01:33:06 [INFO] Forward pass completed for batch 15.
+2025-03-11 01:33:07 [INFO] SAE activations computed for layer 0 in batch 15.
+2025-03-11 01:33:07 [INFO] SAE activations computed for layer 1 in batch 15.
+2025-03-11 01:33:07 [INFO] SAE activations computed for layer 2 in batch 15.
+2025-03-11 01:33:07 [INFO] SAE activations computed for layer 3 in batch 15.
+2025-03-11 01:33:07 [INFO] SAE activations computed for layer 4 in batch 15.
+2025-03-11 01:33:07 [INFO] SAE activations computed for layer 5 in batch 15.
+2025-03-11 01:33:07 [INFO] SAE activations computed for layer 6 in batch 15.
+2025-03-11 01:33:07 [INFO] SAE activations computed for layer 7 in batch 15.
+2025-03-11 01:33:07 [INFO] SAE activations computed for layer 8 in batch 15.
+2025-03-11 01:33:08 [INFO] SAE activations computed for layer 9 in batch 15.
+2025-03-11 01:33:08 [INFO] SAE activations computed for layer 10 in batch 15.
+2025-03-11 01:33:08 [INFO] SAE activations computed for layer 11 in batch 15.
+2025-03-11 01:33:08 [INFO] Processing batch 16/132...
+2025-03-11 01:33:08 [INFO] Forward pass completed for batch 16.
+2025-03-11 01:33:08 [INFO] SAE activations computed for layer 0 in batch 16.
+2025-03-11 01:33:08 [INFO] SAE activations computed for layer 1 in batch 16.
+2025-03-11 01:33:09 [INFO] SAE activations computed for layer 2 in batch 16.
+2025-03-11 01:33:09 [INFO] SAE activations computed for layer 3 in batch 16.
+2025-03-11 01:33:09 [INFO] SAE activations computed for layer 4 in batch 16.
+2025-03-11 01:33:09 [INFO] SAE activations computed for layer 5 in batch 16.
+2025-03-11 01:33:09 [INFO] SAE activations computed for layer 6 in batch 16.
+2025-03-11 01:33:09 [INFO] SAE activations computed for layer 7 in batch 16.
+2025-03-11 01:33:09 [INFO] SAE activations computed for layer 8 in batch 16.
+2025-03-11 01:33:09 [INFO] SAE activations computed for layer 9 in batch 16.
+2025-03-11 01:33:09 [INFO] SAE activations computed for layer 10 in batch 16.
+2025-03-11 01:33:09 [INFO] SAE activations computed for layer 11 in batch 16.
+2025-03-11 01:33:09 [INFO] Saving tensors to file.
+2025-03-11 01:33:10 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_0L_1.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_0L_1.pt to disk
+2025-03-11 01:33:10 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_1L_1.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_1L_1.pt to disk
+2025-03-11 01:33:10 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_2L_1.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_2L_1.pt to disk
+2025-03-11 01:33:11 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_3L_1.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_3L_1.pt to disk
+2025-03-11 01:33:11 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_4L_1.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_4L_1.pt to disk
+2025-03-11 01:33:11 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_5L_1.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_5L_1.pt to disk
+2025-03-11 01:33:12 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_6L_1.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_6L_1.pt to disk
+2025-03-11 01:33:12 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_7L_1.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_7L_1.pt to disk
+2025-03-11 01:33:12 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_8L_1.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_8L_1.pt to disk
+2025-03-11 01:33:13 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_9L_1.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_9L_1.pt to disk
+2025-03-11 01:33:13 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_10L_1.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_10L_1.pt to disk
+2025-03-11 01:33:14 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_11L_1.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_11L_1.pt to disk
+2025-03-11 01:33:18 [INFO] Saved activations_pythia_160m/data_subset/reconstruction_metrics_1.json to disk
+2025-03-11 01:33:18 [INFO] Processing batch 17/132...
+2025-03-11 01:33:18 [INFO] Forward pass completed for batch 17.
+2025-03-11 01:33:18 [INFO] SAE activations computed for layer 0 in batch 17.
+2025-03-11 01:33:18 [INFO] SAE activations computed for layer 1 in batch 17.
+2025-03-11 01:33:19 [INFO] SAE activations computed for layer 2 in batch 17.
+2025-03-11 01:33:19 [INFO] SAE activations computed for layer 3 in batch 17.
+2025-03-11 01:33:19 [INFO] SAE activations computed for layer 4 in batch 17.
+2025-03-11 01:33:19 [INFO] SAE activations computed for layer 5 in batch 17.
+2025-03-11 01:33:19 [INFO] SAE activations computed for layer 6 in batch 17.
+2025-03-11 01:33:19 [INFO] SAE activations computed for layer 7 in batch 17.
+2025-03-11 01:33:19 [INFO] SAE activations computed for layer 8 in batch 17.
+2025-03-11 01:33:19 [INFO] SAE activations computed for layer 9 in batch 17.
+2025-03-11 01:33:19 [INFO] SAE activations computed for layer 10 in batch 17.
+2025-03-11 01:33:19 [INFO] SAE activations computed for layer 11 in batch 17.
+2025-03-11 01:33:19 [INFO] Processing batch 18/132...
+2025-03-11 01:33:19 [INFO] Forward pass completed for batch 18.
+2025-03-11 01:33:20 [INFO] SAE activations computed for layer 0 in batch 18.
+2025-03-11 01:33:20 [INFO] SAE activations computed for layer 1 in batch 18.
+2025-03-11 01:33:20 [INFO] SAE activations computed for layer 2 in batch 18.
+2025-03-11 01:33:20 [INFO] SAE activations computed for layer 3 in batch 18.
+2025-03-11 01:33:20 [INFO] SAE activations computed for layer 4 in batch 18.
+2025-03-11 01:33:20 [INFO] SAE activations computed for layer 5 in batch 18.
+2025-03-11 01:33:20 [INFO] SAE activations computed for layer 6 in batch 18.
+2025-03-11 01:33:20 [INFO] SAE activations computed for layer 7 in batch 18.
+2025-03-11 01:33:20 [INFO] SAE activations computed for layer 8 in batch 18.
+2025-03-11 01:33:20 [INFO] SAE activations computed for layer 9 in batch 18.
+2025-03-11 01:33:20 [INFO] SAE activations computed for layer 10 in batch 18.
+2025-03-11 01:33:21 [INFO] SAE activations computed for layer 11 in batch 18.
+2025-03-11 01:33:21 [INFO] Processing batch 19/132...
+2025-03-11 01:33:21 [INFO] Forward pass completed for batch 19.
+2025-03-11 01:33:21 [INFO] SAE activations computed for layer 0 in batch 19.
+2025-03-11 01:33:21 [INFO] SAE activations computed for layer 1 in batch 19.
+2025-03-11 01:33:21 [INFO] SAE activations computed for layer 2 in batch 19.
+2025-03-11 01:33:21 [INFO] SAE activations computed for layer 3 in batch 19.
+2025-03-11 01:33:22 [INFO] SAE activations computed for layer 4 in batch 19.
+2025-03-11 01:33:22 [INFO] SAE activations computed for layer 5 in batch 19.
+2025-03-11 01:33:22 [INFO] SAE activations computed for layer 6 in batch 19.
+2025-03-11 01:33:22 [INFO] SAE activations computed for layer 7 in batch 19.
+2025-03-11 01:33:22 [INFO] SAE activations computed for layer 8 in batch 19.
+2025-03-11 01:33:22 [INFO] SAE activations computed for layer 9 in batch 19.
+2025-03-11 01:33:22 [INFO] SAE activations computed for layer 10 in batch 19.
+2025-03-11 01:33:22 [INFO] SAE activations computed for layer 11 in batch 19.
+2025-03-11 01:33:22 [INFO] Processing batch 20/132...
+2025-03-11 01:33:22 [INFO] Forward pass completed for batch 20.
+2025-03-11 01:33:23 [INFO] SAE activations computed for layer 0 in batch 20.
+2025-03-11 01:33:23 [INFO] SAE activations computed for layer 1 in batch 20.
+2025-03-11 01:33:23 [INFO] SAE activations computed for layer 2 in batch 20.
+2025-03-11 01:33:23 [INFO] SAE activations computed for layer 3 in batch 20.
+2025-03-11 01:33:23 [INFO] SAE activations computed for layer 4 in batch 20.
+2025-03-11 01:33:23 [INFO] SAE activations computed for layer 5 in batch 20.
+2025-03-11 01:33:23 [INFO] SAE activations computed for layer 6 in batch 20.
+2025-03-11 01:33:23 [INFO] SAE activations computed for layer 7 in batch 20.
+2025-03-11 01:33:23 [INFO] SAE activations computed for layer 8 in batch 20.
+2025-03-11 01:33:23 [INFO] SAE activations computed for layer 9 in batch 20.
+2025-03-11 01:33:23 [INFO] SAE activations computed for layer 10 in batch 20.
+2025-03-11 01:33:23 [INFO] SAE activations computed for layer 11 in batch 20.
+2025-03-11 01:33:23 [INFO] Processing batch 21/132...
+2025-03-11 01:33:23 [INFO] Forward pass completed for batch 21.
+2025-03-11 01:33:24 [INFO] SAE activations computed for layer 0 in batch 21.
+2025-03-11 01:33:24 [INFO] SAE activations computed for layer 1 in batch 21.
+2025-03-11 01:33:24 [INFO] SAE activations computed for layer 2 in batch 21.
+2025-03-11 01:33:24 [INFO] SAE activations computed for layer 3 in batch 21.
+2025-03-11 01:33:24 [INFO] SAE activations computed for layer 4 in batch 21.
+2025-03-11 01:33:24 [INFO] SAE activations computed for layer 5 in batch 21.
+2025-03-11 01:33:24 [INFO] SAE activations computed for layer 6 in batch 21.
+2025-03-11 01:33:25 [INFO] SAE activations computed for layer 7 in batch 21.
+2025-03-11 01:33:25 [INFO] SAE activations computed for layer 8 in batch 21.
+2025-03-11 01:33:25 [INFO] SAE activations computed for layer 9 in batch 21.
+2025-03-11 01:33:25 [INFO] SAE activations computed for layer 10 in batch 21.
+2025-03-11 01:33:25 [INFO] SAE activations computed for layer 11 in batch 21.
+2025-03-11 01:33:25 [INFO] Processing batch 22/132...
+2025-03-11 01:33:25 [INFO] Forward pass completed for batch 22.
+2025-03-11 01:33:25 [INFO] SAE activations computed for layer 0 in batch 22.
+2025-03-11 01:33:26 [INFO] SAE activations computed for layer 1 in batch 22.
+2025-03-11 01:33:26 [INFO] SAE activations computed for layer 2 in batch 22.
+2025-03-11 01:33:26 [INFO] SAE activations computed for layer 3 in batch 22.
+2025-03-11 01:33:26 [INFO] SAE activations computed for layer 4 in batch 22.
+2025-03-11 01:33:26 [INFO] SAE activations computed for layer 5 in batch 22.
+2025-03-11 01:33:26 [INFO] SAE activations computed for layer 6 in batch 22.
+2025-03-11 01:33:26 [INFO] SAE activations computed for layer 7 in batch 22.
+2025-03-11 01:33:26 [INFO] SAE activations computed for layer 8 in batch 22.
+2025-03-11 01:33:26 [INFO] SAE activations computed for layer 9 in batch 22.
+2025-03-11 01:33:26 [INFO] SAE activations computed for layer 10 in batch 22.
+2025-03-11 01:33:26 [INFO] SAE activations computed for layer 11 in batch 22.
+2025-03-11 01:33:26 [INFO] Processing batch 23/132...
+2025-03-11 01:33:26 [INFO] Forward pass completed for batch 23.
+2025-03-11 01:33:27 [INFO] SAE activations computed for layer 0 in batch 23.
+2025-03-11 01:33:27 [INFO] SAE activations computed for layer 1 in batch 23.
+2025-03-11 01:33:27 [INFO] SAE activations computed for layer 2 in batch 23.
+2025-03-11 01:33:27 [INFO] SAE activations computed for layer 3 in batch 23.
+2025-03-11 01:33:27 [INFO] SAE activations computed for layer 4 in batch 23.
+2025-03-11 01:33:27 [INFO] SAE activations computed for layer 5 in batch 23.
+2025-03-11 01:33:27 [INFO] SAE activations computed for layer 6 in batch 23.
+2025-03-11 01:33:27 [INFO] SAE activations computed for layer 7 in batch 23.
+2025-03-11 01:33:27 [INFO] SAE activations computed for layer 8 in batch 23.
+2025-03-11 01:33:27 [INFO] SAE activations computed for layer 9 in batch 23.
+2025-03-11 01:33:28 [INFO] SAE activations computed for layer 10 in batch 23.
+2025-03-11 01:33:28 [INFO] SAE activations computed for layer 11 in batch 23.
+2025-03-11 01:33:28 [INFO] Processing batch 24/132...
+2025-03-11 01:33:28 [INFO] Forward pass completed for batch 24.
+2025-03-11 01:33:28 [INFO] SAE activations computed for layer 0 in batch 24.
+2025-03-11 01:33:28 [INFO] SAE activations computed for layer 1 in batch 24.
+2025-03-11 01:33:28 [INFO] SAE activations computed for layer 2 in batch 24.
+2025-03-11 01:33:29 [INFO] SAE activations computed for layer 3 in batch 24.
+2025-03-11 01:33:29 [INFO] SAE activations computed for layer 4 in batch 24.
+2025-03-11 01:33:29 [INFO] SAE activations computed for layer 5 in batch 24.
+2025-03-11 01:33:29 [INFO] SAE activations computed for layer 6 in batch 24.
+2025-03-11 01:33:29 [INFO] SAE activations computed for layer 7 in batch 24.
+2025-03-11 01:33:29 [INFO] SAE activations computed for layer 8 in batch 24.
+2025-03-11 01:33:29 [INFO] SAE activations computed for layer 9 in batch 24.
+2025-03-11 01:33:29 [INFO] SAE activations computed for layer 10 in batch 24.
+2025-03-11 01:33:29 [INFO] SAE activations computed for layer 11 in batch 24.
+2025-03-11 01:33:29 [INFO] Processing batch 25/132...
+2025-03-11 01:33:29 [INFO] Forward pass completed for batch 25.
+2025-03-11 01:33:30 [INFO] SAE activations computed for layer 0 in batch 25.
+2025-03-11 01:33:30 [INFO] SAE activations computed for layer 1 in batch 25.
+2025-03-11 01:33:30 [INFO] SAE activations computed for layer 2 in batch 25.
+2025-03-11 01:33:30 [INFO] SAE activations computed for layer 3 in batch 25.
+2025-03-11 01:33:30 [INFO] SAE activations computed for layer 4 in batch 25.
+2025-03-11 01:33:30 [INFO] SAE activations computed for layer 5 in batch 25.
+2025-03-11 01:33:30 [INFO] SAE activations computed for layer 6 in batch 25.
+2025-03-11 01:33:30 [INFO] SAE activations computed for layer 7 in batch 25.
+2025-03-11 01:33:30 [INFO] SAE activations computed for layer 8 in batch 25.
+2025-03-11 01:33:30 [INFO] SAE activations computed for layer 9 in batch 25.
+2025-03-11 01:33:30 [INFO] SAE activations computed for layer 10 in batch 25.
+2025-03-11 01:33:30 [INFO] SAE activations computed for layer 11 in batch 25.
+2025-03-11 01:33:31 [INFO] Processing batch 26/132...
+2025-03-11 01:33:31 [INFO] Forward pass completed for batch 26.
+2025-03-11 01:33:31 [INFO] SAE activations computed for layer 0 in batch 26.
+2025-03-11 01:33:31 [INFO] SAE activations computed for layer 1 in batch 26.
+2025-03-11 01:33:31 [INFO] SAE activations computed for layer 2 in batch 26.
+2025-03-11 01:33:31 [INFO] SAE activations computed for layer 3 in batch 26.
+2025-03-11 01:33:31 [INFO] SAE activations computed for layer 4 in batch 26.
+2025-03-11 01:33:31 [INFO] SAE activations computed for layer 5 in batch 26.
+2025-03-11 01:33:32 [INFO] SAE activations computed for layer 6 in batch 26.
+2025-03-11 01:33:32 [INFO] SAE activations computed for layer 7 in batch 26.
+2025-03-11 01:33:32 [INFO] SAE activations computed for layer 8 in batch 26.
+2025-03-11 01:33:32 [INFO] SAE activations computed for layer 9 in batch 26.
+2025-03-11 01:33:32 [INFO] SAE activations computed for layer 10 in batch 26.
+2025-03-11 01:33:32 [INFO] SAE activations computed for layer 11 in batch 26.
+2025-03-11 01:33:32 [INFO] Processing batch 27/132...
+2025-03-11 01:33:32 [INFO] Forward pass completed for batch 27.
+2025-03-11 01:33:33 [INFO] SAE activations computed for layer 0 in batch 27.
+2025-03-11 01:33:33 [INFO] SAE activations computed for layer 1 in batch 27.
+2025-03-11 01:33:33 [INFO] SAE activations computed for layer 2 in batch 27.
+2025-03-11 01:33:33 [INFO] SAE activations computed for layer 3 in batch 27.
+2025-03-11 01:33:33 [INFO] SAE activations computed for layer 4 in batch 27.
+2025-03-11 01:33:33 [INFO] SAE activations computed for layer 5 in batch 27.
+2025-03-11 01:33:33 [INFO] SAE activations computed for layer 6 in batch 27.
+2025-03-11 01:33:33 [INFO] SAE activations computed for layer 7 in batch 27.
+2025-03-11 01:33:33 [INFO] SAE activations computed for layer 8 in batch 27.
+2025-03-11 01:33:33 [INFO] SAE activations computed for layer 9 in batch 27.
+2025-03-11 01:33:33 [INFO] SAE activations computed for layer 10 in batch 27.
+2025-03-11 01:33:33 [INFO] SAE activations computed for layer 11 in batch 27.
+2025-03-11 01:33:33 [INFO] Processing batch 28/132...
+2025-03-11 01:33:33 [INFO] Forward pass completed for batch 28.
+2025-03-11 01:33:34 [INFO] SAE activations computed for layer 0 in batch 28.
+2025-03-11 01:33:34 [INFO] SAE activations computed for layer 1 in batch 28.
+2025-03-11 01:33:34 [INFO] SAE activations computed for layer 2 in batch 28.
+2025-03-11 01:33:34 [INFO] SAE activations computed for layer 3 in batch 28.
+2025-03-11 01:33:34 [INFO] SAE activations computed for layer 4 in batch 28.
+2025-03-11 01:33:34 [INFO] SAE activations computed for layer 5 in batch 28.
+2025-03-11 01:33:34 [INFO] SAE activations computed for layer 6 in batch 28.
+2025-03-11 01:33:34 [INFO] SAE activations computed for layer 7 in batch 28.
+2025-03-11 01:33:35 [INFO] SAE activations computed for layer 8 in batch 28.
+2025-03-11 01:33:35 [INFO] SAE activations computed for layer 9 in batch 28.
+2025-03-11 01:33:35 [INFO] SAE activations computed for layer 10 in batch 28.
+2025-03-11 01:33:35 [INFO] SAE activations computed for layer 11 in batch 28.
+2025-03-11 01:33:35 [INFO] Processing batch 29/132...
+2025-03-11 01:33:35 [INFO] Forward pass completed for batch 29.
+2025-03-11 01:33:35 [INFO] SAE activations computed for layer 0 in batch 29.
+2025-03-11 01:33:35 [INFO] SAE activations computed for layer 1 in batch 29.
+2025-03-11 01:33:36 [INFO] SAE activations computed for layer 2 in batch 29.
+2025-03-11 01:33:36 [INFO] SAE activations computed for layer 3 in batch 29.
+2025-03-11 01:33:36 [INFO] SAE activations computed for layer 4 in batch 29.
+2025-03-11 01:33:36 [INFO] SAE activations computed for layer 5 in batch 29.
+2025-03-11 01:33:36 [INFO] SAE activations computed for layer 6 in batch 29.
+2025-03-11 01:33:36 [INFO] SAE activations computed for layer 7 in batch 29.
+2025-03-11 01:33:36 [INFO] SAE activations computed for layer 8 in batch 29.
+2025-03-11 01:33:36 [INFO] SAE activations computed for layer 9 in batch 29.
+2025-03-11 01:33:36 [INFO] SAE activations computed for layer 10 in batch 29.
+2025-03-11 01:33:36 [INFO] SAE activations computed for layer 11 in batch 29.
+2025-03-11 01:33:36 [INFO] Processing batch 30/132...
+2025-03-11 01:33:36 [INFO] Forward pass completed for batch 30.
+2025-03-11 01:33:37 [INFO] SAE activations computed for layer 0 in batch 30.
+2025-03-11 01:33:37 [INFO] SAE activations computed for layer 1 in batch 30.
+2025-03-11 01:33:37 [INFO] SAE activations computed for layer 2 in batch 30.
+2025-03-11 01:33:37 [INFO] SAE activations computed for layer 3 in batch 30.
+2025-03-11 01:33:37 [INFO] SAE activations computed for layer 4 in batch 30.
+2025-03-11 01:33:37 [INFO] SAE activations computed for layer 5 in batch 30.
+2025-03-11 01:33:37 [INFO] SAE activations computed for layer 6 in batch 30.
+2025-03-11 01:33:37 [INFO] SAE activations computed for layer 7 in batch 30.
+2025-03-11 01:33:37 [INFO] SAE activations computed for layer 8 in batch 30.
+2025-03-11 01:33:37 [INFO] SAE activations computed for layer 9 in batch 30.
+2025-03-11 01:33:37 [INFO] SAE activations computed for layer 10 in batch 30.
+2025-03-11 01:33:38 [INFO] SAE activations computed for layer 11 in batch 30.
+2025-03-11 01:33:38 [INFO] Processing batch 31/132...
+2025-03-11 01:33:38 [INFO] Forward pass completed for batch 31.
+2025-03-11 01:33:38 [INFO] SAE activations computed for layer 0 in batch 31.
+2025-03-11 01:33:38 [INFO] SAE activations computed for layer 1 in batch 31.
+2025-03-11 01:33:38 [INFO] SAE activations computed for layer 2 in batch 31.
+2025-03-11 01:33:38 [INFO] SAE activations computed for layer 3 in batch 31.
+2025-03-11 01:33:39 [INFO] SAE activations computed for layer 4 in batch 31.
+2025-03-11 01:33:39 [INFO] SAE activations computed for layer 5 in batch 31.
+2025-03-11 01:33:39 [INFO] SAE activations computed for layer 6 in batch 31.
+2025-03-11 01:33:39 [INFO] SAE activations computed for layer 7 in batch 31.
+2025-03-11 01:33:39 [INFO] SAE activations computed for layer 8 in batch 31.
+2025-03-11 01:33:39 [INFO] SAE activations computed for layer 9 in batch 31.
+2025-03-11 01:33:39 [INFO] SAE activations computed for layer 10 in batch 31.
+2025-03-11 01:33:39 [INFO] SAE activations computed for layer 11 in batch 31.
+2025-03-11 01:33:39 [INFO] Processing batch 32/132...
+2025-03-11 01:33:39 [INFO] Forward pass completed for batch 32.
+2025-03-11 01:33:40 [INFO] SAE activations computed for layer 0 in batch 32.
+2025-03-11 01:33:40 [INFO] SAE activations computed for layer 1 in batch 32.
+2025-03-11 01:33:40 [INFO] SAE activations computed for layer 2 in batch 32.
+2025-03-11 01:33:40 [INFO] SAE activations computed for layer 3 in batch 32.
+2025-03-11 01:33:40 [INFO] SAE activations computed for layer 4 in batch 32.
+2025-03-11 01:33:40 [INFO] SAE activations computed for layer 5 in batch 32.
+2025-03-11 01:33:40 [INFO] SAE activations computed for layer 6 in batch 32.
+2025-03-11 01:33:40 [INFO] SAE activations computed for layer 7 in batch 32.
+2025-03-11 01:33:40 [INFO] SAE activations computed for layer 8 in batch 32.
+2025-03-11 01:33:40 [INFO] SAE activations computed for layer 9 in batch 32.
+2025-03-11 01:33:40 [INFO] SAE activations computed for layer 10 in batch 32.
+2025-03-11 01:33:40 [INFO] SAE activations computed for layer 11 in batch 32.
+2025-03-11 01:33:40 [INFO] Saving tensors to file.
+2025-03-11 01:33:41 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_0L_2.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_0L_2.pt to disk
+2025-03-11 01:33:41 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_1L_2.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_1L_2.pt to disk
+2025-03-11 01:33:42 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_2L_2.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_2L_2.pt to disk
+2025-03-11 01:33:42 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_3L_2.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_3L_2.pt to disk
+2025-03-11 01:33:42 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_4L_2.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_4L_2.pt to disk
+2025-03-11 01:33:43 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_5L_2.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_5L_2.pt to disk
+2025-03-11 01:33:43 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_6L_2.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_6L_2.pt to disk
+2025-03-11 01:33:43 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_7L_2.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_7L_2.pt to disk
+2025-03-11 01:33:43 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_8L_2.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_8L_2.pt to disk
+2025-03-11 01:33:44 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_9L_2.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_9L_2.pt to disk
+2025-03-11 01:33:44 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_10L_2.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_10L_2.pt to disk
+2025-03-11 01:33:45 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_11L_2.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_11L_2.pt to disk
+2025-03-11 01:33:49 [INFO] Saved activations_pythia_160m/data_subset/reconstruction_metrics_2.json to disk
+2025-03-11 01:33:49 [INFO] Processing batch 33/132...
+2025-03-11 01:33:49 [INFO] Forward pass completed for batch 33.
+2025-03-11 01:33:50 [INFO] SAE activations computed for layer 0 in batch 33.
+2025-03-11 01:33:50 [INFO] SAE activations computed for layer 1 in batch 33.
+2025-03-11 01:33:50 [INFO] SAE activations computed for layer 2 in batch 33.
+2025-03-11 01:33:50 [INFO] SAE activations computed for layer 3 in batch 33.
+2025-03-11 01:33:50 [INFO] SAE activations computed for layer 4 in batch 33.
+2025-03-11 01:33:50 [INFO] SAE activations computed for layer 5 in batch 33.
+2025-03-11 01:33:50 [INFO] SAE activations computed for layer 6 in batch 33.
+2025-03-11 01:33:50 [INFO] SAE activations computed for layer 7 in batch 33.
+2025-03-11 01:33:50 [INFO] SAE activations computed for layer 8 in batch 33.
+2025-03-11 01:33:50 [INFO] SAE activations computed for layer 9 in batch 33.
+2025-03-11 01:33:50 [INFO] SAE activations computed for layer 10 in batch 33.
+2025-03-11 01:33:50 [INFO] SAE activations computed for layer 11 in batch 33.
+2025-03-11 01:33:50 [INFO] Processing batch 34/132...
+2025-03-11 01:33:50 [INFO] Forward pass completed for batch 34.
+2025-03-11 01:33:51 [INFO] SAE activations computed for layer 0 in batch 34.
+2025-03-11 01:33:51 [INFO] SAE activations computed for layer 1 in batch 34.
+2025-03-11 01:33:51 [INFO] SAE activations computed for layer 2 in batch 34.
+2025-03-11 01:33:51 [INFO] SAE activations computed for layer 3 in batch 34.
+2025-03-11 01:33:51 [INFO] SAE activations computed for layer 4 in batch 34.
+2025-03-11 01:33:51 [INFO] SAE activations computed for layer 5 in batch 34.
+2025-03-11 01:33:51 [INFO] SAE activations computed for layer 6 in batch 34.
+2025-03-11 01:33:52 [INFO] SAE activations computed for layer 7 in batch 34.
+2025-03-11 01:33:52 [INFO] SAE activations computed for layer 8 in batch 34.
+2025-03-11 01:33:52 [INFO] SAE activations computed for layer 9 in batch 34.
+2025-03-11 01:33:52 [INFO] SAE activations computed for layer 10 in batch 34.
+2025-03-11 01:33:52 [INFO] SAE activations computed for layer 11 in batch 34.
+2025-03-11 01:33:52 [INFO] Processing batch 35/132...
+2025-03-11 01:33:52 [INFO] Forward pass completed for batch 35.
+2025-03-11 01:33:52 [INFO] SAE activations computed for layer 0 in batch 35.
+2025-03-11 01:33:53 [INFO] SAE activations computed for layer 1 in batch 35.
+2025-03-11 01:33:53 [INFO] SAE activations computed for layer 2 in batch 35.
+2025-03-11 01:33:53 [INFO] SAE activations computed for layer 3 in batch 35.
+2025-03-11 01:33:53 [INFO] SAE activations computed for layer 4 in batch 35.
+2025-03-11 01:33:53 [INFO] SAE activations computed for layer 5 in batch 35.
+2025-03-11 01:33:53 [INFO] SAE activations computed for layer 6 in batch 35.
+2025-03-11 01:33:53 [INFO] SAE activations computed for layer 7 in batch 35.
+2025-03-11 01:33:53 [INFO] SAE activations computed for layer 8 in batch 35.
+2025-03-11 01:33:53 [INFO] SAE activations computed for layer 9 in batch 35.
+2025-03-11 01:33:53 [INFO] SAE activations computed for layer 10 in batch 35.
+2025-03-11 01:33:53 [INFO] SAE activations computed for layer 11 in batch 35.
+2025-03-11 01:33:53 [INFO] Processing batch 36/132...
+2025-03-11 01:33:53 [INFO] Forward pass completed for batch 36.
+2025-03-11 01:33:54 [INFO] SAE activations computed for layer 0 in batch 36.
+2025-03-11 01:33:54 [INFO] SAE activations computed for layer 1 in batch 36.
+2025-03-11 01:33:54 [INFO] SAE activations computed for layer 2 in batch 36.
+2025-03-11 01:33:54 [INFO] SAE activations computed for layer 3 in batch 36.
+2025-03-11 01:33:54 [INFO] SAE activations computed for layer 4 in batch 36.
+2025-03-11 01:33:54 [INFO] SAE activations computed for layer 5 in batch 36.
+2025-03-11 01:33:54 [INFO] SAE activations computed for layer 6 in batch 36.
+2025-03-11 01:33:54 [INFO] SAE activations computed for layer 7 in batch 36.
+2025-03-11 01:33:54 [INFO] SAE activations computed for layer 8 in batch 36.
+2025-03-11 01:33:54 [INFO] SAE activations computed for layer 9 in batch 36.
+2025-03-11 01:33:55 [INFO] SAE activations computed for layer 10 in batch 36.
+2025-03-11 01:33:55 [INFO] SAE activations computed for layer 11 in batch 36.
+2025-03-11 01:33:55 [INFO] Processing batch 37/132...
+2025-03-11 01:33:55 [INFO] Forward pass completed for batch 37.
+2025-03-11 01:33:55 [INFO] SAE activations computed for layer 0 in batch 37.
+2025-03-11 01:33:55 [INFO] SAE activations computed for layer 1 in batch 37.
+2025-03-11 01:33:55 [INFO] SAE activations computed for layer 2 in batch 37.
+2025-03-11 01:33:55 [INFO] SAE activations computed for layer 3 in batch 37.
+2025-03-11 01:33:56 [INFO] SAE activations computed for layer 4 in batch 37.
+2025-03-11 01:33:56 [INFO] SAE activations computed for layer 5 in batch 37.
+2025-03-11 01:33:56 [INFO] SAE activations computed for layer 6 in batch 37.
+2025-03-11 01:33:56 [INFO] SAE activations computed for layer 7 in batch 37.
+2025-03-11 01:33:56 [INFO] SAE activations computed for layer 8 in batch 37.
+2025-03-11 01:33:56 [INFO] SAE activations computed for layer 9 in batch 37.
+2025-03-11 01:33:56 [INFO] SAE activations computed for layer 10 in batch 37.
+2025-03-11 01:33:56 [INFO] SAE activations computed for layer 11 in batch 37.
+2025-03-11 01:33:56 [INFO] Processing batch 38/132...
+2025-03-11 01:33:56 [INFO] Forward pass completed for batch 38.
+2025-03-11 01:33:57 [INFO] SAE activations computed for layer 0 in batch 38.
+2025-03-11 01:33:57 [INFO] SAE activations computed for layer 1 in batch 38.
+2025-03-11 01:33:57 [INFO] SAE activations computed for layer 2 in batch 38.
+2025-03-11 01:33:57 [INFO] SAE activations computed for layer 3 in batch 38.
+2025-03-11 01:33:57 [INFO] SAE activations computed for layer 4 in batch 38.
+2025-03-11 01:33:57 [INFO] SAE activations computed for layer 5 in batch 38.
+2025-03-11 01:33:57 [INFO] SAE activations computed for layer 6 in batch 38.
+2025-03-11 01:33:57 [INFO] SAE activations computed for layer 7 in batch 38.
+2025-03-11 01:33:57 [INFO] SAE activations computed for layer 8 in batch 38.
+2025-03-11 01:33:57 [INFO] SAE activations computed for layer 9 in batch 38.
+2025-03-11 01:33:57 [INFO] SAE activations computed for layer 10 in batch 38.
+2025-03-11 01:33:57 [INFO] SAE activations computed for layer 11 in batch 38.
+2025-03-11 01:33:57 [INFO] Processing batch 39/132...
+2025-03-11 01:33:57 [INFO] Forward pass completed for batch 39.
+2025-03-11 01:33:58 [INFO] SAE activations computed for layer 0 in batch 39.
+2025-03-11 01:33:58 [INFO] SAE activations computed for layer 1 in batch 39.
+2025-03-11 01:33:58 [INFO] SAE activations computed for layer 2 in batch 39.
+2025-03-11 01:33:58 [INFO] SAE activations computed for layer 3 in batch 39.
+2025-03-11 01:33:58 [INFO] SAE activations computed for layer 4 in batch 39.
+2025-03-11 01:33:58 [INFO] SAE activations computed for layer 5 in batch 39.
+2025-03-11 01:33:58 [INFO] SAE activations computed for layer 6 in batch 39.
+2025-03-11 01:33:59 [INFO] SAE activations computed for layer 7 in batch 39.
+2025-03-11 01:33:59 [INFO] SAE activations computed for layer 8 in batch 39.
+2025-03-11 01:33:59 [INFO] SAE activations computed for layer 9 in batch 39.
+2025-03-11 01:33:59 [INFO] SAE activations computed for layer 10 in batch 39.
+2025-03-11 01:33:59 [INFO] SAE activations computed for layer 11 in batch 39.
+2025-03-11 01:33:59 [INFO] Processing batch 40/132...
+2025-03-11 01:33:59 [INFO] Forward pass completed for batch 40.
+2025-03-11 01:34:00 [INFO] SAE activations computed for layer 0 in batch 40.
+2025-03-11 01:34:00 [INFO] SAE activations computed for layer 1 in batch 40.
+2025-03-11 01:34:00 [INFO] SAE activations computed for layer 2 in batch 40.
+2025-03-11 01:34:00 [INFO] SAE activations computed for layer 3 in batch 40.
+2025-03-11 01:34:00 [INFO] SAE activations computed for layer 4 in batch 40.
+2025-03-11 01:34:00 [INFO] SAE activations computed for layer 5 in batch 40.
+2025-03-11 01:34:00 [INFO] SAE activations computed for layer 6 in batch 40.
+2025-03-11 01:34:00 [INFO] SAE activations computed for layer 7 in batch 40.
+2025-03-11 01:34:00 [INFO] SAE activations computed for layer 8 in batch 40.
+2025-03-11 01:34:00 [INFO] SAE activations computed for layer 9 in batch 40.
+2025-03-11 01:34:00 [INFO] SAE activations computed for layer 10 in batch 40.
+2025-03-11 01:34:00 [INFO] SAE activations computed for layer 11 in batch 40.
+2025-03-11 01:34:00 [INFO] Processing batch 41/132...
+2025-03-11 01:34:00 [INFO] Forward pass completed for batch 41.
+2025-03-11 01:34:01 [INFO] SAE activations computed for layer 0 in batch 41.
+2025-03-11 01:34:01 [INFO] SAE activations computed for layer 1 in batch 41.
+2025-03-11 01:34:01 [INFO] SAE activations computed for layer 2 in batch 41.
+2025-03-11 01:34:01 [INFO] SAE activations computed for layer 3 in batch 41.
+2025-03-11 01:34:01 [INFO] SAE activations computed for layer 4 in batch 41.
+2025-03-11 01:34:01 [INFO] SAE activations computed for layer 5 in batch 41.
+2025-03-11 01:34:01 [INFO] SAE activations computed for layer 6 in batch 41.
+2025-03-11 01:34:01 [INFO] SAE activations computed for layer 7 in batch 41.
+2025-03-11 01:34:01 [INFO] SAE activations computed for layer 8 in batch 41.
+2025-03-11 01:34:02 [INFO] SAE activations computed for layer 9 in batch 41.
+2025-03-11 01:34:02 [INFO] SAE activations computed for layer 10 in batch 41.
+2025-03-11 01:34:02 [INFO] SAE activations computed for layer 11 in batch 41.
+2025-03-11 01:34:02 [INFO] Processing batch 42/132...
+2025-03-11 01:34:02 [INFO] Forward pass completed for batch 42.
+2025-03-11 01:34:02 [INFO] SAE activations computed for layer 0 in batch 42.
+2025-03-11 01:34:02 [INFO] SAE activations computed for layer 1 in batch 42.
+2025-03-11 01:34:02 [INFO] SAE activations computed for layer 2 in batch 42.
+2025-03-11 01:34:03 [INFO] SAE activations computed for layer 3 in batch 42.
+2025-03-11 01:34:03 [INFO] SAE activations computed for layer 4 in batch 42.
+2025-03-11 01:34:03 [INFO] SAE activations computed for layer 5 in batch 42.
+2025-03-11 01:34:03 [INFO] SAE activations computed for layer 6 in batch 42.
+2025-03-11 01:34:03 [INFO] SAE activations computed for layer 7 in batch 42.
+2025-03-11 01:34:03 [INFO] SAE activations computed for layer 8 in batch 42.
+2025-03-11 01:34:03 [INFO] SAE activations computed for layer 9 in batch 42.
+2025-03-11 01:34:03 [INFO] SAE activations computed for layer 10 in batch 42.
+2025-03-11 01:34:03 [INFO] SAE activations computed for layer 11 in batch 42.
+2025-03-11 01:34:03 [INFO] Processing batch 43/132...
+2025-03-11 01:34:03 [INFO] Forward pass completed for batch 43.
+2025-03-11 01:34:04 [INFO] SAE activations computed for layer 0 in batch 43.
+2025-03-11 01:34:04 [INFO] SAE activations computed for layer 1 in batch 43.
+2025-03-11 01:34:04 [INFO] SAE activations computed for layer 2 in batch 43.
+2025-03-11 01:34:04 [INFO] SAE activations computed for layer 3 in batch 43.
+2025-03-11 01:34:04 [INFO] SAE activations computed for layer 4 in batch 43.
+2025-03-11 01:34:04 [INFO] SAE activations computed for layer 5 in batch 43.
+2025-03-11 01:34:04 [INFO] SAE activations computed for layer 6 in batch 43.
+2025-03-11 01:34:04 [INFO] SAE activations computed for layer 7 in batch 43.
+2025-03-11 01:34:04 [INFO] SAE activations computed for layer 8 in batch 43.
+2025-03-11 01:34:04 [INFO] SAE activations computed for layer 9 in batch 43.
+2025-03-11 01:34:04 [INFO] SAE activations computed for layer 10 in batch 43.
+2025-03-11 01:34:04 [INFO] SAE activations computed for layer 11 in batch 43.
+2025-03-11 01:34:05 [INFO] Processing batch 44/132...
+2025-03-11 01:34:05 [INFO] Forward pass completed for batch 44.
+2025-03-11 01:34:05 [INFO] SAE activations computed for layer 0 in batch 44.
+2025-03-11 01:34:05 [INFO] SAE activations computed for layer 1 in batch 44.
+2025-03-11 01:34:05 [INFO] SAE activations computed for layer 2 in batch 44.
+2025-03-11 01:34:05 [INFO] SAE activations computed for layer 3 in batch 44.
+2025-03-11 01:34:05 [INFO] SAE activations computed for layer 4 in batch 44.
+2025-03-11 01:34:05 [INFO] SAE activations computed for layer 5 in batch 44.
+2025-03-11 01:34:06 [INFO] SAE activations computed for layer 6 in batch 44.
+2025-03-11 01:34:06 [INFO] SAE activations computed for layer 7 in batch 44.
+2025-03-11 01:34:06 [INFO] SAE activations computed for layer 8 in batch 44.
+2025-03-11 01:34:06 [INFO] SAE activations computed for layer 9 in batch 44.
+2025-03-11 01:34:06 [INFO] SAE activations computed for layer 10 in batch 44.
+2025-03-11 01:34:06 [INFO] SAE activations computed for layer 11 in batch 44.
+2025-03-11 01:34:06 [INFO] Processing batch 45/132...
+2025-03-11 01:34:06 [INFO] Forward pass completed for batch 45.
+2025-03-11 01:34:07 [INFO] SAE activations computed for layer 0 in batch 45.
+2025-03-11 01:34:07 [INFO] SAE activations computed for layer 1 in batch 45.
+2025-03-11 01:34:07 [INFO] SAE activations computed for layer 2 in batch 45.
+2025-03-11 01:34:07 [INFO] SAE activations computed for layer 3 in batch 45.
+2025-03-11 01:34:07 [INFO] SAE activations computed for layer 4 in batch 45.
+2025-03-11 01:34:07 [INFO] SAE activations computed for layer 5 in batch 45.
+2025-03-11 01:34:07 [INFO] SAE activations computed for layer 6 in batch 45.
+2025-03-11 01:34:07 [INFO] SAE activations computed for layer 7 in batch 45.
+2025-03-11 01:34:07 [INFO] SAE activations computed for layer 8 in batch 45.
+2025-03-11 01:34:07 [INFO] SAE activations computed for layer 9 in batch 45.
+2025-03-11 01:34:07 [INFO] SAE activations computed for layer 10 in batch 45.
+2025-03-11 01:34:07 [INFO] SAE activations computed for layer 11 in batch 45.
+2025-03-11 01:34:07 [INFO] Processing batch 46/132...
+2025-03-11 01:34:07 [INFO] Forward pass completed for batch 46.
+2025-03-11 01:34:08 [INFO] SAE activations computed for layer 0 in batch 46.
+2025-03-11 01:34:08 [INFO] SAE activations computed for layer 1 in batch 46.
+2025-03-11 01:34:08 [INFO] SAE activations computed for layer 2 in batch 46.
+2025-03-11 01:34:08 [INFO] SAE activations computed for layer 3 in batch 46.
+2025-03-11 01:34:08 [INFO] SAE activations computed for layer 4 in batch 46.
+2025-03-11 01:34:08 [INFO] SAE activations computed for layer 5 in batch 46.
+2025-03-11 01:34:08 [INFO] SAE activations computed for layer 6 in batch 46.
+2025-03-11 01:34:08 [INFO] SAE activations computed for layer 7 in batch 46.
+2025-03-11 01:34:09 [INFO] SAE activations computed for layer 8 in batch 46.
+2025-03-11 01:34:09 [INFO] SAE activations computed for layer 9 in batch 46.
+2025-03-11 01:34:09 [INFO] SAE activations computed for layer 10 in batch 46.
+2025-03-11 01:34:09 [INFO] SAE activations computed for layer 11 in batch 46.
+2025-03-11 01:34:09 [INFO] Processing batch 47/132...
+2025-03-11 01:34:09 [INFO] Forward pass completed for batch 47.
+2025-03-11 01:34:09 [INFO] SAE activations computed for layer 0 in batch 47.
+2025-03-11 01:34:10 [INFO] SAE activations computed for layer 1 in batch 47.
+2025-03-11 01:34:10 [INFO] SAE activations computed for layer 2 in batch 47.
+2025-03-11 01:34:10 [INFO] SAE activations computed for layer 3 in batch 47.
+2025-03-11 01:34:10 [INFO] SAE activations computed for layer 4 in batch 47.
+2025-03-11 01:34:10 [INFO] SAE activations computed for layer 5 in batch 47.
+2025-03-11 01:34:10 [INFO] SAE activations computed for layer 6 in batch 47.
+2025-03-11 01:34:10 [INFO] SAE activations computed for layer 7 in batch 47.
+2025-03-11 01:34:10 [INFO] SAE activations computed for layer 8 in batch 47.
+2025-03-11 01:34:10 [INFO] SAE activations computed for layer 9 in batch 47.
+2025-03-11 01:34:10 [INFO] SAE activations computed for layer 10 in batch 47.
+2025-03-11 01:34:10 [INFO] SAE activations computed for layer 11 in batch 47.
+2025-03-11 01:34:10 [INFO] Processing batch 48/132...
+2025-03-11 01:34:10 [INFO] Forward pass completed for batch 48.
+2025-03-11 01:34:11 [INFO] SAE activations computed for layer 0 in batch 48.
+2025-03-11 01:34:11 [INFO] SAE activations computed for layer 1 in batch 48.
+2025-03-11 01:34:11 [INFO] SAE activations computed for layer 2 in batch 48.
+2025-03-11 01:34:11 [INFO] SAE activations computed for layer 3 in batch 48.
+2025-03-11 01:34:11 [INFO] SAE activations computed for layer 4 in batch 48.
+2025-03-11 01:34:11 [INFO] SAE activations computed for layer 5 in batch 48.
+2025-03-11 01:34:11 [INFO] SAE activations computed for layer 6 in batch 48.
+2025-03-11 01:34:11 [INFO] SAE activations computed for layer 7 in batch 48.
+2025-03-11 01:34:11 [INFO] SAE activations computed for layer 8 in batch 48.
+2025-03-11 01:34:12 [INFO] SAE activations computed for layer 9 in batch 48.
+2025-03-11 01:34:12 [INFO] SAE activations computed for layer 10 in batch 48.
+2025-03-11 01:34:12 [INFO] SAE activations computed for layer 11 in batch 48.
+2025-03-11 01:34:12 [INFO] Saving tensors to file.
+2025-03-11 01:34:12 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_0L_3.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_0L_3.pt to disk
+2025-03-11 01:34:13 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_1L_3.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_1L_3.pt to disk
+2025-03-11 01:34:13 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_2L_3.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_2L_3.pt to disk
+2025-03-11 01:34:13 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_3L_3.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_3L_3.pt to disk
+2025-03-11 01:34:14 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_4L_3.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_4L_3.pt to disk
+2025-03-11 01:34:14 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_5L_3.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_5L_3.pt to disk
+2025-03-11 01:34:14 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_6L_3.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_6L_3.pt to disk
+2025-03-11 01:34:15 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_7L_3.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_7L_3.pt to disk
+2025-03-11 01:34:15 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_8L_3.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_8L_3.pt to disk
+2025-03-11 01:34:15 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_9L_3.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_9L_3.pt to disk
+2025-03-11 01:34:16 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_10L_3.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_10L_3.pt to disk
+2025-03-11 01:34:16 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_11L_3.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_11L_3.pt to disk
+2025-03-11 01:34:20 [INFO] Saved activations_pythia_160m/data_subset/reconstruction_metrics_3.json to disk
+2025-03-11 01:34:21 [INFO] Processing batch 49/132...
+2025-03-11 01:34:21 [INFO] Forward pass completed for batch 49.
+2025-03-11 01:34:21 [INFO] SAE activations computed for layer 0 in batch 49.
+2025-03-11 01:34:21 [INFO] SAE activations computed for layer 1 in batch 49.
+2025-03-11 01:34:21 [INFO] SAE activations computed for layer 2 in batch 49.
+2025-03-11 01:34:22 [INFO] SAE activations computed for layer 3 in batch 49.
+2025-03-11 01:34:22 [INFO] SAE activations computed for layer 4 in batch 49.
+2025-03-11 01:34:22 [INFO] SAE activations computed for layer 5 in batch 49.
+2025-03-11 01:34:22 [INFO] SAE activations computed for layer 6 in batch 49.
+2025-03-11 01:34:22 [INFO] SAE activations computed for layer 7 in batch 49.
+2025-03-11 01:34:22 [INFO] SAE activations computed for layer 8 in batch 49.
+2025-03-11 01:34:22 [INFO] SAE activations computed for layer 9 in batch 49.
+2025-03-11 01:34:22 [INFO] SAE activations computed for layer 10 in batch 49.
+2025-03-11 01:34:22 [INFO] SAE activations computed for layer 11 in batch 49.
+2025-03-11 01:34:22 [INFO] Processing batch 50/132...
+2025-03-11 01:34:22 [INFO] Forward pass completed for batch 50.
+2025-03-11 01:34:23 [INFO] SAE activations computed for layer 0 in batch 50.
+2025-03-11 01:34:23 [INFO] SAE activations computed for layer 1 in batch 50.
+2025-03-11 01:34:23 [INFO] SAE activations computed for layer 2 in batch 50.
+2025-03-11 01:34:23 [INFO] SAE activations computed for layer 3 in batch 50.
+2025-03-11 01:34:23 [INFO] SAE activations computed for layer 4 in batch 50.
+2025-03-11 01:34:23 [INFO] SAE activations computed for layer 5 in batch 50.
+2025-03-11 01:34:23 [INFO] SAE activations computed for layer 6 in batch 50.
+2025-03-11 01:34:23 [INFO] SAE activations computed for layer 7 in batch 50.
+2025-03-11 01:34:23 [INFO] SAE activations computed for layer 8 in batch 50.
+2025-03-11 01:34:23 [INFO] SAE activations computed for layer 9 in batch 50.
+2025-03-11 01:34:23 [INFO] SAE activations computed for layer 10 in batch 50.
+2025-03-11 01:34:24 [INFO] SAE activations computed for layer 11 in batch 50.
+2025-03-11 01:34:24 [INFO] Processing batch 51/132...
+2025-03-11 01:34:24 [INFO] Forward pass completed for batch 51.
+2025-03-11 01:34:24 [INFO] SAE activations computed for layer 0 in batch 51.
+2025-03-11 01:34:24 [INFO] SAE activations computed for layer 1 in batch 51.
+2025-03-11 01:34:24 [INFO] SAE activations computed for layer 2 in batch 51.
+2025-03-11 01:34:24 [INFO] SAE activations computed for layer 3 in batch 51.
+2025-03-11 01:34:24 [INFO] SAE activations computed for layer 4 in batch 51.
+2025-03-11 01:34:25 [INFO] SAE activations computed for layer 5 in batch 51.
+2025-03-11 01:34:25 [INFO] SAE activations computed for layer 6 in batch 51.
+2025-03-11 01:34:25 [INFO] SAE activations computed for layer 7 in batch 51.
+2025-03-11 01:34:25 [INFO] SAE activations computed for layer 8 in batch 51.
+2025-03-11 01:34:25 [INFO] SAE activations computed for layer 9 in batch 51.
+2025-03-11 01:34:25 [INFO] SAE activations computed for layer 10 in batch 51.
+2025-03-11 01:34:25 [INFO] SAE activations computed for layer 11 in batch 51.
+2025-03-11 01:34:25 [INFO] Processing batch 52/132...
+2025-03-11 01:34:25 [INFO] Forward pass completed for batch 52.
+2025-03-11 01:34:26 [INFO] SAE activations computed for layer 0 in batch 52.
+2025-03-11 01:34:26 [INFO] SAE activations computed for layer 1 in batch 52.
+2025-03-11 01:34:26 [INFO] SAE activations computed for layer 2 in batch 52.
+2025-03-11 01:34:26 [INFO] SAE activations computed for layer 3 in batch 52.
+2025-03-11 01:34:26 [INFO] SAE activations computed for layer 4 in batch 52.
+2025-03-11 01:34:26 [INFO] SAE activations computed for layer 5 in batch 52.
+2025-03-11 01:34:26 [INFO] SAE activations computed for layer 6 in batch 52.
+2025-03-11 01:34:26 [INFO] SAE activations computed for layer 7 in batch 52.
+2025-03-11 01:34:26 [INFO] SAE activations computed for layer 8 in batch 52.
+2025-03-11 01:34:26 [INFO] SAE activations computed for layer 9 in batch 52.
+2025-03-11 01:34:26 [INFO] SAE activations computed for layer 10 in batch 52.
+2025-03-11 01:34:26 [INFO] SAE activations computed for layer 11 in batch 52.
+2025-03-11 01:34:26 [INFO] Processing batch 53/132...
+2025-03-11 01:34:26 [INFO] Forward pass completed for batch 53.
+2025-03-11 01:34:27 [INFO] SAE activations computed for layer 0 in batch 53.
+2025-03-11 01:34:27 [INFO] SAE activations computed for layer 1 in batch 53.
+2025-03-11 01:34:27 [INFO] SAE activations computed for layer 2 in batch 53.
+2025-03-11 01:34:27 [INFO] SAE activations computed for layer 3 in batch 53.
+2025-03-11 01:34:27 [INFO] SAE activations computed for layer 4 in batch 53.
+2025-03-11 01:34:27 [INFO] SAE activations computed for layer 5 in batch 53.
+2025-03-11 01:34:27 [INFO] SAE activations computed for layer 6 in batch 53.
+2025-03-11 01:34:27 [INFO] SAE activations computed for layer 7 in batch 53.
+2025-03-11 01:34:28 [INFO] SAE activations computed for layer 8 in batch 53.
+2025-03-11 01:34:28 [INFO] SAE activations computed for layer 9 in batch 53.
+2025-03-11 01:34:28 [INFO] SAE activations computed for layer 10 in batch 53.
+2025-03-11 01:34:28 [INFO] SAE activations computed for layer 11 in batch 53.
+2025-03-11 01:34:28 [INFO] Processing batch 54/132...
+2025-03-11 01:34:28 [INFO] Forward pass completed for batch 54.
+2025-03-11 01:34:28 [INFO] SAE activations computed for layer 0 in batch 54.
+2025-03-11 01:34:29 [INFO] SAE activations computed for layer 1 in batch 54.
+2025-03-11 01:34:29 [INFO] SAE activations computed for layer 2 in batch 54.
+2025-03-11 01:34:29 [INFO] SAE activations computed for layer 3 in batch 54.
+2025-03-11 01:34:29 [INFO] SAE activations computed for layer 4 in batch 54.
+2025-03-11 01:34:29 [INFO] SAE activations computed for layer 5 in batch 54.
+2025-03-11 01:34:29 [INFO] SAE activations computed for layer 6 in batch 54.
+2025-03-11 01:34:29 [INFO] SAE activations computed for layer 7 in batch 54.
+2025-03-11 01:34:29 [INFO] SAE activations computed for layer 8 in batch 54.
+2025-03-11 01:34:29 [INFO] SAE activations computed for layer 9 in batch 54.
+2025-03-11 01:34:29 [INFO] SAE activations computed for layer 10 in batch 54.
+2025-03-11 01:34:29 [INFO] SAE activations computed for layer 11 in batch 54.
+2025-03-11 01:34:29 [INFO] Processing batch 55/132...
+2025-03-11 01:34:29 [INFO] Forward pass completed for batch 55.
+2025-03-11 01:34:30 [INFO] SAE activations computed for layer 0 in batch 55.
+2025-03-11 01:34:30 [INFO] SAE activations computed for layer 1 in batch 55.
+2025-03-11 01:34:30 [INFO] SAE activations computed for layer 2 in batch 55.
+2025-03-11 01:34:30 [INFO] SAE activations computed for layer 3 in batch 55.
+2025-03-11 01:34:30 [INFO] SAE activations computed for layer 4 in batch 55.
+2025-03-11 01:34:30 [INFO] SAE activations computed for layer 5 in batch 55.
+2025-03-11 01:34:30 [INFO] SAE activations computed for layer 6 in batch 55.
+2025-03-11 01:34:30 [INFO] SAE activations computed for layer 7 in batch 55.
+2025-03-11 01:34:30 [INFO] SAE activations computed for layer 8 in batch 55.
+2025-03-11 01:34:30 [INFO] SAE activations computed for layer 9 in batch 55.
+2025-03-11 01:34:31 [INFO] SAE activations computed for layer 10 in batch 55.
+2025-03-11 01:34:31 [INFO] SAE activations computed for layer 11 in batch 55.
+2025-03-11 01:34:31 [INFO] Processing batch 56/132...
+2025-03-11 01:34:31 [INFO] Forward pass completed for batch 56.
+2025-03-11 01:34:31 [INFO] SAE activations computed for layer 0 in batch 56.
+2025-03-11 01:34:31 [INFO] SAE activations computed for layer 1 in batch 56.
+2025-03-11 01:34:31 [INFO] SAE activations computed for layer 2 in batch 56.
+2025-03-11 01:34:31 [INFO] SAE activations computed for layer 3 in batch 56.
+2025-03-11 01:34:32 [INFO] SAE activations computed for layer 4 in batch 56.
+2025-03-11 01:34:32 [INFO] SAE activations computed for layer 5 in batch 56.
+2025-03-11 01:34:32 [INFO] SAE activations computed for layer 6 in batch 56.
+2025-03-11 01:34:32 [INFO] SAE activations computed for layer 7 in batch 56.
+2025-03-11 01:34:32 [INFO] SAE activations computed for layer 8 in batch 56.
+2025-03-11 01:34:32 [INFO] SAE activations computed for layer 9 in batch 56.
+2025-03-11 01:34:32 [INFO] SAE activations computed for layer 10 in batch 56.
+2025-03-11 01:34:32 [INFO] SAE activations computed for layer 11 in batch 56.
+2025-03-11 01:34:32 [INFO] Processing batch 57/132...
+2025-03-11 01:34:32 [INFO] Forward pass completed for batch 57.
+2025-03-11 01:34:33 [INFO] SAE activations computed for layer 0 in batch 57.
+2025-03-11 01:34:33 [INFO] SAE activations computed for layer 1 in batch 57.
+2025-03-11 01:34:33 [INFO] SAE activations computed for layer 2 in batch 57.
+2025-03-11 01:34:33 [INFO] SAE activations computed for layer 3 in batch 57.
+2025-03-11 01:34:33 [INFO] SAE activations computed for layer 4 in batch 57.
+2025-03-11 01:34:33 [INFO] SAE activations computed for layer 5 in batch 57.
+2025-03-11 01:34:33 [INFO] SAE activations computed for layer 6 in batch 57.
+2025-03-11 01:34:33 [INFO] SAE activations computed for layer 7 in batch 57.
+2025-03-11 01:34:33 [INFO] SAE activations computed for layer 8 in batch 57.
+2025-03-11 01:34:33 [INFO] SAE activations computed for layer 9 in batch 57.
+2025-03-11 01:34:33 [INFO] SAE activations computed for layer 10 in batch 57.
+2025-03-11 01:34:33 [INFO] SAE activations computed for layer 11 in batch 57.
+2025-03-11 01:34:33 [INFO] Processing batch 58/132...
+2025-03-11 01:34:34 [INFO] Forward pass completed for batch 58.
+2025-03-11 01:34:34 [INFO] SAE activations computed for layer 0 in batch 58.
+2025-03-11 01:34:34 [INFO] SAE activations computed for layer 1 in batch 58.
+2025-03-11 01:34:34 [INFO] SAE activations computed for layer 2 in batch 58.
+2025-03-11 01:34:34 [INFO] SAE activations computed for layer 3 in batch 58.
+2025-03-11 01:34:34 [INFO] SAE activations computed for layer 4 in batch 58.
+2025-03-11 01:34:34 [INFO] SAE activations computed for layer 5 in batch 58.
+2025-03-11 01:34:35 [INFO] SAE activations computed for layer 6 in batch 58.
+2025-03-11 01:34:35 [INFO] SAE activations computed for layer 7 in batch 58.
+2025-03-11 01:34:35 [INFO] SAE activations computed for layer 8 in batch 58.
+2025-03-11 01:34:35 [INFO] SAE activations computed for layer 9 in batch 58.
+2025-03-11 01:34:35 [INFO] SAE activations computed for layer 10 in batch 58.
+2025-03-11 01:34:35 [INFO] SAE activations computed for layer 11 in batch 58.
+2025-03-11 01:34:35 [INFO] Processing batch 59/132...
+2025-03-11 01:34:35 [INFO] Forward pass completed for batch 59.
+2025-03-11 01:34:36 [INFO] SAE activations computed for layer 0 in batch 59.
+2025-03-11 01:34:36 [INFO] SAE activations computed for layer 1 in batch 59.
+2025-03-11 01:34:36 [INFO] SAE activations computed for layer 2 in batch 59.
+2025-03-11 01:34:36 [INFO] SAE activations computed for layer 3 in batch 59.
+2025-03-11 01:34:36 [INFO] SAE activations computed for layer 4 in batch 59.
+2025-03-11 01:34:36 [INFO] SAE activations computed for layer 5 in batch 59.
+2025-03-11 01:34:36 [INFO] SAE activations computed for layer 6 in batch 59.
+2025-03-11 01:34:36 [INFO] SAE activations computed for layer 7 in batch 59.
+2025-03-11 01:34:36 [INFO] SAE activations computed for layer 8 in batch 59.
+2025-03-11 01:34:36 [INFO] SAE activations computed for layer 9 in batch 59.
+2025-03-11 01:34:36 [INFO] SAE activations computed for layer 10 in batch 59.
+2025-03-11 01:34:36 [INFO] SAE activations computed for layer 11 in batch 59.
+2025-03-11 01:34:36 [INFO] Processing batch 60/132...
+2025-03-11 01:34:36 [INFO] Forward pass completed for batch 60.
+2025-03-11 01:34:37 [INFO] SAE activations computed for layer 0 in batch 60.
+2025-03-11 01:34:37 [INFO] SAE activations computed for layer 1 in batch 60.
+2025-03-11 01:34:37 [INFO] SAE activations computed for layer 2 in batch 60.
+2025-03-11 01:34:37 [INFO] SAE activations computed for layer 3 in batch 60.
+2025-03-11 01:34:37 [INFO] SAE activations computed for layer 4 in batch 60.
+2025-03-11 01:34:37 [INFO] SAE activations computed for layer 5 in batch 60.
+2025-03-11 01:34:37 [INFO] SAE activations computed for layer 6 in batch 60.
+2025-03-11 01:34:37 [INFO] SAE activations computed for layer 7 in batch 60.
+2025-03-11 01:34:38 [INFO] SAE activations computed for layer 8 in batch 60.
+2025-03-11 01:34:38 [INFO] SAE activations computed for layer 9 in batch 60.
+2025-03-11 01:34:38 [INFO] SAE activations computed for layer 10 in batch 60.
+2025-03-11 01:34:38 [INFO] SAE activations computed for layer 11 in batch 60.
+2025-03-11 01:34:38 [INFO] Processing batch 61/132...
+2025-03-11 01:34:38 [INFO] Forward pass completed for batch 61.
+2025-03-11 01:34:38 [INFO] SAE activations computed for layer 0 in batch 61.
+2025-03-11 01:34:39 [INFO] SAE activations computed for layer 1 in batch 61.
+2025-03-11 01:34:39 [INFO] SAE activations computed for layer 2 in batch 61.
+2025-03-11 01:34:39 [INFO] SAE activations computed for layer 3 in batch 61.
+2025-03-11 01:34:39 [INFO] SAE activations computed for layer 4 in batch 61.
+2025-03-11 01:34:39 [INFO] SAE activations computed for layer 5 in batch 61.
+2025-03-11 01:34:39 [INFO] SAE activations computed for layer 6 in batch 61.
+2025-03-11 01:34:39 [INFO] SAE activations computed for layer 7 in batch 61.
+2025-03-11 01:34:39 [INFO] SAE activations computed for layer 8 in batch 61.
+2025-03-11 01:34:39 [INFO] SAE activations computed for layer 9 in batch 61.
+2025-03-11 01:34:39 [INFO] SAE activations computed for layer 10 in batch 61.
+2025-03-11 01:34:39 [INFO] SAE activations computed for layer 11 in batch 61.
+2025-03-11 01:34:39 [INFO] Processing batch 62/132...
+2025-03-11 01:34:39 [INFO] Forward pass completed for batch 62.
+2025-03-11 01:34:40 [INFO] SAE activations computed for layer 0 in batch 62.
+2025-03-11 01:34:40 [INFO] SAE activations computed for layer 1 in batch 62.
+2025-03-11 01:34:40 [INFO] SAE activations computed for layer 2 in batch 62.
+2025-03-11 01:34:40 [INFO] SAE activations computed for layer 3 in batch 62.
+2025-03-11 01:34:40 [INFO] SAE activations computed for layer 4 in batch 62.
+2025-03-11 01:34:40 [INFO] SAE activations computed for layer 5 in batch 62.
+2025-03-11 01:34:40 [INFO] SAE activations computed for layer 6 in batch 62.
+2025-03-11 01:34:40 [INFO] SAE activations computed for layer 7 in batch 62.
+2025-03-11 01:34:40 [INFO] SAE activations computed for layer 8 in batch 62.
+2025-03-11 01:34:40 [INFO] SAE activations computed for layer 9 in batch 62.
+2025-03-11 01:34:41 [INFO] SAE activations computed for layer 10 in batch 62.
+2025-03-11 01:34:41 [INFO] SAE activations computed for layer 11 in batch 62.
+2025-03-11 01:34:41 [INFO] Processing batch 63/132...
+2025-03-11 01:34:41 [INFO] Forward pass completed for batch 63.
+2025-03-11 01:34:41 [INFO] SAE activations computed for layer 0 in batch 63.
+2025-03-11 01:34:41 [INFO] SAE activations computed for layer 1 in batch 63.
+2025-03-11 01:34:41 [INFO] SAE activations computed for layer 2 in batch 63.
+2025-03-11 01:34:42 [INFO] SAE activations computed for layer 3 in batch 63.
+2025-03-11 01:34:42 [INFO] SAE activations computed for layer 4 in batch 63.
+2025-03-11 01:34:42 [INFO] SAE activations computed for layer 5 in batch 63.
+2025-03-11 01:34:42 [INFO] SAE activations computed for layer 6 in batch 63.
+2025-03-11 01:34:42 [INFO] SAE activations computed for layer 7 in batch 63.
+2025-03-11 01:34:42 [INFO] SAE activations computed for layer 8 in batch 63.
+2025-03-11 01:34:42 [INFO] SAE activations computed for layer 9 in batch 63.
+2025-03-11 01:34:42 [INFO] SAE activations computed for layer 10 in batch 63.
+2025-03-11 01:34:42 [INFO] SAE activations computed for layer 11 in batch 63.
+2025-03-11 01:34:42 [INFO] Processing batch 64/132...
+2025-03-11 01:34:42 [INFO] Forward pass completed for batch 64.
+2025-03-11 01:34:43 [INFO] SAE activations computed for layer 0 in batch 64.
+2025-03-11 01:34:43 [INFO] SAE activations computed for layer 1 in batch 64.
+2025-03-11 01:34:43 [INFO] SAE activations computed for layer 2 in batch 64.
+2025-03-11 01:34:43 [INFO] SAE activations computed for layer 3 in batch 64.
+2025-03-11 01:34:43 [INFO] SAE activations computed for layer 4 in batch 64.
+2025-03-11 01:34:43 [INFO] SAE activations computed for layer 5 in batch 64.
+2025-03-11 01:34:43 [INFO] SAE activations computed for layer 6 in batch 64.
+2025-03-11 01:34:43 [INFO] SAE activations computed for layer 7 in batch 64.
+2025-03-11 01:34:43 [INFO] SAE activations computed for layer 8 in batch 64.
+2025-03-11 01:34:43 [INFO] SAE activations computed for layer 9 in batch 64.
+2025-03-11 01:34:43 [INFO] SAE activations computed for layer 10 in batch 64.
+2025-03-11 01:34:44 [INFO] SAE activations computed for layer 11 in batch 64.
+2025-03-11 01:34:44 [INFO] Saving tensors to file.
+2025-03-11 01:34:44 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_0L_4.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_0L_4.pt to disk
+2025-03-11 01:34:44 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_1L_4.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_1L_4.pt to disk
+2025-03-11 01:34:45 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_2L_4.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_2L_4.pt to disk
+2025-03-11 01:34:45 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_3L_4.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_3L_4.pt to disk
+2025-03-11 01:34:45 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_4L_4.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_4L_4.pt to disk
+2025-03-11 01:34:46 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_5L_4.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_5L_4.pt to disk
+2025-03-11 01:34:46 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_6L_4.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_6L_4.pt to disk
+2025-03-11 01:34:46 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_7L_4.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_7L_4.pt to disk
+2025-03-11 01:34:47 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_8L_4.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_8L_4.pt to disk
+2025-03-11 01:34:47 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_9L_4.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_9L_4.pt to disk
+2025-03-11 01:34:47 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_10L_4.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_10L_4.pt to disk
+2025-03-11 01:34:48 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_11L_4.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_11L_4.pt to disk
+2025-03-11 01:34:52 [INFO] Saved activations_pythia_160m/data_subset/reconstruction_metrics_4.json to disk
+2025-03-11 01:34:52 [INFO] Processing batch 65/132...
+2025-03-11 01:34:53 [INFO] Forward pass completed for batch 65.
+2025-03-11 01:34:53 [INFO] SAE activations computed for layer 0 in batch 65.
+2025-03-11 01:34:53 [INFO] SAE activations computed for layer 1 in batch 65.
+2025-03-11 01:34:53 [INFO] SAE activations computed for layer 2 in batch 65.
+2025-03-11 01:34:53 [INFO] SAE activations computed for layer 3 in batch 65.
+2025-03-11 01:34:53 [INFO] SAE activations computed for layer 4 in batch 65.
+2025-03-11 01:34:53 [INFO] SAE activations computed for layer 5 in batch 65.
+2025-03-11 01:34:54 [INFO] SAE activations computed for layer 6 in batch 65.
+2025-03-11 01:34:54 [INFO] SAE activations computed for layer 7 in batch 65.
+2025-03-11 01:34:54 [INFO] SAE activations computed for layer 8 in batch 65.
+2025-03-11 01:34:54 [INFO] SAE activations computed for layer 9 in batch 65.
+2025-03-11 01:34:54 [INFO] SAE activations computed for layer 10 in batch 65.
+2025-03-11 01:34:54 [INFO] SAE activations computed for layer 11 in batch 65.
+2025-03-11 01:34:54 [INFO] Processing batch 66/132...
+2025-03-11 01:34:54 [INFO] Forward pass completed for batch 66.
+2025-03-11 01:34:55 [INFO] SAE activations computed for layer 0 in batch 66.
+2025-03-11 01:34:55 [INFO] SAE activations computed for layer 1 in batch 66.
+2025-03-11 01:34:55 [INFO] SAE activations computed for layer 2 in batch 66.
+2025-03-11 01:34:55 [INFO] SAE activations computed for layer 3 in batch 66.
+2025-03-11 01:34:55 [INFO] SAE activations computed for layer 4 in batch 66.
+2025-03-11 01:34:55 [INFO] SAE activations computed for layer 5 in batch 66.
+2025-03-11 01:34:55 [INFO] SAE activations computed for layer 6 in batch 66.
+2025-03-11 01:34:55 [INFO] SAE activations computed for layer 7 in batch 66.
+2025-03-11 01:34:55 [INFO] SAE activations computed for layer 8 in batch 66.
+2025-03-11 01:34:55 [INFO] SAE activations computed for layer 9 in batch 66.
+2025-03-11 01:34:55 [INFO] SAE activations computed for layer 10 in batch 66.
+2025-03-11 01:34:55 [INFO] SAE activations computed for layer 11 in batch 66.
+2025-03-11 01:34:55 [INFO] Processing batch 67/132...
+2025-03-11 01:34:55 [INFO] Forward pass completed for batch 67.
+2025-03-11 01:34:56 [INFO] SAE activations computed for layer 0 in batch 67.
+2025-03-11 01:34:56 [INFO] SAE activations computed for layer 1 in batch 67.
+2025-03-11 01:34:56 [INFO] SAE activations computed for layer 2 in batch 67.
+2025-03-11 01:34:56 [INFO] SAE activations computed for layer 3 in batch 67.
+2025-03-11 01:34:56 [INFO] SAE activations computed for layer 4 in batch 67.
+2025-03-11 01:34:56 [INFO] SAE activations computed for layer 5 in batch 67.
+2025-03-11 01:34:56 [INFO] SAE activations computed for layer 6 in batch 67.
+2025-03-11 01:34:56 [INFO] SAE activations computed for layer 7 in batch 67.
+2025-03-11 01:34:56 [INFO] SAE activations computed for layer 8 in batch 67.
+2025-03-11 01:34:57 [INFO] SAE activations computed for layer 9 in batch 67.
+2025-03-11 01:34:57 [INFO] SAE activations computed for layer 10 in batch 67.
+2025-03-11 01:34:57 [INFO] SAE activations computed for layer 11 in batch 67.
+2025-03-11 01:34:57 [INFO] Processing batch 68/132...
+2025-03-11 01:34:57 [INFO] Forward pass completed for batch 68.
+2025-03-11 01:34:57 [INFO] SAE activations computed for layer 0 in batch 68.
+2025-03-11 01:34:57 [INFO] SAE activations computed for layer 1 in batch 68.
+2025-03-11 01:34:58 [INFO] SAE activations computed for layer 2 in batch 68.
+2025-03-11 01:34:58 [INFO] SAE activations computed for layer 3 in batch 68.
+2025-03-11 01:34:58 [INFO] SAE activations computed for layer 4 in batch 68.
+2025-03-11 01:34:58 [INFO] SAE activations computed for layer 5 in batch 68.
+2025-03-11 01:34:58 [INFO] SAE activations computed for layer 6 in batch 68.
+2025-03-11 01:34:58 [INFO] SAE activations computed for layer 7 in batch 68.
+2025-03-11 01:34:58 [INFO] SAE activations computed for layer 8 in batch 68.
+2025-03-11 01:34:58 [INFO] SAE activations computed for layer 9 in batch 68.
+2025-03-11 01:34:58 [INFO] SAE activations computed for layer 10 in batch 68.
+2025-03-11 01:34:58 [INFO] SAE activations computed for layer 11 in batch 68.
+2025-03-11 01:34:58 [INFO] Processing batch 69/132...
+2025-03-11 01:34:58 [INFO] Forward pass completed for batch 69.
+2025-03-11 01:34:59 [INFO] SAE activations computed for layer 0 in batch 69.
+2025-03-11 01:34:59 [INFO] SAE activations computed for layer 1 in batch 69.
+2025-03-11 01:34:59 [INFO] SAE activations computed for layer 2 in batch 69.
+2025-03-11 01:34:59 [INFO] SAE activations computed for layer 3 in batch 69.
+2025-03-11 01:34:59 [INFO] SAE activations computed for layer 4 in batch 69.
+2025-03-11 01:34:59 [INFO] SAE activations computed for layer 5 in batch 69.
+2025-03-11 01:34:59 [INFO] SAE activations computed for layer 6 in batch 69.
+2025-03-11 01:34:59 [INFO] SAE activations computed for layer 7 in batch 69.
+2025-03-11 01:34:59 [INFO] SAE activations computed for layer 8 in batch 69.
+2025-03-11 01:34:59 [INFO] SAE activations computed for layer 9 in batch 69.
+2025-03-11 01:34:59 [INFO] SAE activations computed for layer 10 in batch 69.
+2025-03-11 01:35:00 [INFO] SAE activations computed for layer 11 in batch 69.
+2025-03-11 01:35:00 [INFO] Processing batch 70/132...
+2025-03-11 01:35:00 [INFO] Forward pass completed for batch 70.
+2025-03-11 01:35:00 [INFO] SAE activations computed for layer 0 in batch 70.
+2025-03-11 01:35:00 [INFO] SAE activations computed for layer 1 in batch 70.
+2025-03-11 01:35:00 [INFO] SAE activations computed for layer 2 in batch 70.
+2025-03-11 01:35:00 [INFO] SAE activations computed for layer 3 in batch 70.
+2025-03-11 01:35:00 [INFO] SAE activations computed for layer 4 in batch 70.
+2025-03-11 01:35:01 [INFO] SAE activations computed for layer 5 in batch 70.
+2025-03-11 01:35:01 [INFO] SAE activations computed for layer 6 in batch 70.
+2025-03-11 01:35:01 [INFO] SAE activations computed for layer 7 in batch 70.
+2025-03-11 01:35:01 [INFO] SAE activations computed for layer 8 in batch 70.
+2025-03-11 01:35:01 [INFO] SAE activations computed for layer 9 in batch 70.
+2025-03-11 01:35:01 [INFO] SAE activations computed for layer 10 in batch 70.
+2025-03-11 01:35:01 [INFO] SAE activations computed for layer 11 in batch 70.
+2025-03-11 01:35:01 [INFO] Processing batch 71/132...
+2025-03-11 01:35:01 [INFO] Forward pass completed for batch 71.
+2025-03-11 01:35:02 [INFO] SAE activations computed for layer 0 in batch 71.
+2025-03-11 01:35:02 [INFO] SAE activations computed for layer 1 in batch 71.
+2025-03-11 01:35:02 [INFO] SAE activations computed for layer 2 in batch 71.
+2025-03-11 01:35:02 [INFO] SAE activations computed for layer 3 in batch 71.
+2025-03-11 01:35:02 [INFO] SAE activations computed for layer 4 in batch 71.
+2025-03-11 01:35:02 [INFO] SAE activations computed for layer 5 in batch 71.
+2025-03-11 01:35:02 [INFO] SAE activations computed for layer 6 in batch 71.
+2025-03-11 01:35:02 [INFO] SAE activations computed for layer 7 in batch 71.
+2025-03-11 01:35:02 [INFO] SAE activations computed for layer 8 in batch 71.
+2025-03-11 01:35:02 [INFO] SAE activations computed for layer 9 in batch 71.
+2025-03-11 01:35:02 [INFO] SAE activations computed for layer 10 in batch 71.
+2025-03-11 01:35:02 [INFO] SAE activations computed for layer 11 in batch 71.
+2025-03-11 01:35:02 [INFO] Processing batch 72/132...
+2025-03-11 01:35:02 [INFO] Forward pass completed for batch 72.
+2025-03-11 01:35:03 [INFO] SAE activations computed for layer 0 in batch 72.
+2025-03-11 01:35:03 [INFO] SAE activations computed for layer 1 in batch 72.
+2025-03-11 01:35:03 [INFO] SAE activations computed for layer 2 in batch 72.
+2025-03-11 01:35:03 [INFO] SAE activations computed for layer 3 in batch 72.
+2025-03-11 01:35:03 [INFO] SAE activations computed for layer 4 in batch 72.
+2025-03-11 01:35:03 [INFO] SAE activations computed for layer 5 in batch 72.
+2025-03-11 01:35:03 [INFO] SAE activations computed for layer 6 in batch 72.
+2025-03-11 01:35:04 [INFO] SAE activations computed for layer 7 in batch 72.
+2025-03-11 01:35:04 [INFO] SAE activations computed for layer 8 in batch 72.
+2025-03-11 01:35:04 [INFO] SAE activations computed for layer 9 in batch 72.
+2025-03-11 01:35:04 [INFO] SAE activations computed for layer 10 in batch 72.
+2025-03-11 01:35:04 [INFO] SAE activations computed for layer 11 in batch 72.
+2025-03-11 01:35:04 [INFO] Processing batch 73/132...
+2025-03-11 01:35:04 [INFO] Forward pass completed for batch 73.
+2025-03-11 01:35:05 [INFO] SAE activations computed for layer 0 in batch 73.
+2025-03-11 01:35:05 [INFO] SAE activations computed for layer 1 in batch 73.
+2025-03-11 01:35:05 [INFO] SAE activations computed for layer 2 in batch 73.
+2025-03-11 01:35:05 [INFO] SAE activations computed for layer 3 in batch 73.
+2025-03-11 01:35:05 [INFO] SAE activations computed for layer 4 in batch 73.
+2025-03-11 01:35:05 [INFO] SAE activations computed for layer 5 in batch 73.
+2025-03-11 01:35:05 [INFO] SAE activations computed for layer 6 in batch 73.
+2025-03-11 01:35:05 [INFO] SAE activations computed for layer 7 in batch 73.
+2025-03-11 01:35:05 [INFO] SAE activations computed for layer 8 in batch 73.
+2025-03-11 01:35:05 [INFO] SAE activations computed for layer 9 in batch 73.
+2025-03-11 01:35:05 [INFO] SAE activations computed for layer 10 in batch 73.
+2025-03-11 01:35:05 [INFO] SAE activations computed for layer 11 in batch 73.
+2025-03-11 01:35:05 [INFO] Processing batch 74/132...
+2025-03-11 01:35:05 [INFO] Forward pass completed for batch 74.
+2025-03-11 01:35:06 [INFO] SAE activations computed for layer 0 in batch 74.
+2025-03-11 01:35:06 [INFO] SAE activations computed for layer 1 in batch 74.
+2025-03-11 01:35:06 [INFO] SAE activations computed for layer 2 in batch 74.
+2025-03-11 01:35:06 [INFO] SAE activations computed for layer 3 in batch 74.
+2025-03-11 01:35:06 [INFO] SAE activations computed for layer 4 in batch 74.
+2025-03-11 01:35:06 [INFO] SAE activations computed for layer 5 in batch 74.
+2025-03-11 01:35:06 [INFO] SAE activations computed for layer 6 in batch 74.
+2025-03-11 01:35:06 [INFO] SAE activations computed for layer 7 in batch 74.
+2025-03-11 01:35:06 [INFO] SAE activations computed for layer 8 in batch 74.
+2025-03-11 01:35:07 [INFO] SAE activations computed for layer 9 in batch 74.
+2025-03-11 01:35:07 [INFO] SAE activations computed for layer 10 in batch 74.
+2025-03-11 01:35:07 [INFO] SAE activations computed for layer 11 in batch 74.
+2025-03-11 01:35:07 [INFO] Processing batch 75/132...
+2025-03-11 01:35:07 [INFO] Forward pass completed for batch 75.
+2025-03-11 01:35:07 [INFO] SAE activations computed for layer 0 in batch 75.
+2025-03-11 01:35:07 [INFO] SAE activations computed for layer 1 in batch 75.
+2025-03-11 01:35:08 [INFO] SAE activations computed for layer 2 in batch 75.
+2025-03-11 01:35:08 [INFO] SAE activations computed for layer 3 in batch 75.
+2025-03-11 01:35:08 [INFO] SAE activations computed for layer 4 in batch 75.
+2025-03-11 01:35:08 [INFO] SAE activations computed for layer 5 in batch 75.
+2025-03-11 01:35:08 [INFO] SAE activations computed for layer 6 in batch 75.
+2025-03-11 01:35:08 [INFO] SAE activations computed for layer 7 in batch 75.
+2025-03-11 01:35:08 [INFO] SAE activations computed for layer 8 in batch 75.
+2025-03-11 01:35:08 [INFO] SAE activations computed for layer 9 in batch 75.
+2025-03-11 01:35:08 [INFO] SAE activations computed for layer 10 in batch 75.
+2025-03-11 01:35:08 [INFO] SAE activations computed for layer 11 in batch 75.
+2025-03-11 01:35:08 [INFO] Processing batch 76/132...
+2025-03-11 01:35:08 [INFO] Forward pass completed for batch 76.
+2025-03-11 01:35:09 [INFO] SAE activations computed for layer 0 in batch 76.
+2025-03-11 01:35:09 [INFO] SAE activations computed for layer 1 in batch 76.
+2025-03-11 01:35:09 [INFO] SAE activations computed for layer 2 in batch 76.
+2025-03-11 01:35:09 [INFO] SAE activations computed for layer 3 in batch 76.
+2025-03-11 01:35:09 [INFO] SAE activations computed for layer 4 in batch 76.
+2025-03-11 01:35:09 [INFO] SAE activations computed for layer 5 in batch 76.
+2025-03-11 01:35:09 [INFO] SAE activations computed for layer 6 in batch 76.
+2025-03-11 01:35:09 [INFO] SAE activations computed for layer 7 in batch 76.
+2025-03-11 01:35:09 [INFO] SAE activations computed for layer 8 in batch 76.
+2025-03-11 01:35:09 [INFO] SAE activations computed for layer 9 in batch 76.
+2025-03-11 01:35:09 [INFO] SAE activations computed for layer 10 in batch 76.
+2025-03-11 01:35:10 [INFO] SAE activations computed for layer 11 in batch 76.
+2025-03-11 01:35:10 [INFO] Processing batch 77/132...
+2025-03-11 01:35:10 [INFO] Forward pass completed for batch 77.
+2025-03-11 01:35:10 [INFO] SAE activations computed for layer 0 in batch 77.
+2025-03-11 01:35:10 [INFO] SAE activations computed for layer 1 in batch 77.
+2025-03-11 01:35:10 [INFO] SAE activations computed for layer 2 in batch 77.
+2025-03-11 01:35:10 [INFO] SAE activations computed for layer 3 in batch 77.
+2025-03-11 01:35:11 [INFO] SAE activations computed for layer 4 in batch 77.
+2025-03-11 01:35:11 [INFO] SAE activations computed for layer 5 in batch 77.
+2025-03-11 01:35:11 [INFO] SAE activations computed for layer 6 in batch 77.
+2025-03-11 01:35:11 [INFO] SAE activations computed for layer 7 in batch 77.
+2025-03-11 01:35:11 [INFO] SAE activations computed for layer 8 in batch 77.
+2025-03-11 01:35:11 [INFO] SAE activations computed for layer 9 in batch 77.
+2025-03-11 01:35:11 [INFO] SAE activations computed for layer 10 in batch 77.
+2025-03-11 01:35:11 [INFO] SAE activations computed for layer 11 in batch 77.
+2025-03-11 01:35:11 [INFO] Processing batch 78/132...
+2025-03-11 01:35:11 [INFO] Forward pass completed for batch 78.
+2025-03-11 01:35:12 [INFO] SAE activations computed for layer 0 in batch 78.
+2025-03-11 01:35:12 [INFO] SAE activations computed for layer 1 in batch 78.
+2025-03-11 01:35:12 [INFO] SAE activations computed for layer 2 in batch 78.
+2025-03-11 01:35:12 [INFO] SAE activations computed for layer 3 in batch 78.
+2025-03-11 01:35:12 [INFO] SAE activations computed for layer 4 in batch 78.
+2025-03-11 01:35:12 [INFO] SAE activations computed for layer 5 in batch 78.
+2025-03-11 01:35:12 [INFO] SAE activations computed for layer 6 in batch 78.
+2025-03-11 01:35:12 [INFO] SAE activations computed for layer 7 in batch 78.
+2025-03-11 01:35:12 [INFO] SAE activations computed for layer 8 in batch 78.
+2025-03-11 01:35:12 [INFO] SAE activations computed for layer 9 in batch 78.
+2025-03-11 01:35:12 [INFO] SAE activations computed for layer 10 in batch 78.
+2025-03-11 01:35:12 [INFO] SAE activations computed for layer 11 in batch 78.
+2025-03-11 01:35:12 [INFO] Processing batch 79/132...
+2025-03-11 01:35:13 [INFO] Forward pass completed for batch 79.
+2025-03-11 01:35:13 [INFO] SAE activations computed for layer 0 in batch 79.
+2025-03-11 01:35:13 [INFO] SAE activations computed for layer 1 in batch 79.
+2025-03-11 01:35:13 [INFO] SAE activations computed for layer 2 in batch 79.
+2025-03-11 01:35:13 [INFO] SAE activations computed for layer 3 in batch 79.
+2025-03-11 01:35:13 [INFO] SAE activations computed for layer 4 in batch 79.
+2025-03-11 01:35:13 [INFO] SAE activations computed for layer 5 in batch 79.
+2025-03-11 01:35:14 [INFO] SAE activations computed for layer 6 in batch 79.
+2025-03-11 01:35:14 [INFO] SAE activations computed for layer 7 in batch 79.
+2025-03-11 01:35:14 [INFO] SAE activations computed for layer 8 in batch 79.
+2025-03-11 01:35:14 [INFO] SAE activations computed for layer 9 in batch 79.
+2025-03-11 01:35:14 [INFO] SAE activations computed for layer 10 in batch 79.
+2025-03-11 01:35:14 [INFO] SAE activations computed for layer 11 in batch 79.
+2025-03-11 01:35:14 [INFO] Processing batch 80/132...
+2025-03-11 01:35:14 [INFO] Forward pass completed for batch 80.
+2025-03-11 01:35:15 [INFO] SAE activations computed for layer 0 in batch 80.
+2025-03-11 01:35:15 [INFO] SAE activations computed for layer 1 in batch 80.
+2025-03-11 01:35:15 [INFO] SAE activations computed for layer 2 in batch 80.
+2025-03-11 01:35:15 [INFO] SAE activations computed for layer 3 in batch 80.
+2025-03-11 01:35:15 [INFO] SAE activations computed for layer 4 in batch 80.
+2025-03-11 01:35:15 [INFO] SAE activations computed for layer 5 in batch 80.
+2025-03-11 01:35:15 [INFO] SAE activations computed for layer 6 in batch 80.
+2025-03-11 01:35:15 [INFO] SAE activations computed for layer 7 in batch 80.
+2025-03-11 01:35:15 [INFO] SAE activations computed for layer 8 in batch 80.
+2025-03-11 01:35:15 [INFO] SAE activations computed for layer 9 in batch 80.
+2025-03-11 01:35:15 [INFO] SAE activations computed for layer 10 in batch 80.
+2025-03-11 01:35:15 [INFO] SAE activations computed for layer 11 in batch 80.
+2025-03-11 01:35:15 [INFO] Saving tensors to file.
+2025-03-11 01:35:16 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_0L_5.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_0L_5.pt to disk
+2025-03-11 01:35:16 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_1L_5.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_1L_5.pt to disk
+2025-03-11 01:35:17 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_2L_5.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_2L_5.pt to disk
+2025-03-11 01:35:17 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_3L_5.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_3L_5.pt to disk
+2025-03-11 01:35:17 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_4L_5.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_4L_5.pt to disk
+2025-03-11 01:35:18 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_5L_5.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_5L_5.pt to disk
+2025-03-11 01:35:18 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_6L_5.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_6L_5.pt to disk
+2025-03-11 01:35:18 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_7L_5.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_7L_5.pt to disk
+2025-03-11 01:35:19 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_8L_5.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_8L_5.pt to disk
+2025-03-11 01:35:19 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_9L_5.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_9L_5.pt to disk
+2025-03-11 01:35:19 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_10L_5.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_10L_5.pt to disk
+2025-03-11 01:35:20 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_11L_5.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_11L_5.pt to disk
+2025-03-11 01:35:24 [INFO] Saved activations_pythia_160m/data_subset/reconstruction_metrics_5.json to disk
+2025-03-11 01:35:24 [INFO] Processing batch 81/132...
+2025-03-11 01:35:24 [INFO] Forward pass completed for batch 81.
+2025-03-11 01:35:25 [INFO] SAE activations computed for layer 0 in batch 81.
+2025-03-11 01:35:25 [INFO] SAE activations computed for layer 1 in batch 81.
+2025-03-11 01:35:25 [INFO] SAE activations computed for layer 2 in batch 81.
+2025-03-11 01:35:25 [INFO] SAE activations computed for layer 3 in batch 81.
+2025-03-11 01:35:25 [INFO] SAE activations computed for layer 4 in batch 81.
+2025-03-11 01:35:25 [INFO] SAE activations computed for layer 5 in batch 81.
+2025-03-11 01:35:25 [INFO] SAE activations computed for layer 6 in batch 81.
+2025-03-11 01:35:25 [INFO] SAE activations computed for layer 7 in batch 81.
+2025-03-11 01:35:25 [INFO] SAE activations computed for layer 8 in batch 81.
+2025-03-11 01:35:26 [INFO] SAE activations computed for layer 9 in batch 81.
+2025-03-11 01:35:26 [INFO] SAE activations computed for layer 10 in batch 81.
+2025-03-11 01:35:26 [INFO] SAE activations computed for layer 11 in batch 81.
+2025-03-11 01:35:26 [INFO] Processing batch 82/132...
+2025-03-11 01:35:26 [INFO] Forward pass completed for batch 82.
+2025-03-11 01:35:26 [INFO] SAE activations computed for layer 0 in batch 82.
+2025-03-11 01:35:26 [INFO] SAE activations computed for layer 1 in batch 82.
+2025-03-11 01:35:26 [INFO] SAE activations computed for layer 2 in batch 82.
+2025-03-11 01:35:27 [INFO] SAE activations computed for layer 3 in batch 82.
+2025-03-11 01:35:27 [INFO] SAE activations computed for layer 4 in batch 82.
+2025-03-11 01:35:27 [INFO] SAE activations computed for layer 5 in batch 82.
+2025-03-11 01:35:27 [INFO] SAE activations computed for layer 6 in batch 82.
+2025-03-11 01:35:27 [INFO] SAE activations computed for layer 7 in batch 82.
+2025-03-11 01:35:27 [INFO] SAE activations computed for layer 8 in batch 82.
+2025-03-11 01:35:27 [INFO] SAE activations computed for layer 9 in batch 82.
+2025-03-11 01:35:27 [INFO] SAE activations computed for layer 10 in batch 82.
+2025-03-11 01:35:27 [INFO] SAE activations computed for layer 11 in batch 82.
+2025-03-11 01:35:27 [INFO] Processing batch 83/132...
+2025-03-11 01:35:27 [INFO] Forward pass completed for batch 83.
+2025-03-11 01:35:28 [INFO] SAE activations computed for layer 0 in batch 83.
+2025-03-11 01:35:28 [INFO] SAE activations computed for layer 1 in batch 83.
+2025-03-11 01:35:28 [INFO] SAE activations computed for layer 2 in batch 83.
+2025-03-11 01:35:28 [INFO] SAE activations computed for layer 3 in batch 83.
+2025-03-11 01:35:28 [INFO] SAE activations computed for layer 4 in batch 83.
+2025-03-11 01:35:28 [INFO] SAE activations computed for layer 5 in batch 83.
+2025-03-11 01:35:28 [INFO] SAE activations computed for layer 6 in batch 83.
+2025-03-11 01:35:28 [INFO] SAE activations computed for layer 7 in batch 83.
+2025-03-11 01:35:28 [INFO] SAE activations computed for layer 8 in batch 83.
+2025-03-11 01:35:28 [INFO] SAE activations computed for layer 9 in batch 83.
+2025-03-11 01:35:28 [INFO] SAE activations computed for layer 10 in batch 83.
+2025-03-11 01:35:28 [INFO] SAE activations computed for layer 11 in batch 83.
+2025-03-11 01:35:28 [INFO] Processing batch 84/132...
+2025-03-11 01:35:29 [INFO] Forward pass completed for batch 84.
+2025-03-11 01:35:29 [INFO] SAE activations computed for layer 0 in batch 84.
+2025-03-11 01:35:29 [INFO] SAE activations computed for layer 1 in batch 84.
+2025-03-11 01:35:29 [INFO] SAE activations computed for layer 2 in batch 84.
+2025-03-11 01:35:29 [INFO] SAE activations computed for layer 3 in batch 84.
+2025-03-11 01:35:29 [INFO] SAE activations computed for layer 4 in batch 84.
+2025-03-11 01:35:29 [INFO] SAE activations computed for layer 5 in batch 84.
+2025-03-11 01:35:30 [INFO] SAE activations computed for layer 6 in batch 84.
+2025-03-11 01:35:30 [INFO] SAE activations computed for layer 7 in batch 84.
+2025-03-11 01:35:30 [INFO] SAE activations computed for layer 8 in batch 84.
+2025-03-11 01:35:30 [INFO] SAE activations computed for layer 9 in batch 84.
+2025-03-11 01:35:30 [INFO] SAE activations computed for layer 10 in batch 84.
+2025-03-11 01:35:30 [INFO] SAE activations computed for layer 11 in batch 84.
+2025-03-11 01:35:30 [INFO] Processing batch 85/132...
+2025-03-11 01:35:30 [INFO] Forward pass completed for batch 85.
+2025-03-11 01:35:31 [INFO] SAE activations computed for layer 0 in batch 85.
+2025-03-11 01:35:31 [INFO] SAE activations computed for layer 1 in batch 85.
+2025-03-11 01:35:31 [INFO] SAE activations computed for layer 2 in batch 85.
+2025-03-11 01:35:31 [INFO] SAE activations computed for layer 3 in batch 85.
+2025-03-11 01:35:31 [INFO] SAE activations computed for layer 4 in batch 85.
+2025-03-11 01:35:31 [INFO] SAE activations computed for layer 5 in batch 85.
+2025-03-11 01:35:31 [INFO] SAE activations computed for layer 6 in batch 85.
+2025-03-11 01:35:31 [INFO] SAE activations computed for layer 7 in batch 85.
+2025-03-11 01:35:31 [INFO] SAE activations computed for layer 8 in batch 85.
+2025-03-11 01:35:31 [INFO] SAE activations computed for layer 9 in batch 85.
+2025-03-11 01:35:31 [INFO] SAE activations computed for layer 10 in batch 85.
+2025-03-11 01:35:31 [INFO] SAE activations computed for layer 11 in batch 85.
+2025-03-11 01:35:31 [INFO] Processing batch 86/132...
+2025-03-11 01:35:31 [INFO] Forward pass completed for batch 86.
+2025-03-11 01:35:32 [INFO] SAE activations computed for layer 0 in batch 86.
+2025-03-11 01:35:32 [INFO] SAE activations computed for layer 1 in batch 86.
+2025-03-11 01:35:32 [INFO] SAE activations computed for layer 2 in batch 86.
+2025-03-11 01:35:32 [INFO] SAE activations computed for layer 3 in batch 86.
+2025-03-11 01:35:32 [INFO] SAE activations computed for layer 4 in batch 86.
+2025-03-11 01:35:32 [INFO] SAE activations computed for layer 5 in batch 86.
+2025-03-11 01:35:32 [INFO] SAE activations computed for layer 6 in batch 86.
+2025-03-11 01:35:32 [INFO] SAE activations computed for layer 7 in batch 86.
+2025-03-11 01:35:32 [INFO] SAE activations computed for layer 8 in batch 86.
+2025-03-11 01:35:33 [INFO] SAE activations computed for layer 9 in batch 86.
+2025-03-11 01:35:33 [INFO] SAE activations computed for layer 10 in batch 86.
+2025-03-11 01:35:33 [INFO] SAE activations computed for layer 11 in batch 86.
+2025-03-11 01:35:33 [INFO] Processing batch 87/132...
+2025-03-11 01:35:33 [INFO] Forward pass completed for batch 87.
+2025-03-11 01:35:33 [INFO] SAE activations computed for layer 0 in batch 87.
+2025-03-11 01:35:33 [INFO] SAE activations computed for layer 1 in batch 87.
+2025-03-11 01:35:34 [INFO] SAE activations computed for layer 2 in batch 87.
+2025-03-11 01:35:34 [INFO] SAE activations computed for layer 3 in batch 87.
+2025-03-11 01:35:34 [INFO] SAE activations computed for layer 4 in batch 87.
+2025-03-11 01:35:34 [INFO] SAE activations computed for layer 5 in batch 87.
+2025-03-11 01:35:34 [INFO] SAE activations computed for layer 6 in batch 87.
+2025-03-11 01:35:34 [INFO] SAE activations computed for layer 7 in batch 87.
+2025-03-11 01:35:34 [INFO] SAE activations computed for layer 8 in batch 87.
+2025-03-11 01:35:34 [INFO] SAE activations computed for layer 9 in batch 87.
+2025-03-11 01:35:34 [INFO] SAE activations computed for layer 10 in batch 87.
+2025-03-11 01:35:34 [INFO] SAE activations computed for layer 11 in batch 87.
+2025-03-11 01:35:34 [INFO] Processing batch 88/132...
+2025-03-11 01:35:34 [INFO] Forward pass completed for batch 88.
+2025-03-11 01:35:35 [INFO] SAE activations computed for layer 0 in batch 88.
+2025-03-11 01:35:35 [INFO] SAE activations computed for layer 1 in batch 88.
+2025-03-11 01:35:35 [INFO] SAE activations computed for layer 2 in batch 88.
+2025-03-11 01:35:35 [INFO] SAE activations computed for layer 3 in batch 88.
+2025-03-11 01:35:35 [INFO] SAE activations computed for layer 4 in batch 88.
+2025-03-11 01:35:35 [INFO] SAE activations computed for layer 5 in batch 88.
+2025-03-11 01:35:35 [INFO] SAE activations computed for layer 6 in batch 88.
+2025-03-11 01:35:35 [INFO] SAE activations computed for layer 7 in batch 88.
+2025-03-11 01:35:35 [INFO] SAE activations computed for layer 8 in batch 88.
+2025-03-11 01:35:35 [INFO] SAE activations computed for layer 9 in batch 88.
+2025-03-11 01:35:35 [INFO] SAE activations computed for layer 10 in batch 88.
+2025-03-11 01:35:36 [INFO] SAE activations computed for layer 11 in batch 88.
+2025-03-11 01:35:36 [INFO] Processing batch 89/132...
+2025-03-11 01:35:36 [INFO] Forward pass completed for batch 89.
+2025-03-11 01:35:36 [INFO] SAE activations computed for layer 0 in batch 89.
+2025-03-11 01:35:36 [INFO] SAE activations computed for layer 1 in batch 89.
+2025-03-11 01:35:36 [INFO] SAE activations computed for layer 2 in batch 89.
+2025-03-11 01:35:36 [INFO] SAE activations computed for layer 3 in batch 89.
+2025-03-11 01:35:37 [INFO] SAE activations computed for layer 4 in batch 89.
+2025-03-11 01:35:37 [INFO] SAE activations computed for layer 5 in batch 89.
+2025-03-11 01:35:37 [INFO] SAE activations computed for layer 6 in batch 89.
+2025-03-11 01:35:37 [INFO] SAE activations computed for layer 7 in batch 89.
+2025-03-11 01:35:37 [INFO] SAE activations computed for layer 8 in batch 89.
+2025-03-11 01:35:37 [INFO] SAE activations computed for layer 9 in batch 89.
+2025-03-11 01:35:37 [INFO] SAE activations computed for layer 10 in batch 89.
+2025-03-11 01:35:37 [INFO] SAE activations computed for layer 11 in batch 89.
+2025-03-11 01:35:37 [INFO] Processing batch 90/132...
+2025-03-11 01:35:37 [INFO] Forward pass completed for batch 90.
+2025-03-11 01:35:38 [INFO] SAE activations computed for layer 0 in batch 90.
+2025-03-11 01:35:38 [INFO] SAE activations computed for layer 1 in batch 90.
+2025-03-11 01:35:38 [INFO] SAE activations computed for layer 2 in batch 90.
+2025-03-11 01:35:38 [INFO] SAE activations computed for layer 3 in batch 90.
+2025-03-11 01:35:38 [INFO] SAE activations computed for layer 4 in batch 90.
+2025-03-11 01:35:38 [INFO] SAE activations computed for layer 5 in batch 90.
+2025-03-11 01:35:38 [INFO] SAE activations computed for layer 6 in batch 90.
+2025-03-11 01:35:38 [INFO] SAE activations computed for layer 7 in batch 90.
+2025-03-11 01:35:38 [INFO] SAE activations computed for layer 8 in batch 90.
+2025-03-11 01:35:38 [INFO] SAE activations computed for layer 9 in batch 90.
+2025-03-11 01:35:38 [INFO] SAE activations computed for layer 10 in batch 90.
+2025-03-11 01:35:38 [INFO] SAE activations computed for layer 11 in batch 90.
+2025-03-11 01:35:38 [INFO] Processing batch 91/132...
+2025-03-11 01:35:38 [INFO] Forward pass completed for batch 91.
+2025-03-11 01:35:39 [INFO] SAE activations computed for layer 0 in batch 91.
+2025-03-11 01:35:39 [INFO] SAE activations computed for layer 1 in batch 91.
+2025-03-11 01:35:39 [INFO] SAE activations computed for layer 2 in batch 91.
+2025-03-11 01:35:39 [INFO] SAE activations computed for layer 3 in batch 91.
+2025-03-11 01:35:39 [INFO] SAE activations computed for layer 4 in batch 91.
+2025-03-11 01:35:39 [INFO] SAE activations computed for layer 5 in batch 91.
+2025-03-11 01:35:39 [INFO] SAE activations computed for layer 6 in batch 91.
+2025-03-11 01:35:40 [INFO] SAE activations computed for layer 7 in batch 91.
+2025-03-11 01:35:40 [INFO] SAE activations computed for layer 8 in batch 91.
+2025-03-11 01:35:40 [INFO] SAE activations computed for layer 9 in batch 91.
+2025-03-11 01:35:40 [INFO] SAE activations computed for layer 10 in batch 91.
+2025-03-11 01:35:40 [INFO] SAE activations computed for layer 11 in batch 91.
+2025-03-11 01:35:40 [INFO] Processing batch 92/132...
+2025-03-11 01:35:40 [INFO] Forward pass completed for batch 92.
+2025-03-11 01:35:41 [INFO] SAE activations computed for layer 0 in batch 92.
+2025-03-11 01:35:41 [INFO] SAE activations computed for layer 1 in batch 92.
+2025-03-11 01:35:41 [INFO] SAE activations computed for layer 2 in batch 92.
+2025-03-11 01:35:41 [INFO] SAE activations computed for layer 3 in batch 92.
+2025-03-11 01:35:41 [INFO] SAE activations computed for layer 4 in batch 92.
+2025-03-11 01:35:41 [INFO] SAE activations computed for layer 5 in batch 92.
+2025-03-11 01:35:41 [INFO] SAE activations computed for layer 6 in batch 92.
+2025-03-11 01:35:41 [INFO] SAE activations computed for layer 7 in batch 92.
+2025-03-11 01:35:41 [INFO] SAE activations computed for layer 8 in batch 92.
+2025-03-11 01:35:41 [INFO] SAE activations computed for layer 9 in batch 92.
+2025-03-11 01:35:41 [INFO] SAE activations computed for layer 10 in batch 92.
+2025-03-11 01:35:41 [INFO] SAE activations computed for layer 11 in batch 92.
+2025-03-11 01:35:41 [INFO] Processing batch 93/132...
+2025-03-11 01:35:41 [INFO] Forward pass completed for batch 93.
+2025-03-11 01:35:42 [INFO] SAE activations computed for layer 0 in batch 93.
+2025-03-11 01:35:42 [INFO] SAE activations computed for layer 1 in batch 93.
+2025-03-11 01:35:42 [INFO] SAE activations computed for layer 2 in batch 93.
+2025-03-11 01:35:42 [INFO] SAE activations computed for layer 3 in batch 93.
+2025-03-11 01:35:42 [INFO] SAE activations computed for layer 4 in batch 93.
+2025-03-11 01:35:42 [INFO] SAE activations computed for layer 5 in batch 93.
+2025-03-11 01:35:42 [INFO] SAE activations computed for layer 6 in batch 93.
+2025-03-11 01:35:42 [INFO] SAE activations computed for layer 7 in batch 93.
+2025-03-11 01:35:42 [INFO] SAE activations computed for layer 8 in batch 93.
+2025-03-11 01:35:43 [INFO] SAE activations computed for layer 9 in batch 93.
+2025-03-11 01:35:43 [INFO] SAE activations computed for layer 10 in batch 93.
+2025-03-11 01:35:43 [INFO] SAE activations computed for layer 11 in batch 93.
+2025-03-11 01:35:43 [INFO] Processing batch 94/132...
+2025-03-11 01:35:43 [INFO] Forward pass completed for batch 94.
+2025-03-11 01:35:43 [INFO] SAE activations computed for layer 0 in batch 94.
+2025-03-11 01:35:43 [INFO] SAE activations computed for layer 1 in batch 94.
+2025-03-11 01:35:44 [INFO] SAE activations computed for layer 2 in batch 94.
+2025-03-11 01:35:44 [INFO] SAE activations computed for layer 3 in batch 94.
+2025-03-11 01:35:44 [INFO] SAE activations computed for layer 4 in batch 94.
+2025-03-11 01:35:44 [INFO] SAE activations computed for layer 5 in batch 94.
+2025-03-11 01:35:44 [INFO] SAE activations computed for layer 6 in batch 94.
+2025-03-11 01:35:44 [INFO] SAE activations computed for layer 7 in batch 94.
+2025-03-11 01:35:44 [INFO] SAE activations computed for layer 8 in batch 94.
+2025-03-11 01:35:44 [INFO] SAE activations computed for layer 9 in batch 94.
+2025-03-11 01:35:44 [INFO] SAE activations computed for layer 10 in batch 94.
+2025-03-11 01:35:44 [INFO] SAE activations computed for layer 11 in batch 94.
+2025-03-11 01:35:44 [INFO] Processing batch 95/132...
+2025-03-11 01:35:44 [INFO] Forward pass completed for batch 95.
+2025-03-11 01:35:45 [INFO] SAE activations computed for layer 0 in batch 95.
+2025-03-11 01:35:45 [INFO] SAE activations computed for layer 1 in batch 95.
+2025-03-11 01:35:45 [INFO] SAE activations computed for layer 2 in batch 95.
+2025-03-11 01:35:45 [INFO] SAE activations computed for layer 3 in batch 95.
+2025-03-11 01:35:45 [INFO] SAE activations computed for layer 4 in batch 95.
+2025-03-11 01:35:45 [INFO] SAE activations computed for layer 5 in batch 95.
+2025-03-11 01:35:45 [INFO] SAE activations computed for layer 6 in batch 95.
+2025-03-11 01:35:45 [INFO] SAE activations computed for layer 7 in batch 95.
+2025-03-11 01:35:45 [INFO] SAE activations computed for layer 8 in batch 95.
+2025-03-11 01:35:45 [INFO] SAE activations computed for layer 9 in batch 95.
+2025-03-11 01:35:45 [INFO] SAE activations computed for layer 10 in batch 95.
+2025-03-11 01:35:46 [INFO] SAE activations computed for layer 11 in batch 95.
+2025-03-11 01:35:46 [INFO] Processing batch 96/132...
+2025-03-11 01:35:46 [INFO] Forward pass completed for batch 96.
+2025-03-11 01:35:46 [INFO] SAE activations computed for layer 0 in batch 96.
+2025-03-11 01:35:46 [INFO] SAE activations computed for layer 1 in batch 96.
+2025-03-11 01:35:46 [INFO] SAE activations computed for layer 2 in batch 96.
+2025-03-11 01:35:46 [INFO] SAE activations computed for layer 3 in batch 96.
+2025-03-11 01:35:47 [INFO] SAE activations computed for layer 4 in batch 96.
+2025-03-11 01:35:47 [INFO] SAE activations computed for layer 5 in batch 96.
+2025-03-11 01:35:47 [INFO] SAE activations computed for layer 6 in batch 96.
+2025-03-11 01:35:47 [INFO] SAE activations computed for layer 7 in batch 96.
+2025-03-11 01:35:47 [INFO] SAE activations computed for layer 8 in batch 96.
+2025-03-11 01:35:47 [INFO] SAE activations computed for layer 9 in batch 96.
+2025-03-11 01:35:47 [INFO] SAE activations computed for layer 10 in batch 96.
+2025-03-11 01:35:47 [INFO] SAE activations computed for layer 11 in batch 96.
+2025-03-11 01:35:47 [INFO] Saving tensors to file.
+2025-03-11 01:35:47 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_0L_6.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_0L_6.pt to disk
+2025-03-11 01:35:48 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_1L_6.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_1L_6.pt to disk
+2025-03-11 01:35:48 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_2L_6.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_2L_6.pt to disk
+2025-03-11 01:35:49 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_3L_6.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_3L_6.pt to disk
+2025-03-11 01:35:49 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_4L_6.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_4L_6.pt to disk
+2025-03-11 01:35:49 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_5L_6.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_5L_6.pt to disk
+2025-03-11 01:35:50 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_6L_6.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_6L_6.pt to disk
+2025-03-11 01:35:50 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_7L_6.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_7L_6.pt to disk
+2025-03-11 01:35:50 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_8L_6.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_8L_6.pt to disk
+2025-03-11 01:35:51 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_9L_6.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_9L_6.pt to disk
+2025-03-11 01:35:51 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_10L_6.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_10L_6.pt to disk
+2025-03-11 01:35:51 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_11L_6.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_11L_6.pt to disk
+2025-03-11 01:35:56 [INFO] Saved activations_pythia_160m/data_subset/reconstruction_metrics_6.json to disk
+2025-03-11 01:35:56 [INFO] Processing batch 97/132...
+2025-03-11 01:35:56 [INFO] Forward pass completed for batch 97.
+2025-03-11 01:35:56 [INFO] SAE activations computed for layer 0 in batch 97.
+2025-03-11 01:35:56 [INFO] SAE activations computed for layer 1 in batch 97.
+2025-03-11 01:35:57 [INFO] SAE activations computed for layer 2 in batch 97.
+2025-03-11 01:35:57 [INFO] SAE activations computed for layer 3 in batch 97.
+2025-03-11 01:35:57 [INFO] SAE activations computed for layer 4 in batch 97.
+2025-03-11 01:35:57 [INFO] SAE activations computed for layer 5 in batch 97.
+2025-03-11 01:35:57 [INFO] SAE activations computed for layer 6 in batch 97.
+2025-03-11 01:35:57 [INFO] SAE activations computed for layer 7 in batch 97.
+2025-03-11 01:35:57 [INFO] SAE activations computed for layer 8 in batch 97.
+2025-03-11 01:35:57 [INFO] SAE activations computed for layer 9 in batch 97.
+2025-03-11 01:35:57 [INFO] SAE activations computed for layer 10 in batch 97.
+2025-03-11 01:35:57 [INFO] SAE activations computed for layer 11 in batch 97.
+2025-03-11 01:35:57 [INFO] Processing batch 98/132...
+2025-03-11 01:35:57 [INFO] Forward pass completed for batch 98.
+2025-03-11 01:35:58 [INFO] SAE activations computed for layer 0 in batch 98.
+2025-03-11 01:35:58 [INFO] SAE activations computed for layer 1 in batch 98.
+2025-03-11 01:35:58 [INFO] SAE activations computed for layer 2 in batch 98.
+2025-03-11 01:35:58 [INFO] SAE activations computed for layer 3 in batch 98.
+2025-03-11 01:35:58 [INFO] SAE activations computed for layer 4 in batch 98.
+2025-03-11 01:35:58 [INFO] SAE activations computed for layer 5 in batch 98.
+2025-03-11 01:35:58 [INFO] SAE activations computed for layer 6 in batch 98.
+2025-03-11 01:35:58 [INFO] SAE activations computed for layer 7 in batch 98.
+2025-03-11 01:35:58 [INFO] SAE activations computed for layer 8 in batch 98.
+2025-03-11 01:35:59 [INFO] SAE activations computed for layer 9 in batch 98.
+2025-03-11 01:35:59 [INFO] SAE activations computed for layer 10 in batch 98.
+2025-03-11 01:35:59 [INFO] SAE activations computed for layer 11 in batch 98.
+2025-03-11 01:35:59 [INFO] Processing batch 99/132...
+2025-03-11 01:35:59 [INFO] Forward pass completed for batch 99.
+2025-03-11 01:35:59 [INFO] SAE activations computed for layer 0 in batch 99.
+2025-03-11 01:35:59 [INFO] SAE activations computed for layer 1 in batch 99.
+2025-03-11 01:35:59 [INFO] SAE activations computed for layer 2 in batch 99.
+2025-03-11 01:36:00 [INFO] SAE activations computed for layer 3 in batch 99.
+2025-03-11 01:36:00 [INFO] SAE activations computed for layer 4 in batch 99.
+2025-03-11 01:36:00 [INFO] SAE activations computed for layer 5 in batch 99.
+2025-03-11 01:36:00 [INFO] SAE activations computed for layer 6 in batch 99.
+2025-03-11 01:36:00 [INFO] SAE activations computed for layer 7 in batch 99.
+2025-03-11 01:36:00 [INFO] SAE activations computed for layer 8 in batch 99.
+2025-03-11 01:36:00 [INFO] SAE activations computed for layer 9 in batch 99.
+2025-03-11 01:36:00 [INFO] SAE activations computed for layer 10 in batch 99.
+2025-03-11 01:36:00 [INFO] SAE activations computed for layer 11 in batch 99.
+2025-03-11 01:36:00 [INFO] Processing batch 100/132...
+2025-03-11 01:36:00 [INFO] Forward pass completed for batch 100.
+2025-03-11 01:36:01 [INFO] SAE activations computed for layer 0 in batch 100.
+2025-03-11 01:36:01 [INFO] SAE activations computed for layer 1 in batch 100.
+2025-03-11 01:36:01 [INFO] SAE activations computed for layer 2 in batch 100.
+2025-03-11 01:36:01 [INFO] SAE activations computed for layer 3 in batch 100.
+2025-03-11 01:36:01 [INFO] SAE activations computed for layer 4 in batch 100.
+2025-03-11 01:36:01 [INFO] SAE activations computed for layer 5 in batch 100.
+2025-03-11 01:36:01 [INFO] SAE activations computed for layer 6 in batch 100.
+2025-03-11 01:36:01 [INFO] SAE activations computed for layer 7 in batch 100.
+2025-03-11 01:36:01 [INFO] SAE activations computed for layer 8 in batch 100.
+2025-03-11 01:36:01 [INFO] SAE activations computed for layer 9 in batch 100.
+2025-03-11 01:36:01 [INFO] SAE activations computed for layer 10 in batch 100.
+2025-03-11 01:36:01 [INFO] SAE activations computed for layer 11 in batch 100.
+2025-03-11 01:36:02 [INFO] Processing batch 101/132...
+2025-03-11 01:36:02 [INFO] Forward pass completed for batch 101.
+2025-03-11 01:36:02 [INFO] SAE activations computed for layer 0 in batch 101.
+2025-03-11 01:36:02 [INFO] SAE activations computed for layer 1 in batch 101.
+2025-03-11 01:36:02 [INFO] SAE activations computed for layer 2 in batch 101.
+2025-03-11 01:36:02 [INFO] SAE activations computed for layer 3 in batch 101.
+2025-03-11 01:36:02 [INFO] SAE activations computed for layer 4 in batch 101.
+2025-03-11 01:36:02 [INFO] SAE activations computed for layer 5 in batch 101.
+2025-03-11 01:36:03 [INFO] SAE activations computed for layer 6 in batch 101.
+2025-03-11 01:36:03 [INFO] SAE activations computed for layer 7 in batch 101.
+2025-03-11 01:36:03 [INFO] SAE activations computed for layer 8 in batch 101.
+2025-03-11 01:36:03 [INFO] SAE activations computed for layer 9 in batch 101.
+2025-03-11 01:36:03 [INFO] SAE activations computed for layer 10 in batch 101.
+2025-03-11 01:36:03 [INFO] SAE activations computed for layer 11 in batch 101.
+2025-03-11 01:36:03 [INFO] Processing batch 102/132...
+2025-03-11 01:36:03 [INFO] Forward pass completed for batch 102.
+2025-03-11 01:36:04 [INFO] SAE activations computed for layer 0 in batch 102.
+2025-03-11 01:36:04 [INFO] SAE activations computed for layer 1 in batch 102.
+2025-03-11 01:36:04 [INFO] SAE activations computed for layer 2 in batch 102.
+2025-03-11 01:36:04 [INFO] SAE activations computed for layer 3 in batch 102.
+2025-03-11 01:36:04 [INFO] SAE activations computed for layer 4 in batch 102.
+2025-03-11 01:36:04 [INFO] SAE activations computed for layer 5 in batch 102.
+2025-03-11 01:36:04 [INFO] SAE activations computed for layer 6 in batch 102.
+2025-03-11 01:36:04 [INFO] SAE activations computed for layer 7 in batch 102.
+2025-03-11 01:36:04 [INFO] SAE activations computed for layer 8 in batch 102.
+2025-03-11 01:36:04 [INFO] SAE activations computed for layer 9 in batch 102.
+2025-03-11 01:36:04 [INFO] SAE activations computed for layer 10 in batch 102.
+2025-03-11 01:36:04 [INFO] SAE activations computed for layer 11 in batch 102.
+2025-03-11 01:36:04 [INFO] Processing batch 103/132...
+2025-03-11 01:36:04 [INFO] Forward pass completed for batch 103.
+2025-03-11 01:36:05 [INFO] SAE activations computed for layer 0 in batch 103.
+2025-03-11 01:36:05 [INFO] SAE activations computed for layer 1 in batch 103.
+2025-03-11 01:36:05 [INFO] SAE activations computed for layer 2 in batch 103.
+2025-03-11 01:36:05 [INFO] SAE activations computed for layer 3 in batch 103.
+2025-03-11 01:36:05 [INFO] SAE activations computed for layer 4 in batch 103.
+2025-03-11 01:36:05 [INFO] SAE activations computed for layer 5 in batch 103.
+2025-03-11 01:36:05 [INFO] SAE activations computed for layer 6 in batch 103.
+2025-03-11 01:36:05 [INFO] SAE activations computed for layer 7 in batch 103.
+2025-03-11 01:36:05 [INFO] SAE activations computed for layer 8 in batch 103.
+2025-03-11 01:36:06 [INFO] SAE activations computed for layer 9 in batch 103.
+2025-03-11 01:36:06 [INFO] SAE activations computed for layer 10 in batch 103.
+2025-03-11 01:36:06 [INFO] SAE activations computed for layer 11 in batch 103.
+2025-03-11 01:36:06 [INFO] Processing batch 104/132...
+2025-03-11 01:36:06 [INFO] Forward pass completed for batch 104.
+2025-03-11 01:36:06 [INFO] SAE activations computed for layer 0 in batch 104.
+2025-03-11 01:36:06 [INFO] SAE activations computed for layer 1 in batch 104.
+2025-03-11 01:36:07 [INFO] SAE activations computed for layer 2 in batch 104.
+2025-03-11 01:36:07 [INFO] SAE activations computed for layer 3 in batch 104.
+2025-03-11 01:36:07 [INFO] SAE activations computed for layer 4 in batch 104.
+2025-03-11 01:36:07 [INFO] SAE activations computed for layer 5 in batch 104.
+2025-03-11 01:36:07 [INFO] SAE activations computed for layer 6 in batch 104.
+2025-03-11 01:36:07 [INFO] SAE activations computed for layer 7 in batch 104.
+2025-03-11 01:36:07 [INFO] SAE activations computed for layer 8 in batch 104.
+2025-03-11 01:36:07 [INFO] SAE activations computed for layer 9 in batch 104.
+2025-03-11 01:36:07 [INFO] SAE activations computed for layer 10 in batch 104.
+2025-03-11 01:36:07 [INFO] SAE activations computed for layer 11 in batch 104.
+2025-03-11 01:36:07 [INFO] Processing batch 105/132...
+2025-03-11 01:36:07 [INFO] Forward pass completed for batch 105.
+2025-03-11 01:36:08 [INFO] SAE activations computed for layer 0 in batch 105.
+2025-03-11 01:36:08 [INFO] SAE activations computed for layer 1 in batch 105.
+2025-03-11 01:36:08 [INFO] SAE activations computed for layer 2 in batch 105.
+2025-03-11 01:36:08 [INFO] SAE activations computed for layer 3 in batch 105.
+2025-03-11 01:36:08 [INFO] SAE activations computed for layer 4 in batch 105.
+2025-03-11 01:36:08 [INFO] SAE activations computed for layer 5 in batch 105.
+2025-03-11 01:36:08 [INFO] SAE activations computed for layer 6 in batch 105.
+2025-03-11 01:36:08 [INFO] SAE activations computed for layer 7 in batch 105.
+2025-03-11 01:36:08 [INFO] SAE activations computed for layer 8 in batch 105.
+2025-03-11 01:36:08 [INFO] SAE activations computed for layer 9 in batch 105.
+2025-03-11 01:36:08 [INFO] SAE activations computed for layer 10 in batch 105.
+2025-03-11 01:36:09 [INFO] SAE activations computed for layer 11 in batch 105.
+2025-03-11 01:36:09 [INFO] Processing batch 106/132...
+2025-03-11 01:36:09 [INFO] Forward pass completed for batch 106.
+2025-03-11 01:36:09 [INFO] SAE activations computed for layer 0 in batch 106.
+2025-03-11 01:36:09 [INFO] SAE activations computed for layer 1 in batch 106.
+2025-03-11 01:36:09 [INFO] SAE activations computed for layer 2 in batch 106.
+2025-03-11 01:36:09 [INFO] SAE activations computed for layer 3 in batch 106.
+2025-03-11 01:36:09 [INFO] SAE activations computed for layer 4 in batch 106.
+2025-03-11 01:36:10 [INFO] SAE activations computed for layer 5 in batch 106.
+2025-03-11 01:36:10 [INFO] SAE activations computed for layer 6 in batch 106.
+2025-03-11 01:36:10 [INFO] SAE activations computed for layer 7 in batch 106.
+2025-03-11 01:36:10 [INFO] SAE activations computed for layer 8 in batch 106.
+2025-03-11 01:36:10 [INFO] SAE activations computed for layer 9 in batch 106.
+2025-03-11 01:36:10 [INFO] SAE activations computed for layer 10 in batch 106.
+2025-03-11 01:36:10 [INFO] SAE activations computed for layer 11 in batch 106.
+2025-03-11 01:36:10 [INFO] Processing batch 107/132...
+2025-03-11 01:36:10 [INFO] Forward pass completed for batch 107.
+2025-03-11 01:36:11 [INFO] SAE activations computed for layer 0 in batch 107.
+2025-03-11 01:36:11 [INFO] SAE activations computed for layer 1 in batch 107.
+2025-03-11 01:36:11 [INFO] SAE activations computed for layer 2 in batch 107.
+2025-03-11 01:36:11 [INFO] SAE activations computed for layer 3 in batch 107.
+2025-03-11 01:36:11 [INFO] SAE activations computed for layer 4 in batch 107.
+2025-03-11 01:36:11 [INFO] SAE activations computed for layer 5 in batch 107.
+2025-03-11 01:36:11 [INFO] SAE activations computed for layer 6 in batch 107.
+2025-03-11 01:36:11 [INFO] SAE activations computed for layer 7 in batch 107.
+2025-03-11 01:36:11 [INFO] SAE activations computed for layer 8 in batch 107.
+2025-03-11 01:36:11 [INFO] SAE activations computed for layer 9 in batch 107.
+2025-03-11 01:36:11 [INFO] SAE activations computed for layer 10 in batch 107.
+2025-03-11 01:36:11 [INFO] SAE activations computed for layer 11 in batch 107.
+2025-03-11 01:36:11 [INFO] Processing batch 108/132...
+2025-03-11 01:36:11 [INFO] Forward pass completed for batch 108.
+2025-03-11 01:36:12 [INFO] SAE activations computed for layer 0 in batch 108.
+2025-03-11 01:36:12 [INFO] SAE activations computed for layer 1 in batch 108.
+2025-03-11 01:36:12 [INFO] SAE activations computed for layer 2 in batch 108.
+2025-03-11 01:36:12 [INFO] SAE activations computed for layer 3 in batch 108.
+2025-03-11 01:36:12 [INFO] SAE activations computed for layer 4 in batch 108.
+2025-03-11 01:36:12 [INFO] SAE activations computed for layer 5 in batch 108.
+2025-03-11 01:36:12 [INFO] SAE activations computed for layer 6 in batch 108.
+2025-03-11 01:36:13 [INFO] SAE activations computed for layer 7 in batch 108.
+2025-03-11 01:36:13 [INFO] SAE activations computed for layer 8 in batch 108.
+2025-03-11 01:36:13 [INFO] SAE activations computed for layer 9 in batch 108.
+2025-03-11 01:36:13 [INFO] SAE activations computed for layer 10 in batch 108.
+2025-03-11 01:36:13 [INFO] SAE activations computed for layer 11 in batch 108.
+2025-03-11 01:36:13 [INFO] Processing batch 109/132...
+2025-03-11 01:36:13 [INFO] Forward pass completed for batch 109.
+2025-03-11 01:36:13 [INFO] SAE activations computed for layer 0 in batch 109.
+2025-03-11 01:36:14 [INFO] SAE activations computed for layer 1 in batch 109.
+2025-03-11 01:36:14 [INFO] SAE activations computed for layer 2 in batch 109.
+2025-03-11 01:36:14 [INFO] SAE activations computed for layer 3 in batch 109.
+2025-03-11 01:36:14 [INFO] SAE activations computed for layer 4 in batch 109.
+2025-03-11 01:36:14 [INFO] SAE activations computed for layer 5 in batch 109.
+2025-03-11 01:36:14 [INFO] SAE activations computed for layer 6 in batch 109.
+2025-03-11 01:36:14 [INFO] SAE activations computed for layer 7 in batch 109.
+2025-03-11 01:36:14 [INFO] SAE activations computed for layer 8 in batch 109.
+2025-03-11 01:36:14 [INFO] SAE activations computed for layer 9 in batch 109.
+2025-03-11 01:36:14 [INFO] SAE activations computed for layer 10 in batch 109.
+2025-03-11 01:36:14 [INFO] SAE activations computed for layer 11 in batch 109.
+2025-03-11 01:36:14 [INFO] Processing batch 110/132...
+2025-03-11 01:36:14 [INFO] Forward pass completed for batch 110.
+2025-03-11 01:36:15 [INFO] SAE activations computed for layer 0 in batch 110.
+2025-03-11 01:36:15 [INFO] SAE activations computed for layer 1 in batch 110.
+2025-03-11 01:36:15 [INFO] SAE activations computed for layer 2 in batch 110.
+2025-03-11 01:36:15 [INFO] SAE activations computed for layer 3 in batch 110.
+2025-03-11 01:36:15 [INFO] SAE activations computed for layer 4 in batch 110.
+2025-03-11 01:36:15 [INFO] SAE activations computed for layer 5 in batch 110.
+2025-03-11 01:36:15 [INFO] SAE activations computed for layer 6 in batch 110.
+2025-03-11 01:36:15 [INFO] SAE activations computed for layer 7 in batch 110.
+2025-03-11 01:36:15 [INFO] SAE activations computed for layer 8 in batch 110.
+2025-03-11 01:36:15 [INFO] SAE activations computed for layer 9 in batch 110.
+2025-03-11 01:36:16 [INFO] SAE activations computed for layer 10 in batch 110.
+2025-03-11 01:36:16 [INFO] SAE activations computed for layer 11 in batch 110.
+2025-03-11 01:36:16 [INFO] Processing batch 111/132...
+2025-03-11 01:36:16 [INFO] Forward pass completed for batch 111.
+2025-03-11 01:36:16 [INFO] SAE activations computed for layer 0 in batch 111.
+2025-03-11 01:36:16 [INFO] SAE activations computed for layer 1 in batch 111.
+2025-03-11 01:36:16 [INFO] SAE activations computed for layer 2 in batch 111.
+2025-03-11 01:36:16 [INFO] SAE activations computed for layer 3 in batch 111.
+2025-03-11 01:36:17 [INFO] SAE activations computed for layer 4 in batch 111.
+2025-03-11 01:36:17 [INFO] SAE activations computed for layer 5 in batch 111.
+2025-03-11 01:36:17 [INFO] SAE activations computed for layer 6 in batch 111.
+2025-03-11 01:36:17 [INFO] SAE activations computed for layer 7 in batch 111.
+2025-03-11 01:36:17 [INFO] SAE activations computed for layer 8 in batch 111.
+2025-03-11 01:36:17 [INFO] SAE activations computed for layer 9 in batch 111.
+2025-03-11 01:36:17 [INFO] SAE activations computed for layer 10 in batch 111.
+2025-03-11 01:36:17 [INFO] SAE activations computed for layer 11 in batch 111.
+2025-03-11 01:36:17 [INFO] Processing batch 112/132...
+2025-03-11 01:36:17 [INFO] Forward pass completed for batch 112.
+2025-03-11 01:36:18 [INFO] SAE activations computed for layer 0 in batch 112.
+2025-03-11 01:36:18 [INFO] SAE activations computed for layer 1 in batch 112.
+2025-03-11 01:36:18 [INFO] SAE activations computed for layer 2 in batch 112.
+2025-03-11 01:36:18 [INFO] SAE activations computed for layer 3 in batch 112.
+2025-03-11 01:36:18 [INFO] SAE activations computed for layer 4 in batch 112.
+2025-03-11 01:36:18 [INFO] SAE activations computed for layer 5 in batch 112.
+2025-03-11 01:36:18 [INFO] SAE activations computed for layer 6 in batch 112.
+2025-03-11 01:36:18 [INFO] SAE activations computed for layer 7 in batch 112.
+2025-03-11 01:36:18 [INFO] SAE activations computed for layer 8 in batch 112.
+2025-03-11 01:36:18 [INFO] SAE activations computed for layer 9 in batch 112.
+2025-03-11 01:36:18 [INFO] SAE activations computed for layer 10 in batch 112.
+2025-03-11 01:36:19 [INFO] SAE activations computed for layer 11 in batch 112.
+2025-03-11 01:36:19 [INFO] Saving tensors to file.
+2025-03-11 01:36:19 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_0L_7.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_0L_7.pt to disk
+2025-03-11 01:36:19 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_1L_7.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_1L_7.pt to disk
+2025-03-11 01:36:20 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_2L_7.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_2L_7.pt to disk
+2025-03-11 01:36:20 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_3L_7.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_3L_7.pt to disk
+2025-03-11 01:36:21 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_4L_7.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_4L_7.pt to disk
+2025-03-11 01:36:21 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_5L_7.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_5L_7.pt to disk
+2025-03-11 01:36:21 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_6L_7.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_6L_7.pt to disk
+2025-03-11 01:36:22 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_7L_7.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_7L_7.pt to disk
+2025-03-11 01:36:22 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_8L_7.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_8L_7.pt to disk
+2025-03-11 01:36:22 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_9L_7.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_9L_7.pt to disk
+2025-03-11 01:36:23 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_10L_7.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_10L_7.pt to disk
+2025-03-11 01:36:23 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_11L_7.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_11L_7.pt to disk
+2025-03-11 01:36:27 [INFO] Saved activations_pythia_160m/data_subset/reconstruction_metrics_7.json to disk
+2025-03-11 01:36:28 [INFO] Processing batch 113/132...
+2025-03-11 01:36:28 [INFO] Forward pass completed for batch 113.
+2025-03-11 01:36:28 [INFO] SAE activations computed for layer 0 in batch 113.
+2025-03-11 01:36:28 [INFO] SAE activations computed for layer 1 in batch 113.
+2025-03-11 01:36:28 [INFO] SAE activations computed for layer 2 in batch 113.
+2025-03-11 01:36:28 [INFO] SAE activations computed for layer 3 in batch 113.
+2025-03-11 01:36:29 [INFO] SAE activations computed for layer 4 in batch 113.
+2025-03-11 01:36:29 [INFO] SAE activations computed for layer 5 in batch 113.
+2025-03-11 01:36:29 [INFO] SAE activations computed for layer 6 in batch 113.
+2025-03-11 01:36:29 [INFO] SAE activations computed for layer 7 in batch 113.
+2025-03-11 01:36:29 [INFO] SAE activations computed for layer 8 in batch 113.
+2025-03-11 01:36:29 [INFO] SAE activations computed for layer 9 in batch 113.
+2025-03-11 01:36:29 [INFO] SAE activations computed for layer 10 in batch 113.
+2025-03-11 01:36:29 [INFO] SAE activations computed for layer 11 in batch 113.
+2025-03-11 01:36:29 [INFO] Processing batch 114/132...
+2025-03-11 01:36:29 [INFO] Forward pass completed for batch 114.
+2025-03-11 01:36:30 [INFO] SAE activations computed for layer 0 in batch 114.
+2025-03-11 01:36:30 [INFO] SAE activations computed for layer 1 in batch 114.
+2025-03-11 01:36:30 [INFO] SAE activations computed for layer 2 in batch 114.
+2025-03-11 01:36:30 [INFO] SAE activations computed for layer 3 in batch 114.
+2025-03-11 01:36:30 [INFO] SAE activations computed for layer 4 in batch 114.
+2025-03-11 01:36:30 [INFO] SAE activations computed for layer 5 in batch 114.
+2025-03-11 01:36:30 [INFO] SAE activations computed for layer 6 in batch 114.
+2025-03-11 01:36:30 [INFO] SAE activations computed for layer 7 in batch 114.
+2025-03-11 01:36:30 [INFO] SAE activations computed for layer 8 in batch 114.
+2025-03-11 01:36:30 [INFO] SAE activations computed for layer 9 in batch 114.
+2025-03-11 01:36:31 [INFO] SAE activations computed for layer 10 in batch 114.
+2025-03-11 01:36:31 [INFO] SAE activations computed for layer 11 in batch 114.
+2025-03-11 01:36:31 [INFO] Processing batch 115/132...
+2025-03-11 01:36:31 [INFO] Forward pass completed for batch 115.
+2025-03-11 01:36:31 [INFO] SAE activations computed for layer 0 in batch 115.
+2025-03-11 01:36:31 [INFO] SAE activations computed for layer 1 in batch 115.
+2025-03-11 01:36:31 [INFO] SAE activations computed for layer 2 in batch 115.
+2025-03-11 01:36:32 [INFO] SAE activations computed for layer 3 in batch 115.
+2025-03-11 01:36:32 [INFO] SAE activations computed for layer 4 in batch 115.
+2025-03-11 01:36:32 [INFO] SAE activations computed for layer 5 in batch 115.
+2025-03-11 01:36:32 [INFO] SAE activations computed for layer 6 in batch 115.
+2025-03-11 01:36:32 [INFO] SAE activations computed for layer 7 in batch 115.
+2025-03-11 01:36:32 [INFO] SAE activations computed for layer 8 in batch 115.
+2025-03-11 01:36:32 [INFO] SAE activations computed for layer 9 in batch 115.
+2025-03-11 01:36:32 [INFO] SAE activations computed for layer 10 in batch 115.
+2025-03-11 01:36:32 [INFO] SAE activations computed for layer 11 in batch 115.
+2025-03-11 01:36:32 [INFO] Processing batch 116/132...
+2025-03-11 01:36:32 [INFO] Forward pass completed for batch 116.
+2025-03-11 01:36:33 [INFO] SAE activations computed for layer 0 in batch 116.
+2025-03-11 01:36:33 [INFO] SAE activations computed for layer 1 in batch 116.
+2025-03-11 01:36:33 [INFO] SAE activations computed for layer 2 in batch 116.
+2025-03-11 01:36:33 [INFO] SAE activations computed for layer 3 in batch 116.
+2025-03-11 01:36:33 [INFO] SAE activations computed for layer 4 in batch 116.
+2025-03-11 01:36:33 [INFO] SAE activations computed for layer 5 in batch 116.
+2025-03-11 01:36:33 [INFO] SAE activations computed for layer 6 in batch 116.
+2025-03-11 01:36:33 [INFO] SAE activations computed for layer 7 in batch 116.
+2025-03-11 01:36:33 [INFO] SAE activations computed for layer 8 in batch 116.
+2025-03-11 01:36:33 [INFO] SAE activations computed for layer 9 in batch 116.
+2025-03-11 01:36:33 [INFO] SAE activations computed for layer 10 in batch 116.
+2025-03-11 01:36:33 [INFO] SAE activations computed for layer 11 in batch 116.
+2025-03-11 01:36:34 [INFO] Processing batch 117/132...
+2025-03-11 01:36:34 [INFO] Forward pass completed for batch 117.
+2025-03-11 01:36:34 [INFO] SAE activations computed for layer 0 in batch 117.
+2025-03-11 01:36:34 [INFO] SAE activations computed for layer 1 in batch 117.
+2025-03-11 01:36:34 [INFO] SAE activations computed for layer 2 in batch 117.
+2025-03-11 01:36:34 [INFO] SAE activations computed for layer 3 in batch 117.
+2025-03-11 01:36:34 [INFO] SAE activations computed for layer 4 in batch 117.
+2025-03-11 01:36:34 [INFO] SAE activations computed for layer 5 in batch 117.
+2025-03-11 01:36:35 [INFO] SAE activations computed for layer 6 in batch 117.
+2025-03-11 01:36:35 [INFO] SAE activations computed for layer 7 in batch 117.
+2025-03-11 01:36:35 [INFO] SAE activations computed for layer 8 in batch 117.
+2025-03-11 01:36:35 [INFO] SAE activations computed for layer 9 in batch 117.
+2025-03-11 01:36:35 [INFO] SAE activations computed for layer 10 in batch 117.
+2025-03-11 01:36:35 [INFO] SAE activations computed for layer 11 in batch 117.
+2025-03-11 01:36:35 [INFO] Processing batch 118/132...
+2025-03-11 01:36:35 [INFO] Forward pass completed for batch 118.
+2025-03-11 01:36:36 [INFO] SAE activations computed for layer 0 in batch 118.
+2025-03-11 01:36:36 [INFO] SAE activations computed for layer 1 in batch 118.
+2025-03-11 01:36:36 [INFO] SAE activations computed for layer 2 in batch 118.
+2025-03-11 01:36:36 [INFO] SAE activations computed for layer 3 in batch 118.
+2025-03-11 01:36:36 [INFO] SAE activations computed for layer 4 in batch 118.
+2025-03-11 01:36:36 [INFO] SAE activations computed for layer 5 in batch 118.
+2025-03-11 01:36:36 [INFO] SAE activations computed for layer 6 in batch 118.
+2025-03-11 01:36:36 [INFO] SAE activations computed for layer 7 in batch 118.
+2025-03-11 01:36:36 [INFO] SAE activations computed for layer 8 in batch 118.
+2025-03-11 01:36:36 [INFO] SAE activations computed for layer 9 in batch 118.
+2025-03-11 01:36:36 [INFO] SAE activations computed for layer 10 in batch 118.
+2025-03-11 01:36:36 [INFO] SAE activations computed for layer 11 in batch 118.
+2025-03-11 01:36:36 [INFO] Processing batch 119/132...
+2025-03-11 01:36:36 [INFO] Forward pass completed for batch 119.
+2025-03-11 01:36:37 [INFO] SAE activations computed for layer 0 in batch 119.
+2025-03-11 01:36:37 [INFO] SAE activations computed for layer 1 in batch 119.
+2025-03-11 01:36:37 [INFO] SAE activations computed for layer 2 in batch 119.
+2025-03-11 01:36:37 [INFO] SAE activations computed for layer 3 in batch 119.
+2025-03-11 01:36:37 [INFO] SAE activations computed for layer 4 in batch 119.
+2025-03-11 01:36:37 [INFO] SAE activations computed for layer 5 in batch 119.
+2025-03-11 01:36:37 [INFO] SAE activations computed for layer 6 in batch 119.
+2025-03-11 01:36:37 [INFO] SAE activations computed for layer 7 in batch 119.
+2025-03-11 01:36:38 [INFO] SAE activations computed for layer 8 in batch 119.
+2025-03-11 01:36:38 [INFO] SAE activations computed for layer 9 in batch 119.
+2025-03-11 01:36:38 [INFO] SAE activations computed for layer 10 in batch 119.
+2025-03-11 01:36:38 [INFO] SAE activations computed for layer 11 in batch 119.
+2025-03-11 01:36:38 [INFO] Processing batch 120/132...
+2025-03-11 01:36:38 [INFO] Forward pass completed for batch 120.
+2025-03-11 01:36:38 [INFO] SAE activations computed for layer 0 in batch 120.
+2025-03-11 01:36:38 [INFO] SAE activations computed for layer 1 in batch 120.
+2025-03-11 01:36:39 [INFO] SAE activations computed for layer 2 in batch 120.
+2025-03-11 01:36:39 [INFO] SAE activations computed for layer 3 in batch 120.
+2025-03-11 01:36:39 [INFO] SAE activations computed for layer 4 in batch 120.
+2025-03-11 01:36:39 [INFO] SAE activations computed for layer 5 in batch 120.
+2025-03-11 01:36:39 [INFO] SAE activations computed for layer 6 in batch 120.
+2025-03-11 01:36:39 [INFO] SAE activations computed for layer 7 in batch 120.
+2025-03-11 01:36:39 [INFO] SAE activations computed for layer 8 in batch 120.
+2025-03-11 01:36:39 [INFO] SAE activations computed for layer 9 in batch 120.
+2025-03-11 01:36:39 [INFO] SAE activations computed for layer 10 in batch 120.
+2025-03-11 01:36:39 [INFO] SAE activations computed for layer 11 in batch 120.
+2025-03-11 01:36:39 [INFO] Processing batch 121/132...
+2025-03-11 01:36:39 [INFO] Forward pass completed for batch 121.
+2025-03-11 01:36:40 [INFO] SAE activations computed for layer 0 in batch 121.
+2025-03-11 01:36:40 [INFO] SAE activations computed for layer 1 in batch 121.
+2025-03-11 01:36:40 [INFO] SAE activations computed for layer 2 in batch 121.
+2025-03-11 01:36:40 [INFO] SAE activations computed for layer 3 in batch 121.
+2025-03-11 01:36:40 [INFO] SAE activations computed for layer 4 in batch 121.
+2025-03-11 01:36:40 [INFO] SAE activations computed for layer 5 in batch 121.
+2025-03-11 01:36:40 [INFO] SAE activations computed for layer 6 in batch 121.
+2025-03-11 01:36:40 [INFO] SAE activations computed for layer 7 in batch 121.
+2025-03-11 01:36:40 [INFO] SAE activations computed for layer 8 in batch 121.
+2025-03-11 01:36:40 [INFO] SAE activations computed for layer 9 in batch 121.
+2025-03-11 01:36:41 [INFO] SAE activations computed for layer 10 in batch 121.
+2025-03-11 01:36:41 [INFO] SAE activations computed for layer 11 in batch 121.
+2025-03-11 01:36:41 [INFO] Processing batch 122/132...
+2025-03-11 01:36:41 [INFO] Forward pass completed for batch 122.
+2025-03-11 01:36:41 [INFO] SAE activations computed for layer 0 in batch 122.
+2025-03-11 01:36:41 [INFO] SAE activations computed for layer 1 in batch 122.
+2025-03-11 01:36:41 [INFO] SAE activations computed for layer 2 in batch 122.
+2025-03-11 01:36:41 [INFO] SAE activations computed for layer 3 in batch 122.
+2025-03-11 01:36:42 [INFO] SAE activations computed for layer 4 in batch 122.
+2025-03-11 01:36:42 [INFO] SAE activations computed for layer 5 in batch 122.
+2025-03-11 01:36:42 [INFO] SAE activations computed for layer 6 in batch 122.
+2025-03-11 01:36:42 [INFO] SAE activations computed for layer 7 in batch 122.
+2025-03-11 01:36:42 [INFO] SAE activations computed for layer 8 in batch 122.
+2025-03-11 01:36:42 [INFO] SAE activations computed for layer 9 in batch 122.
+2025-03-11 01:36:42 [INFO] SAE activations computed for layer 10 in batch 122.
+2025-03-11 01:36:42 [INFO] SAE activations computed for layer 11 in batch 122.
+2025-03-11 01:36:42 [INFO] Processing batch 123/132...
+2025-03-11 01:36:42 [INFO] Forward pass completed for batch 123.
+2025-03-11 01:36:43 [INFO] SAE activations computed for layer 0 in batch 123.
+2025-03-11 01:36:43 [INFO] SAE activations computed for layer 1 in batch 123.
+2025-03-11 01:36:43 [INFO] SAE activations computed for layer 2 in batch 123.
+2025-03-11 01:36:43 [INFO] SAE activations computed for layer 3 in batch 123.
+2025-03-11 01:36:43 [INFO] SAE activations computed for layer 4 in batch 123.
+2025-03-11 01:36:43 [INFO] SAE activations computed for layer 5 in batch 123.
+2025-03-11 01:36:43 [INFO] SAE activations computed for layer 6 in batch 123.
+2025-03-11 01:36:43 [INFO] SAE activations computed for layer 7 in batch 123.
+2025-03-11 01:36:43 [INFO] SAE activations computed for layer 8 in batch 123.
+2025-03-11 01:36:43 [INFO] SAE activations computed for layer 9 in batch 123.
+2025-03-11 01:36:43 [INFO] SAE activations computed for layer 10 in batch 123.
+2025-03-11 01:36:43 [INFO] SAE activations computed for layer 11 in batch 123.
+2025-03-11 01:36:44 [INFO] Processing batch 124/132...
+2025-03-11 01:36:44 [INFO] Forward pass completed for batch 124.
+2025-03-11 01:36:44 [INFO] SAE activations computed for layer 0 in batch 124.
+2025-03-11 01:36:44 [INFO] SAE activations computed for layer 1 in batch 124.
+2025-03-11 01:36:44 [INFO] SAE activations computed for layer 2 in batch 124.
+2025-03-11 01:36:44 [INFO] SAE activations computed for layer 3 in batch 124.
+2025-03-11 01:36:44 [INFO] SAE activations computed for layer 4 in batch 124.
+2025-03-11 01:36:45 [INFO] SAE activations computed for layer 5 in batch 124.
+2025-03-11 01:36:45 [INFO] SAE activations computed for layer 6 in batch 124.
+2025-03-11 01:36:45 [INFO] SAE activations computed for layer 7 in batch 124.
+2025-03-11 01:36:45 [INFO] SAE activations computed for layer 8 in batch 124.
+2025-03-11 01:36:45 [INFO] SAE activations computed for layer 9 in batch 124.
+2025-03-11 01:36:45 [INFO] SAE activations computed for layer 10 in batch 124.
+2025-03-11 01:36:45 [INFO] SAE activations computed for layer 11 in batch 124.
+2025-03-11 01:36:45 [INFO] Processing batch 125/132...
+2025-03-11 01:36:45 [INFO] Forward pass completed for batch 125.
+2025-03-11 01:36:46 [INFO] SAE activations computed for layer 0 in batch 125.
+2025-03-11 01:36:46 [INFO] SAE activations computed for layer 1 in batch 125.
+2025-03-11 01:36:46 [INFO] SAE activations computed for layer 2 in batch 125.
+2025-03-11 01:36:46 [INFO] SAE activations computed for layer 3 in batch 125.
+2025-03-11 01:36:46 [INFO] SAE activations computed for layer 4 in batch 125.
+2025-03-11 01:36:46 [INFO] SAE activations computed for layer 5 in batch 125.
+2025-03-11 01:36:46 [INFO] SAE activations computed for layer 6 in batch 125.
+2025-03-11 01:36:46 [INFO] SAE activations computed for layer 7 in batch 125.
+2025-03-11 01:36:46 [INFO] SAE activations computed for layer 8 in batch 125.
+2025-03-11 01:36:46 [INFO] SAE activations computed for layer 9 in batch 125.
+2025-03-11 01:36:46 [INFO] SAE activations computed for layer 10 in batch 125.
+2025-03-11 01:36:46 [INFO] SAE activations computed for layer 11 in batch 125.
+2025-03-11 01:36:46 [INFO] Processing batch 126/132...
+2025-03-11 01:36:46 [INFO] Forward pass completed for batch 126.
+2025-03-11 01:36:47 [INFO] SAE activations computed for layer 0 in batch 126.
+2025-03-11 01:36:47 [INFO] SAE activations computed for layer 1 in batch 126.
+2025-03-11 01:36:47 [INFO] SAE activations computed for layer 2 in batch 126.
+2025-03-11 01:36:47 [INFO] SAE activations computed for layer 3 in batch 126.
+2025-03-11 01:36:47 [INFO] SAE activations computed for layer 4 in batch 126.
+2025-03-11 01:36:47 [INFO] SAE activations computed for layer 5 in batch 126.
+2025-03-11 01:36:47 [INFO] SAE activations computed for layer 6 in batch 126.
+2025-03-11 01:36:47 [INFO] SAE activations computed for layer 7 in batch 126.
+2025-03-11 01:36:48 [INFO] SAE activations computed for layer 8 in batch 126.
+2025-03-11 01:36:48 [INFO] SAE activations computed for layer 9 in batch 126.
+2025-03-11 01:36:48 [INFO] SAE activations computed for layer 10 in batch 126.
+2025-03-11 01:36:48 [INFO] SAE activations computed for layer 11 in batch 126.
+2025-03-11 01:36:48 [INFO] Processing batch 127/132...
+2025-03-11 01:36:48 [INFO] Forward pass completed for batch 127.
+2025-03-11 01:36:48 [INFO] SAE activations computed for layer 0 in batch 127.
+2025-03-11 01:36:49 [INFO] SAE activations computed for layer 1 in batch 127.
+2025-03-11 01:36:49 [INFO] SAE activations computed for layer 2 in batch 127.
+2025-03-11 01:36:49 [INFO] SAE activations computed for layer 3 in batch 127.
+2025-03-11 01:36:49 [INFO] SAE activations computed for layer 4 in batch 127.
+2025-03-11 01:36:49 [INFO] SAE activations computed for layer 5 in batch 127.
+2025-03-11 01:36:49 [INFO] SAE activations computed for layer 6 in batch 127.
+2025-03-11 01:36:49 [INFO] SAE activations computed for layer 7 in batch 127.
+2025-03-11 01:36:49 [INFO] SAE activations computed for layer 8 in batch 127.
+2025-03-11 01:36:49 [INFO] SAE activations computed for layer 9 in batch 127.
+2025-03-11 01:36:49 [INFO] SAE activations computed for layer 10 in batch 127.
+2025-03-11 01:36:49 [INFO] SAE activations computed for layer 11 in batch 127.
+2025-03-11 01:36:49 [INFO] Processing batch 128/132...
+2025-03-11 01:36:49 [INFO] Forward pass completed for batch 128.
+2025-03-11 01:36:50 [INFO] SAE activations computed for layer 0 in batch 128.
+2025-03-11 01:36:50 [INFO] SAE activations computed for layer 1 in batch 128.
+2025-03-11 01:36:50 [INFO] SAE activations computed for layer 2 in batch 128.
+2025-03-11 01:36:50 [INFO] SAE activations computed for layer 3 in batch 128.
+2025-03-11 01:36:50 [INFO] SAE activations computed for layer 4 in batch 128.
+2025-03-11 01:36:50 [INFO] SAE activations computed for layer 5 in batch 128.
+2025-03-11 01:36:50 [INFO] SAE activations computed for layer 6 in batch 128.
+2025-03-11 01:36:50 [INFO] SAE activations computed for layer 7 in batch 128.
+2025-03-11 01:36:50 [INFO] SAE activations computed for layer 8 in batch 128.
+2025-03-11 01:36:51 [INFO] SAE activations computed for layer 9 in batch 128.
+2025-03-11 01:36:51 [INFO] SAE activations computed for layer 10 in batch 128.
+2025-03-11 01:36:51 [INFO] SAE activations computed for layer 11 in batch 128.
+2025-03-11 01:36:51 [INFO] Saving tensors to file.
+2025-03-11 01:36:51 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_0L_8.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_0L_8.pt to disk
+2025-03-11 01:36:51 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_1L_8.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_1L_8.pt to disk
+2025-03-11 01:36:52 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_2L_8.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_2L_8.pt to disk
+2025-03-11 01:36:52 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_3L_8.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_3L_8.pt to disk
+2025-03-11 01:36:53 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_4L_8.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_4L_8.pt to disk
+2025-03-11 01:36:53 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_5L_8.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_5L_8.pt to disk
+2025-03-11 01:36:53 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_6L_8.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_6L_8.pt to disk
+2025-03-11 01:36:54 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_7L_8.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_7L_8.pt to disk
+2025-03-11 01:36:54 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_8L_8.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_8L_8.pt to disk
+2025-03-11 01:36:54 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_9L_8.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_9L_8.pt to disk
+2025-03-11 01:36:55 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_10L_8.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_10L_8.pt to disk
+2025-03-11 01:36:55 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_11L_8.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_11L_8.pt to disk
+2025-03-11 01:36:59 [INFO] Saved activations_pythia_160m/data_subset/reconstruction_metrics_8.json to disk
+2025-03-11 01:37:00 [INFO] Processing batch 129/132...
+2025-03-11 01:37:00 [INFO] Forward pass completed for batch 129.
+2025-03-11 01:37:00 [INFO] SAE activations computed for layer 0 in batch 129.
+2025-03-11 01:37:00 [INFO] SAE activations computed for layer 1 in batch 129.
+2025-03-11 01:37:00 [INFO] SAE activations computed for layer 2 in batch 129.
+2025-03-11 01:37:00 [INFO] SAE activations computed for layer 3 in batch 129.
+2025-03-11 01:37:00 [INFO] SAE activations computed for layer 4 in batch 129.
+2025-03-11 01:37:01 [INFO] SAE activations computed for layer 5 in batch 129.
+2025-03-11 01:37:01 [INFO] SAE activations computed for layer 6 in batch 129.
+2025-03-11 01:37:01 [INFO] SAE activations computed for layer 7 in batch 129.
+2025-03-11 01:37:01 [INFO] SAE activations computed for layer 8 in batch 129.
+2025-03-11 01:37:01 [INFO] SAE activations computed for layer 9 in batch 129.
+2025-03-11 01:37:01 [INFO] SAE activations computed for layer 10 in batch 129.
+2025-03-11 01:37:01 [INFO] SAE activations computed for layer 11 in batch 129.
+2025-03-11 01:37:01 [INFO] Processing batch 130/132...
+2025-03-11 01:37:01 [INFO] Forward pass completed for batch 130.
+2025-03-11 01:37:02 [INFO] SAE activations computed for layer 0 in batch 130.
+2025-03-11 01:37:02 [INFO] SAE activations computed for layer 1 in batch 130.
+2025-03-11 01:37:02 [INFO] SAE activations computed for layer 2 in batch 130.
+2025-03-11 01:37:02 [INFO] SAE activations computed for layer 3 in batch 130.
+2025-03-11 01:37:02 [INFO] SAE activations computed for layer 4 in batch 130.
+2025-03-11 01:37:02 [INFO] SAE activations computed for layer 5 in batch 130.
+2025-03-11 01:37:02 [INFO] SAE activations computed for layer 6 in batch 130.
+2025-03-11 01:37:02 [INFO] SAE activations computed for layer 7 in batch 130.
+2025-03-11 01:37:02 [INFO] SAE activations computed for layer 8 in batch 130.
+2025-03-11 01:37:02 [INFO] SAE activations computed for layer 9 in batch 130.
+2025-03-11 01:37:02 [INFO] SAE activations computed for layer 10 in batch 130.
+2025-03-11 01:37:02 [INFO] SAE activations computed for layer 11 in batch 130.
+2025-03-11 01:37:02 [INFO] Processing batch 131/132...
+2025-03-11 01:37:02 [INFO] Forward pass completed for batch 131.
+2025-03-11 01:37:03 [INFO] SAE activations computed for layer 0 in batch 131.
+2025-03-11 01:37:03 [INFO] SAE activations computed for layer 1 in batch 131.
+2025-03-11 01:37:03 [INFO] SAE activations computed for layer 2 in batch 131.
+2025-03-11 01:37:03 [INFO] SAE activations computed for layer 3 in batch 131.
+2025-03-11 01:37:03 [INFO] SAE activations computed for layer 4 in batch 131.
+2025-03-11 01:37:03 [INFO] SAE activations computed for layer 5 in batch 131.
+2025-03-11 01:37:03 [INFO] SAE activations computed for layer 6 in batch 131.
+2025-03-11 01:37:03 [INFO] SAE activations computed for layer 7 in batch 131.
+2025-03-11 01:37:04 [INFO] SAE activations computed for layer 8 in batch 131.
+2025-03-11 01:37:04 [INFO] SAE activations computed for layer 9 in batch 131.
+2025-03-11 01:37:04 [INFO] SAE activations computed for layer 10 in batch 131.
+2025-03-11 01:37:04 [INFO] SAE activations computed for layer 11 in batch 131.
+2025-03-11 01:37:04 [INFO] Processing batch 132/132...
+2025-03-11 01:37:04 [INFO] Forward pass completed for batch 132.
+2025-03-11 01:37:04 [INFO] SAE activations computed for layer 0 in batch 132.
+2025-03-11 01:37:04 [INFO] SAE activations computed for layer 1 in batch 132.
+2025-03-11 01:37:04 [INFO] SAE activations computed for layer 2 in batch 132.
+2025-03-11 01:37:04 [INFO] SAE activations computed for layer 3 in batch 132.
+2025-03-11 01:37:04 [INFO] SAE activations computed for layer 4 in batch 132.
+2025-03-11 01:37:04 [INFO] SAE activations computed for layer 5 in batch 132.
+2025-03-11 01:37:04 [INFO] SAE activations computed for layer 6 in batch 132.
+2025-03-11 01:37:04 [INFO] SAE activations computed for layer 7 in batch 132.
+2025-03-11 01:37:04 [INFO] SAE activations computed for layer 8 in batch 132.
+2025-03-11 01:37:04 [INFO] SAE activations computed for layer 9 in batch 132.
+2025-03-11 01:37:04 [INFO] SAE activations computed for layer 10 in batch 132.
+2025-03-11 01:37:04 [INFO] SAE activations computed for layer 11 in batch 132.
+2025-03-11 01:37:05 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_0L_9.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_0L_9.pt to disk
+2025-03-11 01:37:05 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_1L_9.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_1L_9.pt to disk
+2025-03-11 01:37:05 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_2L_9.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_2L_9.pt to disk
+2025-03-11 01:37:05 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_3L_9.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_3L_9.pt to disk
+2025-03-11 01:37:05 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_4L_9.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_4L_9.pt to disk
+2025-03-11 01:37:05 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_5L_9.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_5L_9.pt to disk
+2025-03-11 01:37:05 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_6L_9.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_6L_9.pt to disk
+2025-03-11 01:37:05 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_7L_9.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_7L_9.pt to disk
+2025-03-11 01:37:05 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_8L_9.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_8L_9.pt to disk
+2025-03-11 01:37:05 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_9L_9.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_9L_9.pt to disk
+2025-03-11 01:37:05 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_10L_9.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_10L_9.pt to disk
+2025-03-11 01:37:05 [INFO] Saved activations_pythia_160m/data_subset/model-activations/EleutherAI_pythia-160m_11L_9.pt and activations_pythia_160m/data_subset/sae-activations/EleutherAI_sae-pythia-160m-32k_11L_9.pt to disk
+2025-03-11 01:37:06 [INFO] Saved activations_pythia_160m/data_subset/reconstruction_metrics_9.json to disk
