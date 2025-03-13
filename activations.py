@@ -22,12 +22,15 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# Custom Dataset Class
+#########################################################
+#                   Dataset / Collate                  #
+#########################################################
+
 class CustomDataset(Dataset):
     def __init__(self, dataset, dataset_idx, offset=0):
         """
         Initialize with the original dataset and dataset index.
-        offset is used to keep track of the "true" dataset index if we skip some rows.
+        offset is used to keep track of the 'true' dataset index if we skip some rows.
         """
         self.dataset = dataset
         self.dataset_idx = dataset_idx
@@ -42,16 +45,17 @@ class CustomDataset(Dataset):
         # Return the tokenized prompt, positions, and the "global" index (offset + idx)
         return tokenized_prompt, positions, (self.offset + idx)
 
+
 def collate_fn(batch):
     """
     Pad tokenized prompts and prepare batch data.
     Args:
-        batch: List of (tokenized_prompt, positions, global_idx) tuples from CustomDataset.
+        batch: List of (tokenized_prompt, positions, global_idx) tuples.
     Returns:
         input_ids: Padded tensor [batch_size, max_seq_len].
         attention_mask: Tensor indicating non-padded positions [batch_size, max_seq_len].
         positions_list: List of position lists for each sample.
-        global_indices: The dataset-wide sample indices corresponding to each batch row.
+        global_indices: Dataset-wide sample indices corresponding to each batch row.
     """
     tokenized_prompts, positions_list, global_indices = zip(*batch)
     input_ids = torch.nn.utils.rnn.pad_sequence(
@@ -60,36 +64,113 @@ def collate_fn(batch):
     attention_mask = (input_ids != tokenizer.pad_token_id).long()
     return input_ids, attention_mask, positions_list, global_indices
 
-def main():
-    # Parse command-line arguments
-    parser = argparse.ArgumentParser(description="Compute and save model and SAE activations with reconstruction metrics.")
-    parser.add_argument('--model_name', type=str, required=True,
-                        help="Hugging Face model name (e.g., 'meta-llama/Meta-Llama-3-8B')")
-    parser.add_argument('--sae_name', type=str, required=True,
-                        help="Identifier for SAE models (e.g., 'EleutherAI/sae-llama-3-8b-32x')")
-    parser.add_argument('--dataset_idx', type=int, required=True,
-                        help="Dataset index for get_data_path")
-    parser.add_argument('--start_index', type=int, default=0,
-                        help="Start from this dataset index for metrics computation")
-    parser.add_argument('--n_samples', type=int, default=None,
-                        help="Number of samples to use (optional). If provided, only that many samples are processed.")
-    parser.add_argument('--device', type=str, default='cuda:0',
-                        help="Device to run computation (e.g., 'cuda:0')")
-    parser.add_argument('--batch_size', type=int, default=32,
-                        help="Batch size for processing")
-    parser.add_argument('--layers', type=str, required=True,
-                        help="Comma-separated list of layer indices (e.g., '0,1,2')")
-    parser.add_argument('--output_size', type=int, default=1024,
-                        help="Number of samples per shard file")
-    parser.add_argument('--output_directory', type=str, required=True,
-                        help="Output directory for saving activations and metrics")
-    parser.add_argument('--num_workers', type=int, default=2,
-                        help="Number of workers for DataLoader")
-    parser.add_argument('--model_hook_template', type=str, default='blocks.<layer>.hook_resid_post',
-                        help='E.g. "blocks.<layer>.hook_resid_post". The layer numbers replace the <layer> placeholder.')
-    parser.add_argument('--sae_layer_template', type=str, default='layers.<layer>',
-                        help='E.g. "layers.<layer>". The layer numbers replace the <layer> placeholder.')
-    args = parser.parse_args()
+
+#########################################################
+#      Default Processor: Write Activations to Disk     #
+#########################################################
+
+def write_activations_and_metrics_to_disk(
+    model_acts_accum,
+    sae_acts_accum,
+    reconstruction_metrics_accum,
+    layers,
+    shard_num,
+    model_name_safe,
+    sae_name_safe,
+    dataset_dir,
+    output_size
+):
+    """
+    Write the accumulated activations and reconstruction metrics to disk.
+    This function expects the same data structures used in the main loop.
+    """
+    logger.info(f"Saving tensors to file for shard {shard_num}...")
+
+    model_acts_dir = dataset_dir / 'model-activations'
+    sae_acts_dir = dataset_dir / 'sae-activations'
+    model_acts_dir.mkdir(parents=True, exist_ok=True)
+    sae_acts_dir.mkdir(parents=True, exist_ok=True)
+
+    # Save model & SAE activations
+    for layer in layers:
+        if len(model_acts_accum[layer]) == 0:
+            continue  # Skip empty accumulations
+
+        model_shard_path = model_acts_dir / f"{model_name_safe}_{layer}L_{shard_num}.pt"
+        sae_shard_path = sae_acts_dir / f"{sae_name_safe}_{layer}L_{shard_num}.pt"
+
+        torch.save(model_acts_accum[layer], model_shard_path)
+        torch.save(sae_acts_accum[layer], sae_shard_path)
+        logger.info(f"Saved {model_shard_path} and {sae_shard_path} to disk")
+
+        # Reset after saving
+        model_acts_accum[layer].clear()
+        sae_acts_accum[layer].clear()
+
+    # Save metrics shard if it is non-empty
+    if reconstruction_metrics_accum:
+        shard_metrics_path = dataset_dir / f"reconstruction_metrics_{shard_num}.json"
+        with open(shard_metrics_path, 'w') as f:
+            json.dump(reconstruction_metrics_accum, f, indent=4)
+        logger.info(f"Saved {shard_metrics_path} to disk")
+        reconstruction_metrics_accum.clear()
+
+
+#########################################################
+#    Alternative Processor: Put Activations in a Queue  #
+#########################################################
+
+def enqueue_activations_and_metrics(
+    model_acts_accum,
+    sae_acts_accum,
+    reconstruction_metrics_accum,
+    layers,
+    shard_num,
+    model_name_safe,
+    sae_name_safe,
+    dataset_dir,
+    output_size,
+    queue
+):
+    """
+    Example alternative to writing data to disk: push it into a queue for further processing.
+    Note: 'queue' can be any data structure or multiprocessing queue, etc.
+    """
+    logger.info(f"Enqueuing activations for shard {shard_num}...")
+    # For demonstration, we put everything in the queue as one object
+    queue.put({
+        "shard_num": shard_num,
+        "model_acts": {layer: data for layer, data in model_acts_accum.items()},
+        "sae_acts": {layer: data for layer, data in sae_acts_accum.items()},
+        "metrics": reconstruction_metrics_accum[:],  # shallow copy
+    })
+    # Clear the original accumulations
+    for layer in layers:
+        model_acts_accum[layer].clear()
+        sae_acts_accum[layer].clear()
+    reconstruction_metrics_accum.clear()
+
+
+#########################################################
+#          Main Logic in a Callable Function            #
+#########################################################
+
+def compute_activations_and_metrics(args, activation_processor=None, processor_kwargs=None):
+    """
+    Computes model and SAE activations and processes them (defaults to writing to disk).
+
+    :param args: Namespace of arguments (from argparse).
+    :param activation_processor: Function that receives the accumulations
+        when it's time to 'flush' them (write to disk, queue them, etc.).
+    :param processor_kwargs: Additional kwargs passed into activation_processor.
+    """
+
+    if activation_processor is None:
+        # Default: write to disk
+        activation_processor = write_activations_and_metrics_to_disk
+
+    if processor_kwargs is None:
+        processor_kwargs = {}
 
     logger.info("Validating Arguments...")
     assert args.output_size % args.batch_size == 0, \
@@ -110,11 +191,12 @@ def main():
 
     device = args.device
     logger.info("Loading Dataset...")
+
     # Load dataset
     dataset_path = get_data_path(args.dataset_idx)
     dataset = load_from_disk(dataset_path)
 
-    # Slice dataset based on start_index and n_samples (no random shuffle)
+    # Slice dataset
     start = args.start_index
     if args.n_samples is not None:
         end = min(start + args.n_samples, len(dataset))
@@ -126,8 +208,7 @@ def main():
     custom_dataset = CustomDataset(dataset, args.dataset_idx, offset=start)
 
     # Load model and tokenizer
-    global tokenizer  # Make tokenizer accessible in collate_fn
-
+    global tokenizer  # needed for collate_fn
     logger.info("Loading Model...")
     tokenizer = AutoTokenizer.from_pretrained(args.model_name)
     if tokenizer.pad_token_id is None:
@@ -139,18 +220,14 @@ def main():
     sae_handle = SAE(device=device, sae_layer_template=args.sae_layer_template)
     sae_handle.load_many(args.sae_name, layers)
 
-    # Set up output directories
-    dataset_dir = Path(args.output_directory)
-    model_acts_dir = dataset_dir / 'model-activations'
-    sae_acts_dir = dataset_dir / 'sae-activations'
-    model_acts_dir.mkdir(parents=True, exist_ok=True)
-    sae_acts_dir.mkdir(parents=True, exist_ok=True)
-
-    # Initialize accumulation lists
+    # Prepare accumulators
     model_acts_accum = {layer: [] for layer in layers}
     sae_acts_accum = {layer: [] for layer in layers}
     reconstruction_metrics_accum = []
     sample_count = 0
+
+    # Prepare output directory
+    dataset_dir = Path(args.output_directory)
 
     # Create DataLoader
     dataloader = DataLoader(
@@ -162,7 +239,7 @@ def main():
     )
     logger.info("Starting Inference...")
 
-    # Process dataset using DataLoader
+    # Process dataset
     for batch_idx, (input_ids, attention_mask, positions_list, global_indices) in enumerate(dataloader):
         logger.info(f"Processing batch {batch_idx + 1}/{len(dataloader)}...")
         input_ids = input_ids.to(device)
@@ -184,8 +261,6 @@ def main():
 
             # Prepare per-sample metric storage for this batch
             batch_metrics = [{} for _ in range(batch_size)]
-
-            # Fill in sample_idx (which is the "global" dataset index)
             for i in range(batch_size):
                 batch_metrics[i]['sample_idx'] = int(global_indices[i])
 
@@ -198,20 +273,19 @@ def main():
                 decoded_batch, sae_acts_full_batch = sae_handle.compute_activations(full_hidden_state_batch, layer=layer)
                 logger.info(f"SAE activations computed for layer {layer} in batch {batch_idx + 1}.")
 
-                # Iterate through batch samples
+                # Iterate through samples
                 for sample_i in range(batch_size):
                     positions = positions_list[sample_i]
                     if positions is not None and len(positions) > 0:
-                        original_sample = full_hidden_state_batch[sample_i, positions, :]  # [num_positions, hidden_dim]
-                        #print(decoded_batch.shape, sample_i, positions)
-                        decoded_sample = decoded_batch[sample_i, positions, :]             # [num_positions, hidden_dim]
-                        sae_acts_sample = sae_acts_full_batch[sample_i, positions, :]     # [num_positions, latent_dim]
-    
+                        original_sample = full_hidden_state_batch[sample_i, positions, :]
+                        decoded_sample = decoded_batch[sample_i, positions, :]
+                        sae_acts_sample = sae_acts_full_batch[sample_i, positions, :]
+
                         # Compute reconstruction metrics
                         mse = ((original_sample - decoded_sample) ** 2).mean(dim=-1).cpu().tolist()
                         l0 = (sae_acts_sample != 0).sum(dim=-1).cpu().tolist()
                         l1 = sae_acts_sample.abs().sum(dim=-1).cpu().tolist()
-    
+
                         # Store metrics by token position
                         for pos_idx, pos in enumerate(positions):
                             pos_str = f"pos_{pos}"
@@ -222,68 +296,94 @@ def main():
                                 'l0': l0[pos_idx],
                                 'l1': l1[pos_idx]
                             }
-    
+
                         # Accumulate activations
                         model_acts_accum[layer].append(original_sample.cpu())
                         sae_acts_accum[layer].append(sae_acts_sample.to_sparse().cpu())
-                        #logger.info(f"Metrics computed for sample {sample_i+1}/{batch_size} batch {batch_idx + 1} layer {layer}.")
                     else:
-                        #add dummy
+                        # For samples that have no positions, append None
                         model_acts_accum[layer].append(None)
                         sae_acts_accum[layer].append(None)
 
-            # Append batch metrics
+            # Append batch metrics to global
             reconstruction_metrics_accum.extend(batch_metrics)
-            
 
+        # Clear cache to free memory
         del cache
         sample_count += batch_size
 
-        # Save activations & metrics in shards
+        # Flush to activation_processor if we have reached the shard size
         if sample_count % args.output_size == 0:
-            logger.info(f"Saving tensors to file.")
             shard_num = sample_count // args.output_size
+            activation_processor(
+                model_acts_accum,
+                sae_acts_accum,
+                reconstruction_metrics_accum,
+                layers,
+                shard_num,
+                model_name_safe,
+                sae_name_safe,
+                dataset_dir,
+                args.output_size,
+                **processor_kwargs
+            )
 
-            # Save model & SAE activations
-            for layer in layers:
-                model_shard_path = model_acts_dir / f"{model_name_safe}_{layer}L_{shard_num}.pt"
-                sae_shard_path = sae_acts_dir / f"{sae_name_safe}_{layer}L_{shard_num}.pt"
-                torch.save(model_acts_accum[layer], model_shard_path)
-                torch.save(sae_acts_accum[layer], sae_shard_path)
-                logger.info(f"Saved {model_shard_path} and {sae_shard_path} to disk")
-                model_acts_accum[layer] = []
-                sae_acts_accum[layer] = []
-
-            # Save metrics shard
-            shard_metrics_path = dataset_dir / f"reconstruction_metrics_{shard_num}.json"
-            with open(shard_metrics_path, 'w') as f:
-                json.dump(reconstruction_metrics_accum, f, indent=4)
-            logger.info(f"Saved {shard_metrics_path} to disk")
-            reconstruction_metrics_accum = []
-
-    # Save any remaining activations
-    if model_acts_accum[layers[0]]:
+    # If there are any leftover activations or metrics, flush them
+    # (e.g. if the total samples wasn't a multiple of output_size).
+    leftover_data = any(len(model_acts_accum[layer]) > 0 for layer in layers) or len(reconstruction_metrics_accum) > 0
+    if leftover_data:
         shard_num = (sample_count // args.output_size) + 1
-        for layer in layers:
-            model_shard_path = model_acts_dir / f"{model_name_safe}_{layer}L_{shard_num}.pt"
-            sae_shard_path = sae_acts_dir / f"{sae_name_safe}_{layer}L_{shard_num}.pt"
-            torch.save(model_acts_accum[layer], model_shard_path)
-            torch.save(sae_acts_accum[layer], sae_shard_path)
-            logger.info(f"Saved {model_shard_path} and {sae_shard_path} to disk")
+        activation_processor(
+            model_acts_accum,
+            sae_acts_accum,
+            reconstruction_metrics_accum,
+            layers,
+            shard_num,
+            model_name_safe,
+            sae_name_safe,
+            dataset_dir,
+            args.output_size,
+            **processor_kwargs
+        )
 
-        # Save leftover metrics shard
-        shard_metrics_path = dataset_dir / f"reconstruction_metrics_{shard_num}.json"
-        with open(shard_metrics_path, 'w') as f:
-            json.dump(reconstruction_metrics_accum, f, indent=4)
-        logger.info(f"Saved {shard_metrics_path} to disk")
-    else:
-        # If no leftover activations, but leftover metrics (unlikely but safe to handle)
-        if reconstruction_metrics_accum:
-            shard_num = (sample_count // args.output_size) + 1
-            shard_metrics_path = dataset_dir / f"reconstruction_metrics_{shard_num}.json"
-            with open(shard_metrics_path, 'w') as f:
-                json.dump(reconstruction_metrics_accum, f, indent=4)
-            logger.info(f"Saved {shard_metrics_path} to disk")
+
+#########################################################
+#                 Command-Line Entry                    #
+#########################################################
+
+def main():
+    parser = argparse.ArgumentParser(description="Compute and process model/SAE activations with reconstruction metrics.")
+    parser.add_argument('--model_name', type=str, required=True,
+                        help="Hugging Face model name (e.g., 'meta-llama/Meta-Llama-3-8B')")
+    parser.add_argument('--sae_name', type=str, required=True,
+                        help="Identifier for SAE models (e.g., 'EleutherAI/sae-llama-3-8b-32x')")
+    parser.add_argument('--dataset_idx', type=int, required=True,
+                        help="Dataset index for get_data_path")
+    parser.add_argument('--start_index', type=int, default=0,
+                        help="Start from this dataset index for metrics computation")
+    parser.add_argument('--n_samples', type=int, default=None,
+                        help="Number of samples to use (optional)")
+    parser.add_argument('--device', type=str, default='cuda:0',
+                        help="Device to run computation (e.g., 'cuda:0')")
+    parser.add_argument('--batch_size', type=int, default=32,
+                        help="Batch size for processing")
+    parser.add_argument('--layers', type=str, required=True,
+                        help="Comma-separated list of layer indices (e.g., '0,1,2')")
+    parser.add_argument('--output_size', type=int, default=1024,
+                        help="Number of samples per shard file")
+    parser.add_argument('--output_directory', type=str, required=True,
+                        help="Output directory for saving activations and metrics")
+    parser.add_argument('--num_workers', type=int, default=2,
+                        help="Number of workers for DataLoader")
+    parser.add_argument('--model_hook_template', type=str, default='blocks.<layer>.hook_resid_post',
+                        help='E.g. "blocks.<layer>.hook_resid_post"')
+    parser.add_argument('--sae_layer_template', type=str, default='layers.<layer>',
+                        help='E.g. "layers.<layer>"')
+    args = parser.parse_args()
+
+    # By default, we will just write to disk. But we can swap in any other function.
+    compute_activations_and_metrics(args)
+
 
 if __name__ == '__main__':
     main()
