@@ -6,7 +6,7 @@ from torch.utils.data import Dataset, DataLoader
 from transformers import AutoTokenizer
 from datasets import load_from_disk
 from transformer_lens import HookedTransformer
-from utils import get_data_path, preprocess_data
+from utils import get_data_path, preprocess_data, get_binary_probes
 import json
 from pythia_sae import SAE
 import re
@@ -42,8 +42,9 @@ class CustomDataset(Dataset):
     def __getitem__(self, idx):
         sample = self.dataset[idx]
         tokenized_prompt, positions = preprocess_data(sample, self.dataset_idx)
+        binary_probes = get_binary_probes(sample, self.dataset_idx)
         # Return the tokenized prompt, positions, and the "global" index (offset + idx)
-        return tokenized_prompt, positions, (self.offset + idx)
+        return tokenized_prompt, positions, (self.offset + idx), binary_probes
 
 
 def collate_fn(batch):
@@ -57,12 +58,12 @@ def collate_fn(batch):
         positions_list: List of position lists for each sample.
         global_indices: Dataset-wide sample indices corresponding to each batch row.
     """
-    tokenized_prompts, positions_list, global_indices = zip(*batch)
+    tokenized_prompts, positions_list, global_indices, binary_probes = zip(*batch)
     input_ids = torch.nn.utils.rnn.pad_sequence(
         tokenized_prompts, batch_first=True, padding_value=tokenizer.pad_token_id
     )
     attention_mask = (input_ids != tokenizer.pad_token_id).long()
-    return input_ids, attention_mask, positions_list, global_indices
+    return input_ids, attention_mask, positions_list, global_indices, binary_probes
 
 
 #########################################################
@@ -73,6 +74,7 @@ def write_activations_and_metrics_to_disk(
     model_acts_accum,
     sae_acts_accum,
     reconstruction_metrics_accum,
+    probes,
     layers,
     shard_num,
     model_name_safe,
@@ -124,6 +126,7 @@ def enqueue_activations_and_metrics(
     model_acts_accum,
     sae_acts_accum,
     reconstruction_metrics_accum,
+    probes,
     layers,
     shard_num,
     model_name_safe,
@@ -143,12 +146,14 @@ def enqueue_activations_and_metrics(
         "model_acts": {layer: data for layer, data in model_acts_accum.items()},
         "sae_acts": {layer: data for layer, data in sae_acts_accum.items()},
         "metrics": reconstruction_metrics_accum[:],  # shallow copy
+        "probes": probes[:]
     })
     # Clear the original accumulations
     for layer in layers:
         model_acts_accum[layer].clear()
         sae_acts_accum[layer].clear()
     reconstruction_metrics_accum.clear()
+    probes.clear()
 
 
 #########################################################
@@ -221,9 +226,10 @@ def compute_activations_and_metrics(args, activation_processor=None, processor_k
     sae_handle.load_many(args.sae_name, layers)
 
     # Prepare accumulators
-    model_acts_accum = {layer: [] for layer in layers}
-    sae_acts_accum = {layer: [] for layer in layers}
-    reconstruction_metrics_accum = []
+    model_acts_accum = {layer: [] for layer in layers} # num_layers * num_samples
+    sae_acts_accum = {layer: [] for layer in layers} #num_layers * num_samples
+    metrics = {layer: [] for layer in layers} #num_layers
+    probes = []
     sample_count = 0
 
     # Prepare output directory
@@ -240,7 +246,7 @@ def compute_activations_and_metrics(args, activation_processor=None, processor_k
     logger.info("Starting Inference...")
 
     # Process dataset
-    for batch_idx, (input_ids, attention_mask, positions_list, global_indices) in enumerate(dataloader):
+    for batch_idx, (input_ids, attention_mask, positions_list, global_indices, binary_probes) in enumerate(dataloader):
         logger.info(f"Processing batch {batch_idx + 1}/{len(dataloader)}...")
         input_ids = input_ids.to(device)
         attention_mask = attention_mask.to(device)
@@ -282,31 +288,51 @@ def compute_activations_and_metrics(args, activation_processor=None, processor_k
                         sae_acts_sample = sae_acts_full_batch[sample_i, positions, :]
 
                         # Compute reconstruction metrics
-                        mse = ((original_sample - decoded_sample) ** 2).mean(dim=-1).cpu().tolist()
-                        l0 = (sae_acts_sample != 0).sum(dim=-1).cpu().tolist()
-                        l1 = sae_acts_sample.abs().sum(dim=-1).cpu().tolist()
+                        mse_pos = ((original_sample - decoded_sample) ** 2).mean(dim=-1).sum().cpu().item()
+                        mse_whole = ((full_hidden_state_batch[sample_i, :, :] - decoded_batch[sample_i, : , :]) ** 2).mean(dim=-1).sum().cpu().item()
+                        #l0 proportion
+                        l0 = (sae_acts_sample != 0).sum(dim=-1).sum().cpu().item()
+                        l1 = sae_acts_sample.abs().sum(dim=-1).sum().cpu().item()
 
-                        # Store metrics by token position
-                        for pos_idx, pos in enumerate(positions):
-                            pos_str = f"pos_{pos}"
-                            if pos_str not in batch_metrics[sample_i]:
-                                batch_metrics[sample_i][pos_str] = {}
-                            batch_metrics[sample_i][pos_str][f"layer_{layer}"] = {
-                                'mse': mse[pos_idx],
-                                'l0': l0[pos_idx],
-                                'l1': l1[pos_idx]
-                            }
+                        # # Store metrics by token position
+                        # for pos_idx, pos in enumerate(positions):
+                        #     pos_str = f"pos_{pos}"
+                        #     if pos_str not in batch_metrics[sample_i]:
+                        #         batch_metrics[sample_i][pos_str] = {}
+                        #     batch_metrics[sample_i][pos_str][f"layer_{layer}"] = {
+                        #         'mse': mse[pos_idx],
+                        #         'l0': l0[pos_idx],
+                        #         'l1': l1[pos_idx]
+                        #     }
 
                         # Accumulate activations
+                        metrics[layer].append({
+                            'idx':sample_i,
+                            'mse_pos':mse_pos,
+                            'mse_whole':mse_whole,
+                            'count_whole':full_hidden_state_batch.shape[1],
+                            'count_pos':len(positions),
+                            'l0': l0,
+                            'l1': l1
+                            })
+                        probes.append(binary_probes[sample_i])
                         model_acts_accum[layer].append(original_sample.cpu())
                         sae_acts_accum[layer].append(sae_acts_sample.to_sparse().cpu())
                     else:
                         # For samples that have no positions, append None
                         model_acts_accum[layer].append(None)
                         sae_acts_accum[layer].append(None)
+                        metrics[layer].append({
+                                'idx':sample_i,
+                                'mse_pos':None,
+                                'mse_whole':None,
+                                'count_whole':None,
+                                'count_pos':None,
+                                'l0': None,
+                                'l1': None
+                            })
+                        probes.append(None)
 
-            # Append batch metrics to global
-            reconstruction_metrics_accum.extend(batch_metrics)
 
         # Clear cache to free memory
         del cache
@@ -318,7 +344,8 @@ def compute_activations_and_metrics(args, activation_processor=None, processor_k
             activation_processor(
                 model_acts_accum,
                 sae_acts_accum,
-                reconstruction_metrics_accum,
+                metrics,
+                probes,
                 layers,
                 shard_num,
                 model_name_safe,
@@ -330,13 +357,14 @@ def compute_activations_and_metrics(args, activation_processor=None, processor_k
 
     # If there are any leftover activations or metrics, flush them
     # (e.g. if the total samples wasn't a multiple of output_size).
-    leftover_data = any(len(model_acts_accum[layer]) > 0 for layer in layers) or len(reconstruction_metrics_accum) > 0
+    leftover_data = any(len(model_acts_accum[layer]) > 0 for layer in layers) or len(metrics) > 0
     if leftover_data:
         shard_num = (sample_count // args.output_size) + 1
         activation_processor(
             model_acts_accum,
             sae_acts_accum,
-            reconstruction_metrics_accum,
+            metrics,
+            probes,
             layers,
             shard_num,
             model_name_safe,

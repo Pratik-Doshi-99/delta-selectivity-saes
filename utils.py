@@ -132,12 +132,57 @@ def get_sae_activations(model, layer, dataset_idx, device):
     return get_tensors(dir_pattern)
     
 
-def get_binary_probes(dataset_idx):
-    pass
+def get_binary_probes(sample, dataset_idx):
+    # return a list: [(probe_name, probe_pos, target_value)]
+    # if probe_pos is None, all captured pos (from preprocess_data) must be accounted
+    if dataset_idx == 11:
+        return [('wikidata_gender_1female_0male', None, 1 if sample['class'] == 'female' else 0)]
+    elif dataset_idx == 10:
+        return [('wikidata_politics_1democratic_0republic', None, 1 if sample['class'] == 'Democratic Party' else 0)]
+    elif dataset_idx == 9:
+        return [('wikidata_athlete_is_football', None, 1 if sample['class'] == 'association football player' else 0),
+                ('wikidata_athlete_is_basketball', None, 1 if sample['class'] == 'basketball player' else 0),
+                ('wikidata_athlete_is_baseball', None, 1 if sample['class'] == 'baseball player' else 0),
+                ('wikidata_athlete_is_american_football', None, 1 if sample['class'] == 'American football player' else 0),
+                ('wikidata_athlete_is_icehockey', None, 1 if sample['class'] == 'ice hockey player' else 0)]
+    elif dataset_idx == 7:
+        return [('wikidata_1alive_0dead', None, 1 if sample['class'] is True else 0)]
+    elif dataset_idx == 8:
+        return [('wikidata_occupation_is_singer', None, 1 if sample['class'] == 'singer' else 0),
+                ('wikidata_athlete_is_actor', None, 1 if sample['class'] == 'actor' else 0),
+                ('wikidata_athlete_is_politician', None, 1 if sample['class'] == 'politician' else 0),
+                ('wikidata_athlete_is_journalist', None, 1 if sample['class'] == 'journalist' else 0),
+                ('wikidata_athlete_is_athlete', None, 1 if sample['class'] == 'athlete' else 0),
+                ('wikidata_athlete_is_researcher', None, 1 if sample['class'] == 'researcher' else 0)]
+    elif dataset_idx == 4:
+        return [('nat_lang_is_spanish', None, 1 if sample['class_ids'] == 1 else 0),
+                ('nat_lang_is_english', None, 1 if sample['class_ids'] == 2 else 0),
+                ('nat_lang_is_french', None, 1 if sample['class_ids'] == 3 else 0),
+                ('nat_lang_is_dutch', None, 1 if sample['class_ids'] == 4 else 0),
+                ('nat_lang_is_italian', None, 1 if sample['class_ids'] == 5 else 0),
+                ('nat_lang_is_greek', None, 1 if sample['class_ids'] == 6 else 0),
+                ('nat_lang_is_german', None, 1 if sample['class_ids'] == 7 else 0),
+                ('nat_lang_is_portuguese', None, 1 if sample['class_ids'] == 8 else 0),
+                ('nat_lang_is_swedish', None, 1 if sample['class_ids'] == 9 else 0)]
+    
+    elif dataset_idx == 1:
+        return [('data_subset_is_wikipedia', None, 1 if sample['distribution'] == 'wikipedia' else 0),
+                ('data_subset_is_pubmed_abstracts', None, 1 if sample['distribution'] == 'pubmed_abstracts' else 0),
+                ('data_subset_is_stack_exchange', None, 1 if sample['distribution'] == 'stack_exchange' else 0),
+                ('data_subset_is_github', None, 1 if sample['distribution'] == 'github' else 0),
+                ('data_subset_is_arxiv', None, 1 if sample['distribution'] == 'arxiv' else 0),
+                ('data_subset_is_uspto', None, 1 if sample['distribution'] == 'uspto' else 0),
+                ('data_subset_is_freelaw', None, 1 if sample['distribution'] == 'freelaw' else 0),
+                ('data_subset_is_hackernews', None, 1 if sample['distribution'] == 'hackernews' else 0),
+                ('data_subset_is_enron', None, 1 if sample['distribution'] == 'enron' else 0)]
+    
+    else:
+        raise NotImplementedError(f"Binary probes for {dataset_idx} is not implemented")
 
 
 
 def preprocess_data(sample, dataset_idx):
+    # returns all_tokens and captured tokens
     # sex_gender | political party | athlete | alive
     if dataset_idx == 11 or dataset_idx == 10 or dataset_idx == 9 or dataset_idx == 7 or dataset_idx == 8:
         # probe only the name of the person: from name_index_start to name_index_finish (inclusive)
