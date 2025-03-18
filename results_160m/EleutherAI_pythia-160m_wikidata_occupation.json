@@ -1,0 +1,362 @@
+{
+  "0": {
+    "mse_pos": 0.04300888719319666,
+    "mse_whole": 0.04120794477495661,
+    "l0": 32.0,
+    "l1": 54.16850985396285,
+    "wikidata_occupation_is_singer": {
+      "model_sel": 0.005436062812805176,
+      "sae_sel": 0.0018908381462097168
+    },
+    "wikidata_athlete_is_actor": {
+      "model_sel": -0.0007090568542480469,
+      "sae_sel": 0.011344850063323975
+    },
+    "wikidata_athlete_is_politician": {
+      "model_sel": 0.03238004446029663,
+      "sae_sel": 0.03497987985610962
+    },
+    "wikidata_athlete_is_journalist": {
+      "model_sel": -0.0028362274169921875,
+      "sae_sel": 0.0014181137084960938
+    },
+    "wikidata_athlete_is_athlete": {
+      "model_sel": 0.02670764923095703,
+      "sae_sel": 0.0333254337310791
+    },
+    "wikidata_athlete_is_researcher": {
+      "model_sel": 0.02552586793899536,
+      "sae_sel": 0.02576225996017456
+    }
+  },
+  "1": {
+    "mse_pos": 0.08399040175172161,
+    "mse_whole": 0.07988455599192593,
+    "l0": 32.0,
+    "l1": 46.577602911290704,
+    "wikidata_occupation_is_singer": {
+      "model_sel": 0.0021271705627441406,
+      "sae_sel": 0.018908023834228516
+    },
+    "wikidata_athlete_is_actor": {
+      "model_sel": 0.003781616687774658,
+      "sae_sel": 0.022926032543182373
+    },
+    "wikidata_athlete_is_politician": {
+      "model_sel": 0.033561766147613525,
+      "sae_sel": 0.05483335256576538
+    },
+    "wikidata_athlete_is_journalist": {
+      "model_sel": -0.003545224666595459,
+      "sae_sel": 0.0023635029792785645
+    },
+    "wikidata_athlete_is_athlete": {
+      "model_sel": 0.025053203105926514,
+      "sae_sel": 0.041597723960876465
+    },
+    "wikidata_athlete_is_researcher": {
+      "model_sel": 0.02505314350128174,
+      "sae_sel": 0.04916095733642578
+    }
+  },
+  "2": {
+    "mse_pos": 0.09855912112816165,
+    "mse_whole": 0.09158144235162433,
+    "l0": 32.0,
+    "l1": 44.66699749515573,
+    "wikidata_occupation_is_singer": {
+      "model_sel": 0.022926032543182373,
+      "sae_sel": 0.035925328731536865
+    },
+    "wikidata_athlete_is_actor": {
+      "model_sel": 0.014181017875671387,
+      "sae_sel": 0.040652334690093994
+    },
+    "wikidata_athlete_is_politician": {
+      "model_sel": 0.06097853183746338,
+      "sae_sel": 0.0886315107345581
+    },
+    "wikidata_athlete_is_journalist": {
+      "model_sel": 0.00047272443771362305,
+      "sae_sel": 0.026471316814422607
+    },
+    "wikidata_athlete_is_athlete": {
+      "model_sel": 0.06972348690032959,
+      "sae_sel": 0.08461356163024902
+    },
+    "wikidata_athlete_is_researcher": {
+      "model_sel": 0.03970688581466675,
+      "sae_sel": 0.0680689811706543
+    }
+  },
+  "3": {
+    "mse_pos": 0.09812858928716996,
+    "mse_whole": 0.09078953215434998,
+    "l0": 32.0,
+    "l1": 46.847322652299255,
+    "wikidata_occupation_is_singer": {
+      "model_sel": 0.022926032543182373,
+      "sae_sel": 0.03734344244003296
+    },
+    "wikidata_athlete_is_actor": {
+      "model_sel": 0.01678091287612915,
+      "sae_sel": 0.036870718002319336
+    },
+    "wikidata_athlete_is_politician": {
+      "model_sel": 0.0784684419631958,
+      "sae_sel": 0.10730326175689697
+    },
+    "wikidata_athlete_is_journalist": {
+      "model_sel": 0.003308892250061035,
+      "sae_sel": 0.02127152681350708
+    },
+    "wikidata_athlete_is_athlete": {
+      "model_sel": 0.0742141604423523,
+      "sae_sel": 0.09950363636016846
+    },
+    "wikidata_athlete_is_researcher": {
+      "model_sel": 0.045142948627471924,
+      "sae_sel": 0.0831955075263977
+    }
+  },
+  "4": {
+    "mse_pos": 0.11644949525449637,
+    "mse_whole": 0.11383219153860141,
+    "l0": 32.0,
+    "l1": 44.352828583581456,
+    "wikidata_occupation_is_singer": {
+      "model_sel": 0.035688936710357666,
+      "sae_sel": 0.05365157127380371
+    },
+    "wikidata_athlete_is_actor": {
+      "model_sel": 0.030016541481018066,
+      "sae_sel": 0.06641453504562378
+    },
+    "wikidata_athlete_is_politician": {
+      "model_sel": 0.08059561252593994,
+      "sae_sel": 0.10895770788192749
+    },
+    "wikidata_athlete_is_journalist": {
+      "model_sel": 0.00898134708404541,
+      "sae_sel": 0.04987001419067383
+    },
+    "wikidata_athlete_is_athlete": {
+      "model_sel": 0.08603167533874512,
+      "sae_sel": 0.11439377069473267
+    },
+    "wikidata_athlete_is_researcher": {
+      "model_sel": 0.05766957998275757,
+      "sae_sel": 0.0829591155052185
+    }
+  },
+  "5": {
+    "mse_pos": 0.17150500707750516,
+    "mse_whole": 0.16911754252818914,
+    "l0": 32.0,
+    "l1": 44.57334940214566,
+    "wikidata_occupation_is_singer": {
+      "model_sel": 0.04537934064865112,
+      "sae_sel": 0.07161426544189453
+    },
+    "wikidata_athlete_is_actor": {
+      "model_sel": 0.03545260429382324,
+      "sae_sel": 0.0772867202758789
+    },
+    "wikidata_athlete_is_politician": {
+      "model_sel": 0.08508628606796265,
+      "sae_sel": 0.10919404029846191
+    },
+    "wikidata_athlete_is_journalist": {
+      "model_sel": 0.016308188438415527,
+      "sae_sel": 0.03190737962722778
+    },
+    "wikidata_athlete_is_athlete": {
+      "model_sel": 0.09099507331848145,
+      "sae_sel": 0.10564881563186646
+    },
+    "wikidata_athlete_is_researcher": {
+      "model_sel": 0.05956035852432251,
+      "sae_sel": 0.09312218427658081
+    }
+  },
+  "6": {
+    "mse_pos": 0.18624048722709216,
+    "mse_whole": 0.18475152923660135,
+    "l0": 32.0,
+    "l1": 49.28971123399027,
+    "wikidata_occupation_is_singer": {
+      "model_sel": 0.0392342209815979,
+      "sae_sel": 0.0567241907119751
+    },
+    "wikidata_athlete_is_actor": {
+      "model_sel": 0.03876149654388428,
+      "sae_sel": 0.06523281335830688
+    },
+    "wikidata_athlete_is_politician": {
+      "model_sel": 0.08508628606796265,
+      "sae_sel": 0.11297565698623657
+    },
+    "wikidata_athlete_is_journalist": {
+      "model_sel": 0.016308188438415527,
+      "sae_sel": 0.04230678081512451
+    },
+    "wikidata_athlete_is_athlete": {
+      "model_sel": 0.08910423517227173,
+      "sae_sel": 0.11463010311126709
+    },
+    "wikidata_athlete_is_researcher": {
+      "model_sel": 0.058142244815826416,
+      "sae_sel": 0.07894116640090942
+    }
+  },
+  "7": {
+    "mse_pos": 0.2691482480856054,
+    "mse_whole": 0.2679373399519601,
+    "l0": 32.0,
+    "l1": 57.466609953211396,
+    "wikidata_occupation_is_singer": {
+      "model_sel": 0.04987001419067383,
+      "sae_sel": 0.08390450477600098
+    },
+    "wikidata_athlete_is_actor": {
+      "model_sel": 0.04703378677368164,
+      "sae_sel": 0.0680689811706543
+    },
+    "wikidata_athlete_is_politician": {
+      "model_sel": 0.08815884590148926,
+      "sae_sel": 0.11935710906982422
+    },
+    "wikidata_athlete_is_journalist": {
+      "model_sel": 0.02245330810546875,
+      "sae_sel": 0.07208698987960815
+    },
+    "wikidata_athlete_is_athlete": {
+      "model_sel": 0.0945402979850769,
+      "sae_sel": 0.1337745189666748
+    },
+    "wikidata_athlete_is_researcher": {
+      "model_sel": 0.060978472232818604,
+      "sae_sel": 0.0742141604423523
+    }
+  },
+  "8": {
+    "mse_pos": 0.2774306295262747,
+    "mse_whole": 0.27771689452754217,
+    "l0": 32.0,
+    "l1": 56.448248972068626,
+    "wikidata_occupation_is_singer": {
+      "model_sel": 0.04561567306518555,
+      "sae_sel": 0.07137787342071533
+    },
+    "wikidata_athlete_is_actor": {
+      "model_sel": 0.048215508460998535,
+      "sae_sel": 0.07775938510894775
+    },
+    "wikidata_athlete_is_politician": {
+      "model_sel": 0.08792245388031006,
+      "sae_sel": 0.1188843846321106
+    },
+    "wikidata_athlete_is_journalist": {
+      "model_sel": 0.02576225996017456,
+      "sae_sel": 0.04537934064865112
+    },
+    "wikidata_athlete_is_athlete": {
+      "model_sel": 0.09643107652664185,
+      "sae_sel": 0.12715667486190796
+    },
+    "wikidata_athlete_is_researcher": {
+      "model_sel": 0.061923861503601074,
+      "sae_sel": 0.09170407056808472
+    }
+  },
+  "9": {
+    "mse_pos": 0.3531157748956886,
+    "mse_whole": 0.3502569450582549,
+    "l0": 32.0,
+    "l1": 56.585849992910816,
+    "wikidata_occupation_is_singer": {
+      "model_sel": 0.04537934064865112,
+      "sae_sel": 0.07917749881744385
+    },
+    "wikidata_athlete_is_actor": {
+      "model_sel": 0.0449066162109375,
+      "sae_sel": 0.07610493898391724
+    },
+    "wikidata_athlete_is_politician": {
+      "model_sel": 0.08957695960998535,
+      "sae_sel": 0.12077522277832031
+    },
+    "wikidata_athlete_is_journalist": {
+      "model_sel": 0.023162364959716797,
+      "sae_sel": 0.05885130167007446
+    },
+    "wikidata_athlete_is_athlete": {
+      "model_sel": 0.09548568725585938,
+      "sae_sel": 0.13708341121673584
+    },
+    "wikidata_athlete_is_researcher": {
+      "model_sel": 0.059324026107788086,
+      "sae_sel": 0.10493969917297363
+    }
+  },
+  "10": {
+    "mse_pos": 0.40668643108246494,
+    "mse_whole": 0.3946628677705459,
+    "l0": 32.0,
+    "l1": 58.02648990973108,
+    "wikidata_occupation_is_singer": {
+      "model_sel": 0.04656106233596802,
+      "sae_sel": 0.08319544792175293
+    },
+    "wikidata_athlete_is_actor": {
+      "model_sel": 0.041597723960876465,
+      "sae_sel": 0.08839517831802368
+    },
+    "wikidata_athlete_is_politician": {
+      "model_sel": 0.08225005865097046,
+      "sae_sel": 0.1290474534034729
+    },
+    "wikidata_athlete_is_journalist": {
+      "model_sel": 0.02245330810546875,
+      "sae_sel": 0.07019621133804321
+    },
+    "wikidata_athlete_is_athlete": {
+      "model_sel": 0.08839517831802368,
+      "sae_sel": 0.14559203386306763
+    },
+    "wikidata_athlete_is_researcher": {
+      "model_sel": 0.05246990919113159,
+      "sae_sel": 0.10281258821487427
+    }
+  },
+  "11": {
+    "mse_pos": 13.443936219912429,
+    "mse_whole": 13.432188523174528,
+    "l0": 32.0,
+    "l1": 89.88491894702018,
+    "wikidata_occupation_is_singer": {
+      "model_sel": 0.04396122694015503,
+      "sae_sel": 0.08532261848449707
+    },
+    "wikidata_athlete_is_actor": {
+      "model_sel": 0.03876149654388428,
+      "sae_sel": 0.08414089679718018
+    },
+    "wikidata_athlete_is_politician": {
+      "model_sel": 0.0798865556716919,
+      "sae_sel": 0.13802886009216309
+    },
+    "wikidata_athlete_is_journalist": {
+      "model_sel": 0.024107813835144043,
+      "sae_sel": 0.0671236515045166
+    },
+    "wikidata_athlete_is_athlete": {
+      "model_sel": 0.08650434017181396,
+      "sae_sel": 0.13921058177947998
+    },
+    "wikidata_athlete_is_researcher": {
+      "model_sel": 0.05483335256576538,
+      "sae_sel": 0.09737652540206909
+    }
+  }
+}

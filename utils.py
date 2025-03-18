@@ -78,7 +78,7 @@ def get_dataset_name(dataset_idx):
     return DATA_MAP[dataset_idx]['name']
 
 def get_datasets():
-    return [0,1,2,3,4,6,7,8,9,10,11]
+    return [1,4,7,8, 9,10,11]
 
 def get_models():
     return ['EleutherAI_pythia-160m','EleutherAI_pythia-410m']
@@ -146,7 +146,7 @@ def get_binary_probes(sample, dataset_idx):
                 ('wikidata_athlete_is_american_football', None, 1 if sample['class'] == 'American football player' else 0),
                 ('wikidata_athlete_is_icehockey', None, 1 if sample['class'] == 'ice hockey player' else 0)]
     elif dataset_idx == 7:
-        return [('wikidata_1alive_0dead', None, 1 if sample['class'] is True else 0)]
+        return [('wikidata_1alive_0dead', None, 1 if sample['class'] == 'true' else 0)]
     elif dataset_idx == 8:
         return [('wikidata_occupation_is_singer', None, 1 if sample['class'] == 'singer' else 0),
                 ('wikidata_athlete_is_actor', None, 1 if sample['class'] == 'actor' else 0),
@@ -191,8 +191,8 @@ def preprocess_data(sample, dataset_idx):
         return tokens, name_range #name range are the token positions to probe
     elif dataset_idx == 4:
         tokens = sample['tokens']
-        # probe_indices + ~50 other random indices to probe
-        pos = list(set(torch.randint(low=0, high=len(sample['tokens']), size=(55,)).tolist() + sample['probe_indices'].tolist()))
+        # probe_indices + ~10 other random indices to probe
+        pos = list(set(torch.randint(low=0, high=len(sample['tokens']), size=(10,)).tolist() + sample['probe_indices'].tolist()))
         return tokens, pos
     elif dataset_idx == 6:
         tokens = sample['tokens']
@@ -209,8 +209,8 @@ def preprocess_data(sample, dataset_idx):
         return tokens, pos
     elif dataset_idx == 1:
         tokens = sample['tokens']
-        # probe_indices + ~50 other random indices to probe
-        pos = list(set(torch.randint(low=0, high=len(sample['tokens']), size=(55,)).tolist() + sample['probe_indices'].tolist()))
+        # probe_indices + ~10 other random indices to probe
+        pos = list(set(torch.randint(low=0, high=len(sample['tokens']), size=(10,)).tolist() + sample['probe_indices'].tolist()))
         return tokens, pos
     elif dataset_idx == 0:
         tokens = sample['tokens']

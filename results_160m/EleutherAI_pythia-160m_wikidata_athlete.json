@@ -1,0 +1,314 @@
+{
+  "0": {
+    "mse_pos": 0.042807377251456426,
+    "mse_whole": 0.04086013007089496,
+    "l0": 32.0,
+    "l1": 55.252703437443365,
+    "wikidata_athlete_is_football": {
+      "model_sel": 0.06072509288787842,
+      "sae_sel": 0.05981874465942383
+    },
+    "wikidata_athlete_is_basketball": {
+      "model_sel": -0.0033232569694519043,
+      "sae_sel": -0.005740165710449219
+    },
+    "wikidata_athlete_is_baseball": {
+      "model_sel": 0.005135953426361084,
+      "sae_sel": 0.009667634963989258
+    },
+    "wikidata_athlete_is_american_football": {
+      "model_sel": 0.005438089370727539,
+      "sae_sel": 0.009365558624267578
+    },
+    "wikidata_athlete_is_icehockey": {
+      "model_sel": -0.0021147727966308594,
+      "sae_sel": 0.0033233165740966797
+    }
+  },
+  "1": {
+    "mse_pos": 0.08338456076487655,
+    "mse_whole": 0.07874832751303912,
+    "l0": 32.0,
+    "l1": 47.69153627741195,
+    "wikidata_athlete_is_football": {
+      "model_sel": 0.0459214448928833,
+      "sae_sel": 0.06978851556777954
+    },
+    "wikidata_athlete_is_basketball": {
+      "model_sel": -0.0009063482284545898,
+      "sae_sel": 0.005438089370727539
+    },
+    "wikidata_athlete_is_baseball": {
+      "model_sel": 0.006646573543548584,
+      "sae_sel": 0.018429040908813477
+    },
+    "wikidata_athlete_is_american_football": {
+      "model_sel": 0.004531741142272949,
+      "sae_sel": 0.009667694568634033
+    },
+    "wikidata_athlete_is_icehockey": {
+      "model_sel": 0.0009063482284545898,
+      "sae_sel": 0.012688815593719482
+    }
+  },
+  "2": {
+    "mse_pos": 0.09766302500787706,
+    "mse_whole": 0.08985614737421274,
+    "l0": 32.0,
+    "l1": 46.401014921766446,
+    "wikidata_athlete_is_football": {
+      "model_sel": 0.14501512050628662,
+      "sae_sel": 0.1604229211807251
+    },
+    "wikidata_athlete_is_basketball": {
+      "model_sel": 0.015105783939361572,
+      "sae_sel": 0.03927487134933472
+    },
+    "wikidata_athlete_is_baseball": {
+      "model_sel": 0.0383685827255249,
+      "sae_sel": 0.04984891414642334
+    },
+    "wikidata_athlete_is_american_football": {
+      "model_sel": 0.043504536151885986,
+      "sae_sel": 0.05830812454223633
+    },
+    "wikidata_athlete_is_icehockey": {
+      "model_sel": 0.06706947088241577,
+      "sae_sel": 0.05951660871505737
+    }
+  },
+  "3": {
+    "mse_pos": 0.0976951850904177,
+    "mse_whole": 0.08922704171836376,
+    "l0": 32.0,
+    "l1": 47.336343865160394,
+    "wikidata_athlete_is_football": {
+      "model_sel": 0.12809669971466064,
+      "sae_sel": 0.14954686164855957
+    },
+    "wikidata_athlete_is_basketball": {
+      "model_sel": 0.016918480396270752,
+      "sae_sel": 0.03897285461425781
+    },
+    "wikidata_athlete_is_baseball": {
+      "model_sel": 0.03806644678115845,
+      "sae_sel": 0.05407857894897461
+    },
+    "wikidata_athlete_is_american_football": {
+      "model_sel": 0.0398792028427124,
+      "sae_sel": 0.05709969997406006
+    },
+    "wikidata_athlete_is_icehockey": {
+      "model_sel": 0.05861026048660278,
+      "sae_sel": 0.06283986568450928
+    }
+  },
+  "4": {
+    "mse_pos": 0.11587941247333193,
+    "mse_whole": 0.11072186466157437,
+    "l0": 32.0,
+    "l1": 44.77282063674259,
+    "wikidata_athlete_is_football": {
+      "model_sel": 0.15438061952590942,
+      "sae_sel": 0.1728096604347229
+    },
+    "wikidata_athlete_is_basketball": {
+      "model_sel": 0.029909372329711914,
+      "sae_sel": 0.014803647994995117
+    },
+    "wikidata_athlete_is_baseball": {
+      "model_sel": 0.08036249876022339,
+      "sae_sel": 0.09546828269958496
+    },
+    "wikidata_athlete_is_american_football": {
+      "model_sel": 0.05861026048660278,
+      "sae_sel": 0.06525683403015137
+    },
+    "wikidata_athlete_is_icehockey": {
+      "model_sel": 0.08036255836486816,
+      "sae_sel": 0.07522660493850708
+    }
+  },
+  "5": {
+    "mse_pos": 0.17047264285658822,
+    "mse_whole": 0.16791142310798168,
+    "l0": 32.0,
+    "l1": 44.77197486860388,
+    "wikidata_athlete_is_football": {
+      "model_sel": 0.15407854318618774,
+      "sae_sel": 0.19093650579452515
+    },
+    "wikidata_athlete_is_basketball": {
+      "model_sel": 0.03293049335479736,
+      "sae_sel": 0.04712986946105957
+    },
+    "wikidata_athlete_is_baseball": {
+      "model_sel": 0.0858006477355957,
+      "sae_sel": 0.10302114486694336
+    },
+    "wikidata_athlete_is_american_football": {
+      "model_sel": 0.06797581911087036,
+      "sae_sel": 0.07280969619750977
+    },
+    "wikidata_athlete_is_icehockey": {
+      "model_sel": 0.08791542053222656,
+      "sae_sel": 0.09425985813140869
+    }
+  },
+  "6": {
+    "mse_pos": 0.18552543477933442,
+    "mse_whole": 0.18373291488587856,
+    "l0": 32.0,
+    "l1": 49.10662719748686,
+    "wikidata_athlete_is_football": {
+      "model_sel": 0.1543806791305542,
+      "sae_sel": 0.18731117248535156
+    },
+    "wikidata_athlete_is_basketball": {
+      "model_sel": 0.03293049335479736,
+      "sae_sel": 0.04290032386779785
+    },
+    "wikidata_athlete_is_baseball": {
+      "model_sel": 0.08549851179122925,
+      "sae_sel": 0.10151058435440063
+    },
+    "wikidata_athlete_is_american_football": {
+      "model_sel": 0.05800604820251465,
+      "sae_sel": 0.09093654155731201
+    },
+    "wikidata_athlete_is_icehockey": {
+      "model_sel": 0.08187311887741089,
+      "sae_sel": 0.09818732738494873
+    }
+  },
+  "7": {
+    "mse_pos": 0.2669867914385402,
+    "mse_whole": 0.26641127299666406,
+    "l0": 32.0,
+    "l1": 56.77405908294569,
+    "wikidata_athlete_is_football": {
+      "model_sel": 0.16223567724227905,
+      "sae_sel": 0.1885196566581726
+    },
+    "wikidata_athlete_is_basketball": {
+      "model_sel": 0.043504536151885986,
+      "sae_sel": 0.06163144111633301
+    },
+    "wikidata_athlete_is_baseball": {
+      "model_sel": 0.09637463092803955,
+      "sae_sel": 0.11722052097320557
+    },
+    "wikidata_athlete_is_american_football": {
+      "model_sel": 0.07190334796905518,
+      "sae_sel": 0.12990933656692505
+    },
+    "wikidata_athlete_is_icehockey": {
+      "model_sel": 0.09033232927322388,
+      "sae_sel": 0.08942598104476929
+    }
+  },
+  "8": {
+    "mse_pos": 0.2752653221446553,
+    "mse_whole": 0.27692723453044893,
+    "l0": 32.0,
+    "l1": 56.54763486981212,
+    "wikidata_athlete_is_football": {
+      "model_sel": 0.15951663255691528,
+      "sae_sel": 0.201812744140625
+    },
+    "wikidata_athlete_is_basketball": {
+      "model_sel": 0.05619335174560547,
+      "sae_sel": 0.10574018955230713
+    },
+    "wikidata_athlete_is_baseball": {
+      "model_sel": 0.09274923801422119,
+      "sae_sel": 0.13806647062301636
+    },
+    "wikidata_athlete_is_american_football": {
+      "model_sel": 0.08277946710586548,
+      "sae_sel": 0.13836854696273804
+    },
+    "wikidata_athlete_is_icehockey": {
+      "model_sel": 0.10392749309539795,
+      "sae_sel": 0.12658607959747314
+    }
+  },
+  "9": {
+    "mse_pos": 0.35466414128647306,
+    "mse_whole": 0.3514935219109058,
+    "l0": 32.0,
+    "l1": 56.43200628284903,
+    "wikidata_athlete_is_football": {
+      "model_sel": 0.15740180015563965,
+      "sae_sel": 0.22688817977905273
+    },
+    "wikidata_athlete_is_basketball": {
+      "model_sel": 0.05589127540588379,
+      "sae_sel": 0.11087614297866821
+    },
+    "wikidata_athlete_is_baseball": {
+      "model_sel": 0.10000002384185791,
+      "sae_sel": 0.14894258975982666
+    },
+    "wikidata_athlete_is_american_football": {
+      "model_sel": 0.08006042242050171,
+      "sae_sel": 0.1353474259376526
+    },
+    "wikidata_athlete_is_icehockey": {
+      "model_sel": 0.11661630868911743,
+      "sae_sel": 0.17069482803344727
+    }
+  },
+  "10": {
+    "mse_pos": 0.41161488950529795,
+    "mse_whole": 0.3974262839317322,
+    "l0": 32.0,
+    "l1": 57.967075454600376,
+    "wikidata_athlete_is_football": {
+      "model_sel": 0.16072505712509155,
+      "sae_sel": 0.23262840509414673
+    },
+    "wikidata_athlete_is_basketball": {
+      "model_sel": 0.05770397186279297,
+      "sae_sel": 0.11722052097320557
+    },
+    "wikidata_athlete_is_baseball": {
+      "model_sel": 0.10392749309539795,
+      "sae_sel": 0.16012084484100342
+    },
+    "wikidata_athlete_is_american_football": {
+      "model_sel": 0.08761328458786011,
+      "sae_sel": 0.134441077709198
+    },
+    "wikidata_athlete_is_icehockey": {
+      "model_sel": 0.1226586103439331,
+      "sae_sel": 0.17492449283599854
+    }
+  },
+  "11": {
+    "mse_pos": 13.452180357963982,
+    "mse_whole": 13.437040800666809,
+    "l0": 32.0,
+    "l1": 91.94864979157856,
+    "wikidata_athlete_is_football": {
+      "model_sel": 0.161027193069458,
+      "sae_sel": 0.23413902521133423
+    },
+    "wikidata_athlete_is_basketball": {
+      "model_sel": 0.06223565340042114,
+      "sae_sel": 0.10513591766357422
+    },
+    "wikidata_athlete_is_baseball": {
+      "model_sel": 0.10513591766357422,
+      "sae_sel": 0.17432022094726562
+    },
+    "wikidata_athlete_is_american_football": {
+      "model_sel": 0.0824773907661438,
+      "sae_sel": 0.15589123964309692
+    },
+    "wikidata_athlete_is_icehockey": {
+      "model_sel": 0.12326288223266602,
+      "sae_sel": 0.17673718929290771
+    }
+  }
+}

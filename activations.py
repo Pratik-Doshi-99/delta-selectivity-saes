@@ -16,7 +16,7 @@ import sys
 # Set up logging to stdout with timestamps
 logging.basicConfig(
     level=logging.INFO,
-    format="%(asctime)s [%(levelname)s] %(message)s",
+    format="%(asctime)s [%(threadName)s] [%(levelname)s] %(message)s",
     datefmt="%Y-%m-%d %H:%M:%S",
     stream=sys.stdout
 )
@@ -125,7 +125,7 @@ def write_activations_and_metrics_to_disk(
 def enqueue_activations_and_metrics(
     model_acts_accum,
     sae_acts_accum,
-    reconstruction_metrics_accum,
+    metrics_accum,
     probes,
     layers,
     shard_num,
@@ -140,20 +140,21 @@ def enqueue_activations_and_metrics(
     Note: 'queue' can be any data structure or multiprocessing queue, etc.
     """
     logger.info(f"Enqueuing activations for shard {shard_num}...")
+    #logger.info(f"Length of probes enqueued: {len(probes)}")
     # For demonstration, we put everything in the queue as one object
     queue.put({
         "shard_num": shard_num,
         "model_acts": {layer: data for layer, data in model_acts_accum.items()},
         "sae_acts": {layer: data for layer, data in sae_acts_accum.items()},
-        "metrics": reconstruction_metrics_accum[:],  # shallow copy
+        "metrics": {layer: data for layer, data in metrics_accum.items()},  # shallow copy
         "probes": probes[:]
     })
     # Clear the original accumulations
-    for layer in layers:
-        model_acts_accum[layer].clear()
-        sae_acts_accum[layer].clear()
-    reconstruction_metrics_accum.clear()
-    probes.clear()
+    #for layer in layers:
+    #    model_acts_accum[layer].clear()
+    #    sae_acts_accum[layer].clear()
+    #    metrics_accum[layer].clear()
+    #probes.clear()
 
 
 #########################################################
@@ -248,6 +249,7 @@ def compute_activations_and_metrics(args, activation_processor=None, processor_k
     # Process dataset
     for batch_idx, (input_ids, attention_mask, positions_list, global_indices, binary_probes) in enumerate(dataloader):
         logger.info(f"Processing batch {batch_idx + 1}/{len(dataloader)}...")
+        #logger.info(f"Length of batched binary_probes={len(binary_probes)}, probes={len(probes)}")
         input_ids = input_ids.to(device)
         attention_mask = attention_mask.to(device)
         batch_size = input_ids.size(0)
@@ -263,13 +265,15 @@ def compute_activations_and_metrics(args, activation_processor=None, processor_k
         with torch.inference_mode():
             # Forward pass
             _ = model.run_with_hooks(input_ids, attention_mask=attention_mask, fwd_hooks=hooks)
-            logger.info(f"Forward pass completed for batch {batch_idx + 1}.")
+            #logger.info(f"Forward pass completed for batch {batch_idx + 1}.")
 
             # Prepare per-sample metric storage for this batch
             batch_metrics = [{} for _ in range(batch_size)]
             for i in range(batch_size):
                 batch_metrics[i]['sample_idx'] = int(global_indices[i])
 
+
+            probes += [binary_probes[i] if p is not None and len(p) > 0 else None for i,p in enumerate(positions_list)]
             # Process each layer
             for layer in layers:
                 hook_name = re.sub("<layer>", str(layer), args.model_hook_template)
@@ -277,7 +281,7 @@ def compute_activations_and_metrics(args, activation_processor=None, processor_k
 
                 # SAE activations
                 decoded_batch, sae_acts_full_batch = sae_handle.compute_activations(full_hidden_state_batch, layer=layer)
-                logger.info(f"SAE activations computed for layer {layer} in batch {batch_idx + 1}.")
+                #logger.info(f"SAE activations computed for layer {layer} in batch {batch_idx + 1}.")
 
                 # Iterate through samples
                 for sample_i in range(batch_size):
@@ -315,7 +319,6 @@ def compute_activations_and_metrics(args, activation_processor=None, processor_k
                             'l0': l0,
                             'l1': l1
                             })
-                        probes.append(binary_probes[sample_i])
                         model_acts_accum[layer].append(original_sample.cpu())
                         sae_acts_accum[layer].append(sae_acts_sample.to_sparse().cpu())
                     else:
@@ -331,7 +334,6 @@ def compute_activations_and_metrics(args, activation_processor=None, processor_k
                                 'l0': None,
                                 'l1': None
                             })
-                        probes.append(None)
 
 
         # Clear cache to free memory
@@ -354,6 +356,10 @@ def compute_activations_and_metrics(args, activation_processor=None, processor_k
                 args.output_size,
                 **processor_kwargs
             )
+            model_acts_accum = {layer: [] for layer in layers} # num_layers * num_samples
+            sae_acts_accum = {layer: [] for layer in layers} #num_layers * num_samples
+            metrics = {layer: [] for layer in layers} #num_layers
+            probes = []
 
     # If there are any leftover activations or metrics, flush them
     # (e.g. if the total samples wasn't a multiple of output_size).
@@ -373,6 +379,10 @@ def compute_activations_and_metrics(args, activation_processor=None, processor_k
             args.output_size,
             **processor_kwargs
         )
+        model_acts_accum = {layer: [] for layer in layers} # num_layers * num_samples
+        sae_acts_accum = {layer: [] for layer in layers} #num_layers * num_samples
+        metrics = {layer: [] for layer in layers} #num_layers
+        probes = []
 
 
 #########################################################

@@ -1,0 +1,560 @@
+2025-03-18 02:44:10 [MainThread] [INFO] Computing selectivity with the following arguments:
+2025-03-18 02:44:10 [MainThread] [INFO] Namespace(device1=None, device2=None, output_directory='results_160m', model_name='EleutherAI/pythia-160m', sae_name='EleutherAI/sae-pythia-160m-32k', datasets='7,8,9,10,11', start_index=0, n_samples=None, batch_size=512, layers='0,1,2,3,4,5,6,7,8,9,10,11', output_size=2048, num_workers=2, model_hook_template='blocks.<layer>.hook_resid_post', sae_layer_template='layers.<layer>')
+2025-03-18 02:44:10 [MainThread] [INFO] Will process dataset indices: [7, 8, 9, 10, 11]
+2025-03-18 02:44:10 [MainThread] [INFO] Starting dataset 7...
+2025-03-18 02:44:10 [MainThread] [INFO] Validating Arguments...
+2025-03-18 02:44:10 [MainThread] [INFO] Computing activations with the following arguments:
+2025-03-18 02:44:10 [MainThread] [INFO] Namespace(model_name='EleutherAI/pythia-160m', sae_name='EleutherAI/sae-pythia-160m-32k', dataset_idx=7, start_index=0, n_samples=None, device='cuda:0', batch_size=512, layers='0,1,2,3,4,5,6,7,8,9,10,11', output_size=2048, output_directory='results_160m', num_workers=2, model_hook_template='blocks.<layer>.hook_resid_post', sae_layer_template='layers.<layer>')
+2025-03-18 02:44:10 [MainThread] [INFO] Configured Model Hook Points:
+2025-03-18 02:44:10 [MainThread] [INFO] ['blocks.0.hook_resid_post', 'blocks.1.hook_resid_post', 'blocks.2.hook_resid_post', 'blocks.3.hook_resid_post', 'blocks.4.hook_resid_post', 'blocks.5.hook_resid_post', 'blocks.6.hook_resid_post', 'blocks.7.hook_resid_post', 'blocks.8.hook_resid_post', 'blocks.9.hook_resid_post', 'blocks.10.hook_resid_post', 'blocks.11.hook_resid_post']
+2025-03-18 02:44:10 [MainThread] [INFO] Configured SAEs:
+2025-03-18 02:44:10 [MainThread] [INFO] ['layers.0', 'layers.1', 'layers.2', 'layers.3', 'layers.4', 'layers.5', 'layers.6', 'layers.7', 'layers.8', 'layers.9', 'layers.10', 'layers.11']
+2025-03-18 02:44:10 [MainThread] [INFO] Loading Dataset...
+2025-03-18 02:44:10 [MainThread] [INFO] Loading Model...
+2025-03-18 02:44:25 [ActivationConsumer] [INFO] Running consumer on cuda:1
+Loaded pretrained model EleutherAI/pythia-160m into HookedTransformer
+Moving model to device:  cuda:0
+2025-03-18 02:44:49 [MainThread] [INFO] Loading SAE...
+Loading SAEs
+Fetching 50 files:   0%|          | 0/50 [00:00<?, ?it/s]Fetching 50 files: 100%|██████████| 50/50 [00:00<00:00, 8539.94it/s]
+2025-03-18 02:44:49 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:44:49 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:44:49 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:44:49 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:44:49 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:44:49 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:44:49 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:44:49 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:44:49 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:44:49 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:44:50 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:44:50 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:44:50 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:44:50 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:44:50 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:44:50 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:44:50 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:44:50 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:44:50 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:44:50 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:44:50 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:44:50 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:44:50 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:44:50 [MainThread] [WARNING] Dropping extra args {'signed': False}
+Finished Loading SAEs
+2025-03-18 02:44:50 [MainThread] [INFO] Starting Inference...
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+2025-03-18 02:44:51 [MainThread] [INFO] Processing batch 1/12...
+2025-03-18 02:44:58 [MainThread] [INFO] Processing batch 2/12...
+2025-03-18 02:45:05 [MainThread] [INFO] Processing batch 3/12...
+2025-03-18 02:45:11 [MainThread] [INFO] Processing batch 4/12...
+2025-03-18 02:45:17 [MainThread] [INFO] Enqueuing activations for shard 1...
+2025-03-18 02:45:17 [MainThread] [INFO] Processing batch 5/12...
+2025-03-18 02:45:21 [ActivationConsumer] [INFO] Consumer successfully processed shard 1
+2025-03-18 02:45:25 [MainThread] [INFO] Processing batch 6/12...
+2025-03-18 02:45:31 [MainThread] [INFO] Processing batch 7/12...
+2025-03-18 02:45:37 [MainThread] [INFO] Processing batch 8/12...
+2025-03-18 02:45:44 [MainThread] [INFO] Enqueuing activations for shard 2...
+2025-03-18 02:45:44 [MainThread] [INFO] Processing batch 9/12...
+2025-03-18 02:45:48 [ActivationConsumer] [INFO] Consumer successfully processed shard 2
+2025-03-18 02:45:51 [MainThread] [INFO] Processing batch 10/12...
+2025-03-18 02:45:57 [MainThread] [INFO] Processing batch 11/12...
+2025-03-18 02:46:04 [MainThread] [INFO] Processing batch 12/12...
+2025-03-18 02:46:08 [MainThread] [INFO] Enqueuing activations for shard 3...
+2025-03-18 02:46:11 [ActivationConsumer] [INFO] Consumer successfully processed shard 3
+2025-03-18 02:46:11 [ActivationConsumer] [INFO] Got sentinel for dataset 7. Finishing up.
+2025-03-18 02:46:11 [ActivationConsumer] [INFO] Aggregating traditional metrics for 7
+2025-03-18 02:46:11 [ActivationConsumer] [INFO] Received 1 binary probes for dataset 7.
+2025-03-18 02:46:11 [ActivationConsumer] [INFO] Probes Received for dataset 7: ['wikidata_1alive_0dead']
+2025-03-18 02:46:11 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_1alive_0dead, layer=0
+2025-03-18 02:46:13 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_1alive_0dead, layer=1
+2025-03-18 02:46:15 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_1alive_0dead, layer=2
+2025-03-18 02:46:19 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_1alive_0dead, layer=3
+2025-03-18 02:46:29 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_1alive_0dead, layer=4
+[2025-03-18 02:46:33.397] [CUML] [warning] L-BFGS stopped, because the line search failed to advance (step delta = 0.000000)
+2025-03-18 02:46:37 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_1alive_0dead, layer=5
+2025-03-18 02:46:48 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_1alive_0dead, layer=6
+2025-03-18 02:47:00 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_1alive_0dead, layer=7
+2025-03-18 02:47:13 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_1alive_0dead, layer=8
+2025-03-18 02:47:29 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_1alive_0dead, layer=9
+2025-03-18 02:47:39 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_1alive_0dead, layer=10
+2025-03-18 02:47:46 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_1alive_0dead, layer=11
+[2025-03-18 02:47:56.713] [CUML] [warning] L-BFGS stopped, because the line search failed to advance (step delta = 0.000000)
+[2025-03-18 02:48:12.170] [CUML] [warning] L-BFGS stopped, because the line search failed to advance (step delta = 0.000000)
+2025-03-18 02:48:12 [ActivationConsumer] [INFO] Wrote delta selectivity results to results_160m/EleutherAI_pythia-160m_wikidata_is_alive.json for dataset 7.
+2025-03-18 02:48:12 [MainThread] [INFO] Dataset 7 is fully processed.
+
+2025-03-18 02:48:12 [MainThread] [INFO] Starting dataset 8...
+2025-03-18 02:48:12 [ActivationConsumer] [INFO] Running consumer on cuda:1
+2025-03-18 02:48:12 [MainThread] [INFO] Validating Arguments...
+2025-03-18 02:48:12 [MainThread] [INFO] Computing activations with the following arguments:
+2025-03-18 02:48:12 [MainThread] [INFO] Namespace(model_name='EleutherAI/pythia-160m', sae_name='EleutherAI/sae-pythia-160m-32k', dataset_idx=8, start_index=0, n_samples=None, device='cuda:0', batch_size=512, layers='0,1,2,3,4,5,6,7,8,9,10,11', output_size=2048, output_directory='results_160m', num_workers=2, model_hook_template='blocks.<layer>.hook_resid_post', sae_layer_template='layers.<layer>')
+2025-03-18 02:48:12 [MainThread] [INFO] Configured Model Hook Points:
+2025-03-18 02:48:12 [MainThread] [INFO] ['blocks.0.hook_resid_post', 'blocks.1.hook_resid_post', 'blocks.2.hook_resid_post', 'blocks.3.hook_resid_post', 'blocks.4.hook_resid_post', 'blocks.5.hook_resid_post', 'blocks.6.hook_resid_post', 'blocks.7.hook_resid_post', 'blocks.8.hook_resid_post', 'blocks.9.hook_resid_post', 'blocks.10.hook_resid_post', 'blocks.11.hook_resid_post']
+2025-03-18 02:48:12 [MainThread] [INFO] Configured SAEs:
+2025-03-18 02:48:12 [MainThread] [INFO] ['layers.0', 'layers.1', 'layers.2', 'layers.3', 'layers.4', 'layers.5', 'layers.6', 'layers.7', 'layers.8', 'layers.9', 'layers.10', 'layers.11']
+2025-03-18 02:48:12 [MainThread] [INFO] Loading Dataset...
+2025-03-18 02:48:12 [MainThread] [INFO] Loading Model...
+Loaded pretrained model EleutherAI/pythia-160m into HookedTransformer
+Moving model to device:  cuda:0
+2025-03-18 02:48:48 [MainThread] [INFO] Loading SAE...
+Loading SAEs
+Fetching 50 files:   0%|          | 0/50 [00:00<?, ?it/s]Fetching 50 files: 100%|██████████| 50/50 [00:00<00:00, 6583.22it/s]
+2025-03-18 02:48:48 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:48:49 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:48:49 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:48:49 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:48:49 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:48:49 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:48:49 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:48:49 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:48:49 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:48:49 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:48:49 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:48:49 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:48:49 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:48:49 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:48:49 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:48:49 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:48:49 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:48:49 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:48:50 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:48:50 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:48:50 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:48:50 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:48:50 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:48:50 [MainThread] [WARNING] Dropping extra args {'signed': False}
+Finished Loading SAEs
+2025-03-18 02:48:50 [MainThread] [INFO] Starting Inference...
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+2025-03-18 02:48:50 [MainThread] [INFO] Processing batch 1/12...
+2025-03-18 02:48:57 [MainThread] [INFO] Processing batch 2/12...
+2025-03-18 02:49:04 [MainThread] [INFO] Processing batch 3/12...
+2025-03-18 02:49:12 [MainThread] [INFO] Processing batch 4/12...
+2025-03-18 02:49:19 [MainThread] [INFO] Enqueuing activations for shard 1...
+2025-03-18 02:49:19 [MainThread] [INFO] Processing batch 5/12...
+2025-03-18 02:49:23 [ActivationConsumer] [INFO] Consumer successfully processed shard 1
+2025-03-18 02:49:28 [MainThread] [INFO] Processing batch 6/12...
+2025-03-18 02:49:34 [MainThread] [INFO] Processing batch 7/12...
+2025-03-18 02:49:41 [MainThread] [INFO] Processing batch 8/12...
+2025-03-18 02:49:47 [MainThread] [INFO] Enqueuing activations for shard 2...
+2025-03-18 02:49:47 [MainThread] [INFO] Processing batch 9/12...
+2025-03-18 02:49:51 [ActivationConsumer] [INFO] Consumer successfully processed shard 2
+2025-03-18 02:49:55 [MainThread] [INFO] Processing batch 10/12...
+2025-03-18 02:50:02 [MainThread] [INFO] Processing batch 11/12...
+2025-03-18 02:50:08 [MainThread] [INFO] Processing batch 12/12...
+2025-03-18 02:50:13 [MainThread] [INFO] Enqueuing activations for shard 3...
+2025-03-18 02:50:16 [ActivationConsumer] [INFO] Consumer successfully processed shard 3
+2025-03-18 02:50:16 [ActivationConsumer] [INFO] Got sentinel for dataset 8. Finishing up.
+2025-03-18 02:50:16 [ActivationConsumer] [INFO] Aggregating traditional metrics for 8
+2025-03-18 02:50:16 [ActivationConsumer] [INFO] Received 6 binary probes for dataset 8.
+2025-03-18 02:50:16 [ActivationConsumer] [INFO] Probes Received for dataset 8: ['wikidata_occupation_is_singer', 'wikidata_athlete_is_actor', 'wikidata_athlete_is_politician', 'wikidata_athlete_is_journalist', 'wikidata_athlete_is_athlete', 'wikidata_athlete_is_researcher']
+2025-03-18 02:50:16 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_occupation_is_singer, layer=0
+2025-03-18 02:50:16 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_actor, layer=0
+2025-03-18 02:50:17 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_politician, layer=0
+2025-03-18 02:50:18 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_journalist, layer=0
+2025-03-18 02:50:18 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_athlete, layer=0
+2025-03-18 02:50:19 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_researcher, layer=0
+2025-03-18 02:50:19 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_occupation_is_singer, layer=1
+2025-03-18 02:50:21 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_actor, layer=1
+2025-03-18 02:50:22 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_politician, layer=1
+2025-03-18 02:50:23 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_journalist, layer=1
+2025-03-18 02:50:25 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_athlete, layer=1
+2025-03-18 02:50:26 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_researcher, layer=1
+2025-03-18 02:50:27 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_occupation_is_singer, layer=2
+2025-03-18 02:50:29 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_actor, layer=2
+2025-03-18 02:50:31 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_politician, layer=2
+2025-03-18 02:50:34 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_journalist, layer=2
+2025-03-18 02:50:36 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_athlete, layer=2
+2025-03-18 02:50:38 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_researcher, layer=2
+2025-03-18 02:50:40 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_occupation_is_singer, layer=3
+[2025-03-18 02:50:45.099] [CUML] [warning] L-BFGS stopped, because the line search failed to advance (step delta = 0.000000)
+2025-03-18 02:50:48 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_actor, layer=3
+2025-03-18 02:50:54 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_politician, layer=3
+2025-03-18 02:51:01 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_journalist, layer=3
+2025-03-18 02:51:06 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_athlete, layer=3
+2025-03-18 02:51:15 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_researcher, layer=3
+[2025-03-18 02:51:22.662] [CUML] [warning] L-BFGS stopped, because the line search failed to advance (step delta = 0.000000)
+2025-03-18 02:51:22 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_occupation_is_singer, layer=4
+2025-03-18 02:51:29 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_actor, layer=4
+2025-03-18 02:51:34 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_politician, layer=4
+2025-03-18 02:51:40 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_journalist, layer=4
+[2025-03-18 02:51:46.980] [CUML] [warning] L-BFGS stopped, because the line search failed to advance (step delta = 0.000000)
+2025-03-18 02:51:46 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_athlete, layer=4
+2025-03-18 02:51:52 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_researcher, layer=4
+2025-03-18 02:51:59 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_occupation_is_singer, layer=5
+2025-03-18 02:52:05 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_actor, layer=5
+[2025-03-18 02:52:08.781] [CUML] [warning] L-BFGS stopped, because the line search failed to advance (step delta = 0.000000)
+2025-03-18 02:52:11 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_politician, layer=5
+2025-03-18 02:52:17 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_journalist, layer=5
+2025-03-18 02:52:25 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_athlete, layer=5
+2025-03-18 02:52:33 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_researcher, layer=5
+2025-03-18 02:52:39 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_occupation_is_singer, layer=6
+2025-03-18 02:52:48 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_actor, layer=6
+[2025-03-18 02:52:51.453] [CUML] [warning] L-BFGS stopped, because the line search failed to advance (step delta = 0.000000)
+2025-03-18 02:52:55 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_politician, layer=6
+2025-03-18 02:53:01 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_journalist, layer=6
+2025-03-18 02:53:07 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_athlete, layer=6
+2025-03-18 02:53:14 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_researcher, layer=6
+2025-03-18 02:53:20 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_occupation_is_singer, layer=7
+2025-03-18 02:53:29 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_actor, layer=7
+2025-03-18 02:53:36 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_politician, layer=7
+2025-03-18 02:53:44 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_journalist, layer=7
+2025-03-18 02:53:53 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_athlete, layer=7
+[2025-03-18 02:53:59.844] [CUML] [warning] L-BFGS stopped, because the line search failed to advance (step delta = 0.000000)
+2025-03-18 02:53:59 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_researcher, layer=7
+2025-03-18 02:54:05 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_occupation_is_singer, layer=8
+2025-03-18 02:54:13 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_actor, layer=8
+[2025-03-18 02:54:24.433] [CUML] [warning] L-BFGS stopped, because the line search failed to advance (step delta = 0.000000)
+2025-03-18 02:54:24 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_politician, layer=8
+2025-03-18 02:54:32 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_journalist, layer=8
+2025-03-18 02:54:40 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_athlete, layer=8
+[2025-03-18 02:54:43.679] [CUML] [warning] L-BFGS stopped, because the line search failed to advance (step delta = 0.000000)
+2025-03-18 02:54:48 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_researcher, layer=8
+2025-03-18 02:54:55 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_occupation_is_singer, layer=9
+2025-03-18 02:55:01 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_actor, layer=9
+2025-03-18 02:55:07 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_politician, layer=9
+[2025-03-18 02:55:11.724] [CUML] [warning] L-BFGS stopped, because the line search failed to advance (step delta = 0.000000)
+2025-03-18 02:55:14 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_journalist, layer=9
+2025-03-18 02:55:20 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_athlete, layer=9
+2025-03-18 02:55:28 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_researcher, layer=9
+2025-03-18 02:55:34 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_occupation_is_singer, layer=10
+2025-03-18 02:55:39 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_actor, layer=10
+2025-03-18 02:55:43 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_politician, layer=10
+2025-03-18 02:55:48 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_journalist, layer=10
+2025-03-18 02:55:52 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_athlete, layer=10
+2025-03-18 02:55:56 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_researcher, layer=10
+2025-03-18 02:56:00 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_occupation_is_singer, layer=11
+2025-03-18 02:56:10 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_actor, layer=11
+[2025-03-18 02:56:15.682] [CUML] [warning] L-BFGS stopped, because the line search failed to advance (step delta = 0.000000)
+2025-03-18 02:56:23 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_politician, layer=11
+[2025-03-18 02:56:30.494] [CUML] [warning] L-BFGS stopped, because the line search failed to advance (step delta = 0.000000)
+[2025-03-18 02:56:40.488] [CUML] [warning] L-BFGS stopped, because the line search failed to advance (step delta = 0.000000)
+2025-03-18 02:56:40 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_journalist, layer=11
+2025-03-18 02:56:55 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_athlete, layer=11
+2025-03-18 02:57:10 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_researcher, layer=11
+[2025-03-18 02:57:16.195] [CUML] [warning] L-BFGS stopped, because the line search failed to advance (step delta = 0.000000)
+2025-03-18 02:57:19 [ActivationConsumer] [INFO] Wrote delta selectivity results to results_160m/EleutherAI_pythia-160m_wikidata_occupation.json for dataset 8.
+2025-03-18 02:57:20 [MainThread] [INFO] Dataset 8 is fully processed.
+
+2025-03-18 02:57:20 [MainThread] [INFO] Starting dataset 9...
+2025-03-18 02:57:20 [ActivationConsumer] [INFO] Running consumer on cuda:1
+2025-03-18 02:57:20 [MainThread] [INFO] Validating Arguments...
+2025-03-18 02:57:20 [MainThread] [INFO] Computing activations with the following arguments:
+2025-03-18 02:57:20 [MainThread] [INFO] Namespace(model_name='EleutherAI/pythia-160m', sae_name='EleutherAI/sae-pythia-160m-32k', dataset_idx=9, start_index=0, n_samples=None, device='cuda:0', batch_size=512, layers='0,1,2,3,4,5,6,7,8,9,10,11', output_size=2048, output_directory='results_160m', num_workers=2, model_hook_template='blocks.<layer>.hook_resid_post', sae_layer_template='layers.<layer>')
+2025-03-18 02:57:20 [MainThread] [INFO] Configured Model Hook Points:
+2025-03-18 02:57:20 [MainThread] [INFO] ['blocks.0.hook_resid_post', 'blocks.1.hook_resid_post', 'blocks.2.hook_resid_post', 'blocks.3.hook_resid_post', 'blocks.4.hook_resid_post', 'blocks.5.hook_resid_post', 'blocks.6.hook_resid_post', 'blocks.7.hook_resid_post', 'blocks.8.hook_resid_post', 'blocks.9.hook_resid_post', 'blocks.10.hook_resid_post', 'blocks.11.hook_resid_post']
+2025-03-18 02:57:20 [MainThread] [INFO] Configured SAEs:
+2025-03-18 02:57:20 [MainThread] [INFO] ['layers.0', 'layers.1', 'layers.2', 'layers.3', 'layers.4', 'layers.5', 'layers.6', 'layers.7', 'layers.8', 'layers.9', 'layers.10', 'layers.11']
+2025-03-18 02:57:20 [MainThread] [INFO] Loading Dataset...
+2025-03-18 02:57:20 [MainThread] [INFO] Loading Model...
+Loaded pretrained model EleutherAI/pythia-160m into HookedTransformer
+Moving model to device:  cuda:0
+2025-03-18 02:57:56 [MainThread] [INFO] Loading SAE...
+Loading SAEs
+Fetching 50 files:   0%|          | 0/50 [00:00<?, ?it/s]Fetching 50 files: 100%|██████████| 50/50 [00:00<00:00, 8244.49it/s]
+2025-03-18 02:57:56 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:57:56 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:57:56 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:57:57 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:57:57 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:57:57 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:57:57 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:57:57 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:57:57 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:57:57 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:57:57 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:57:57 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:57:57 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:57:57 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:57:57 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:57:57 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:57:57 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:57:57 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:57:57 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:57:58 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:57:58 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:57:58 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:57:58 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 02:57:58 [MainThread] [WARNING] Dropping extra args {'signed': False}
+Finished Loading SAEs
+2025-03-18 02:57:58 [MainThread] [INFO] Starting Inference...
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+2025-03-18 02:57:58 [MainThread] [INFO] Processing batch 1/10...
+2025-03-18 02:58:05 [MainThread] [INFO] Processing batch 2/10...
+2025-03-18 02:58:11 [MainThread] [INFO] Processing batch 3/10...
+2025-03-18 02:58:18 [MainThread] [INFO] Processing batch 4/10...
+2025-03-18 02:58:23 [MainThread] [INFO] Enqueuing activations for shard 1...
+2025-03-18 02:58:23 [MainThread] [INFO] Processing batch 5/10...
+2025-03-18 02:58:25 [ActivationConsumer] [INFO] Consumer successfully processed shard 1
+2025-03-18 02:58:29 [MainThread] [INFO] Processing batch 6/10...
+2025-03-18 02:58:35 [MainThread] [INFO] Processing batch 7/10...
+2025-03-18 02:58:41 [MainThread] [INFO] Processing batch 8/10...
+2025-03-18 02:58:47 [MainThread] [INFO] Enqueuing activations for shard 2...
+2025-03-18 02:58:47 [MainThread] [INFO] Processing batch 9/10...
+2025-03-18 02:58:50 [ActivationConsumer] [INFO] Consumer successfully processed shard 2
+2025-03-18 02:58:55 [MainThread] [INFO] Processing batch 10/10...
+2025-03-18 02:58:59 [MainThread] [INFO] Enqueuing activations for shard 3...
+2025-03-18 02:59:00 [ActivationConsumer] [INFO] Consumer successfully processed shard 3
+2025-03-18 02:59:00 [ActivationConsumer] [INFO] Got sentinel for dataset 9. Finishing up.
+2025-03-18 02:59:00 [ActivationConsumer] [INFO] Aggregating traditional metrics for 9
+2025-03-18 02:59:00 [ActivationConsumer] [INFO] Received 5 binary probes for dataset 9.
+2025-03-18 02:59:00 [ActivationConsumer] [INFO] Probes Received for dataset 9: ['wikidata_athlete_is_football', 'wikidata_athlete_is_basketball', 'wikidata_athlete_is_baseball', 'wikidata_athlete_is_american_football', 'wikidata_athlete_is_icehockey']
+2025-03-18 02:59:00 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_football, layer=0
+2025-03-18 02:59:01 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_basketball, layer=0
+2025-03-18 02:59:02 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_baseball, layer=0
+2025-03-18 02:59:02 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_american_football, layer=0
+2025-03-18 02:59:03 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_icehockey, layer=0
+2025-03-18 02:59:03 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_football, layer=1
+2025-03-18 02:59:05 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_basketball, layer=1
+2025-03-18 02:59:06 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_baseball, layer=1
+2025-03-18 02:59:07 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_american_football, layer=1
+2025-03-18 02:59:08 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_icehockey, layer=1
+2025-03-18 02:59:10 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_football, layer=2
+2025-03-18 02:59:12 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_basketball, layer=2
+2025-03-18 02:59:14 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_baseball, layer=2
+2025-03-18 02:59:16 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_american_football, layer=2
+2025-03-18 02:59:18 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_icehockey, layer=2
+2025-03-18 02:59:21 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_football, layer=3
+2025-03-18 02:59:29 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_basketball, layer=3
+2025-03-18 02:59:35 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_baseball, layer=3
+[2025-03-18 02:59:42.328] [CUML] [warning] L-BFGS stopped, because the line search failed to advance (step delta = 0.000000)
+2025-03-18 02:59:42 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_american_football, layer=3
+2025-03-18 02:59:48 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_icehockey, layer=3
+2025-03-18 02:59:55 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_football, layer=4
+2025-03-18 03:00:02 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_basketball, layer=4
+2025-03-18 03:00:08 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_baseball, layer=4
+2025-03-18 03:00:13 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_american_football, layer=4
+2025-03-18 03:00:18 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_icehockey, layer=4
+2025-03-18 03:00:23 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_football, layer=5
+2025-03-18 03:00:30 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_basketball, layer=5
+2025-03-18 03:00:36 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_baseball, layer=5
+2025-03-18 03:00:43 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_american_football, layer=5
+2025-03-18 03:00:48 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_icehockey, layer=5
+2025-03-18 03:00:53 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_football, layer=6
+2025-03-18 03:01:00 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_basketball, layer=6
+2025-03-18 03:01:05 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_baseball, layer=6
+[2025-03-18 03:01:12.103] [CUML] [warning] L-BFGS stopped, because the line search failed to advance (step delta = 0.000000)
+2025-03-18 03:01:12 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_american_football, layer=6
+[2025-03-18 03:01:17.613] [CUML] [warning] L-BFGS stopped, because the line search failed to advance (step delta = 0.000000)
+2025-03-18 03:01:17 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_icehockey, layer=6
+2025-03-18 03:01:24 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_football, layer=7
+[2025-03-18 03:01:29.469] [CUML] [warning] L-BFGS stopped, because the line search failed to advance (step delta = 0.000000)
+2025-03-18 03:01:32 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_basketball, layer=7
+2025-03-18 03:01:40 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_baseball, layer=7
+2025-03-18 03:01:46 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_american_football, layer=7
+2025-03-18 03:01:53 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_icehockey, layer=7
+2025-03-18 03:02:00 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_football, layer=8
+2025-03-18 03:02:07 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_basketball, layer=8
+2025-03-18 03:02:16 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_baseball, layer=8
+2025-03-18 03:02:23 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_american_football, layer=8
+2025-03-18 03:02:30 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_icehockey, layer=8
+2025-03-18 03:02:36 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_football, layer=9
+2025-03-18 03:02:44 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_basketball, layer=9
+2025-03-18 03:02:50 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_baseball, layer=9
+2025-03-18 03:02:56 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_american_football, layer=9
+2025-03-18 03:03:00 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_icehockey, layer=9
+2025-03-18 03:03:09 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_football, layer=10
+2025-03-18 03:03:12 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_basketball, layer=10
+2025-03-18 03:03:16 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_baseball, layer=10
+2025-03-18 03:03:20 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_american_football, layer=10
+2025-03-18 03:03:24 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_icehockey, layer=10
+2025-03-18 03:03:28 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_football, layer=11
+2025-03-18 03:03:43 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_basketball, layer=11
+2025-03-18 03:03:56 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_baseball, layer=11
+[2025-03-18 03:04:06.371] [CUML] [warning] L-BFGS stopped, because the line search failed to advance (step delta = 0.000000)
+2025-03-18 03:04:06 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_american_football, layer=11
+2025-03-18 03:04:20 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_icehockey, layer=11
+2025-03-18 03:04:34 [ActivationConsumer] [INFO] Wrote delta selectivity results to results_160m/EleutherAI_pythia-160m_wikidata_athlete.json for dataset 9.
+2025-03-18 03:04:35 [MainThread] [INFO] Dataset 9 is fully processed.
+
+2025-03-18 03:04:35 [MainThread] [INFO] Starting dataset 10...
+2025-03-18 03:04:35 [ActivationConsumer] [INFO] Running consumer on cuda:1
+2025-03-18 03:04:35 [MainThread] [INFO] Validating Arguments...
+2025-03-18 03:04:35 [MainThread] [INFO] Computing activations with the following arguments:
+2025-03-18 03:04:35 [MainThread] [INFO] Namespace(model_name='EleutherAI/pythia-160m', sae_name='EleutherAI/sae-pythia-160m-32k', dataset_idx=10, start_index=0, n_samples=None, device='cuda:0', batch_size=512, layers='0,1,2,3,4,5,6,7,8,9,10,11', output_size=2048, output_directory='results_160m', num_workers=2, model_hook_template='blocks.<layer>.hook_resid_post', sae_layer_template='layers.<layer>')
+2025-03-18 03:04:35 [MainThread] [INFO] Configured Model Hook Points:
+2025-03-18 03:04:35 [MainThread] [INFO] ['blocks.0.hook_resid_post', 'blocks.1.hook_resid_post', 'blocks.2.hook_resid_post', 'blocks.3.hook_resid_post', 'blocks.4.hook_resid_post', 'blocks.5.hook_resid_post', 'blocks.6.hook_resid_post', 'blocks.7.hook_resid_post', 'blocks.8.hook_resid_post', 'blocks.9.hook_resid_post', 'blocks.10.hook_resid_post', 'blocks.11.hook_resid_post']
+2025-03-18 03:04:35 [MainThread] [INFO] Configured SAEs:
+2025-03-18 03:04:35 [MainThread] [INFO] ['layers.0', 'layers.1', 'layers.2', 'layers.3', 'layers.4', 'layers.5', 'layers.6', 'layers.7', 'layers.8', 'layers.9', 'layers.10', 'layers.11']
+2025-03-18 03:04:35 [MainThread] [INFO] Loading Dataset...
+2025-03-18 03:04:35 [MainThread] [INFO] Loading Model...
+Loaded pretrained model EleutherAI/pythia-160m into HookedTransformer
+Moving model to device:  cuda:0
+2025-03-18 03:05:10 [MainThread] [INFO] Loading SAE...
+Loading SAEs
+Fetching 50 files:   0%|          | 0/50 [00:00<?, ?it/s]Fetching 50 files: 100%|██████████| 50/50 [00:00<00:00, 8570.30it/s]
+2025-03-18 03:05:10 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 03:05:10 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 03:05:10 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 03:05:10 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 03:05:10 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 03:05:10 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 03:05:10 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 03:05:10 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 03:05:10 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 03:05:10 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 03:05:10 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 03:05:10 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 03:05:10 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 03:05:11 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 03:05:11 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 03:05:11 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 03:05:11 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 03:05:11 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 03:05:11 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 03:05:11 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 03:05:11 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 03:05:11 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 03:05:11 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 03:05:11 [MainThread] [WARNING] Dropping extra args {'signed': False}
+Finished Loading SAEs
+2025-03-18 03:05:11 [MainThread] [INFO] Starting Inference...
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+2025-03-18 03:05:12 [MainThread] [INFO] Processing batch 1/6...
+2025-03-18 03:05:19 [MainThread] [INFO] Processing batch 2/6...
+2025-03-18 03:05:25 [MainThread] [INFO] Processing batch 3/6...
+2025-03-18 03:05:32 [MainThread] [INFO] Processing batch 4/6...
+2025-03-18 03:05:38 [MainThread] [INFO] Enqueuing activations for shard 1...
+2025-03-18 03:05:38 [MainThread] [INFO] Processing batch 5/6...
+2025-03-18 03:05:40 [ActivationConsumer] [INFO] Consumer successfully processed shard 1
+2025-03-18 03:05:45 [MainThread] [INFO] Processing batch 6/6...
+2025-03-18 03:05:51 [MainThread] [INFO] Enqueuing activations for shard 2...
+2025-03-18 03:05:52 [ActivationConsumer] [INFO] Consumer successfully processed shard 2
+2025-03-18 03:05:52 [ActivationConsumer] [INFO] Got sentinel for dataset 10. Finishing up.
+2025-03-18 03:05:52 [ActivationConsumer] [INFO] Aggregating traditional metrics for 10
+2025-03-18 03:05:52 [ActivationConsumer] [INFO] Received 1 binary probes for dataset 10.
+2025-03-18 03:05:52 [ActivationConsumer] [INFO] Probes Received for dataset 10: ['wikidata_politics_1democratic_0republic']
+2025-03-18 03:05:52 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_politics_1democratic_0republic, layer=0
+2025-03-18 03:05:52 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_politics_1democratic_0republic, layer=1
+2025-03-18 03:05:53 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_politics_1democratic_0republic, layer=2
+2025-03-18 03:05:55 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_politics_1democratic_0republic, layer=3
+2025-03-18 03:05:58 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_politics_1democratic_0republic, layer=4
+2025-03-18 03:06:01 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_politics_1democratic_0republic, layer=5
+2025-03-18 03:06:04 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_politics_1democratic_0republic, layer=6
+2025-03-18 03:06:08 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_politics_1democratic_0republic, layer=7
+2025-03-18 03:06:11 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_politics_1democratic_0republic, layer=8
+[2025-03-18 03:06:15.530] [CUML] [warning] L-BFGS stopped, because the line search failed to advance (step delta = 0.000000)
+2025-03-18 03:06:15 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_politics_1democratic_0republic, layer=9
+2025-03-18 03:06:19 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_politics_1democratic_0republic, layer=10
+2025-03-18 03:06:21 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_politics_1democratic_0republic, layer=11
+2025-03-18 03:06:30 [ActivationConsumer] [INFO] Wrote delta selectivity results to results_160m/EleutherAI_pythia-160m_wikidata_politics.json for dataset 10.
+2025-03-18 03:06:30 [MainThread] [INFO] Dataset 10 is fully processed.
+
+2025-03-18 03:06:30 [MainThread] [INFO] Starting dataset 11...
+2025-03-18 03:06:30 [ActivationConsumer] [INFO] Running consumer on cuda:1
+2025-03-18 03:06:30 [MainThread] [INFO] Validating Arguments...
+2025-03-18 03:06:30 [MainThread] [INFO] Computing activations with the following arguments:
+2025-03-18 03:06:30 [MainThread] [INFO] Namespace(model_name='EleutherAI/pythia-160m', sae_name='EleutherAI/sae-pythia-160m-32k', dataset_idx=11, start_index=0, n_samples=None, device='cuda:0', batch_size=512, layers='0,1,2,3,4,5,6,7,8,9,10,11', output_size=2048, output_directory='results_160m', num_workers=2, model_hook_template='blocks.<layer>.hook_resid_post', sae_layer_template='layers.<layer>')
+2025-03-18 03:06:30 [MainThread] [INFO] Configured Model Hook Points:
+2025-03-18 03:06:30 [MainThread] [INFO] ['blocks.0.hook_resid_post', 'blocks.1.hook_resid_post', 'blocks.2.hook_resid_post', 'blocks.3.hook_resid_post', 'blocks.4.hook_resid_post', 'blocks.5.hook_resid_post', 'blocks.6.hook_resid_post', 'blocks.7.hook_resid_post', 'blocks.8.hook_resid_post', 'blocks.9.hook_resid_post', 'blocks.10.hook_resid_post', 'blocks.11.hook_resid_post']
+2025-03-18 03:06:30 [MainThread] [INFO] Configured SAEs:
+2025-03-18 03:06:30 [MainThread] [INFO] ['layers.0', 'layers.1', 'layers.2', 'layers.3', 'layers.4', 'layers.5', 'layers.6', 'layers.7', 'layers.8', 'layers.9', 'layers.10', 'layers.11']
+2025-03-18 03:06:30 [MainThread] [INFO] Loading Dataset...
+2025-03-18 03:06:30 [MainThread] [INFO] Loading Model...
+Loaded pretrained model EleutherAI/pythia-160m into HookedTransformer
+Moving model to device:  cuda:0
+2025-03-18 03:06:58 [MainThread] [INFO] Loading SAE...
+Loading SAEs
+Fetching 50 files:   0%|          | 0/50 [00:00<?, ?it/s]Fetching 50 files: 100%|██████████| 50/50 [00:00<00:00, 8722.87it/s]
+2025-03-18 03:06:58 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 03:06:58 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 03:06:58 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 03:06:59 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 03:06:59 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 03:06:59 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 03:06:59 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 03:06:59 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 03:06:59 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 03:06:59 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 03:06:59 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 03:06:59 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 03:06:59 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 03:06:59 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 03:07:00 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 03:07:00 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 03:07:00 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 03:07:01 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 03:07:01 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 03:07:01 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 03:07:01 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 03:07:01 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 03:07:01 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 03:07:01 [MainThread] [WARNING] Dropping extra args {'signed': False}
+Finished Loading SAEs
+2025-03-18 03:07:01 [MainThread] [INFO] Starting Inference...
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+2025-03-18 03:07:01 [MainThread] [INFO] Processing batch 1/12...
+2025-03-18 03:07:08 [MainThread] [INFO] Processing batch 2/12...
+2025-03-18 03:07:14 [MainThread] [INFO] Processing batch 3/12...
+2025-03-18 03:07:21 [MainThread] [INFO] Processing batch 4/12...
+2025-03-18 03:07:27 [MainThread] [INFO] Enqueuing activations for shard 1...
+2025-03-18 03:07:27 [MainThread] [INFO] Processing batch 5/12...
+2025-03-18 03:07:30 [ActivationConsumer] [INFO] Consumer successfully processed shard 1
+2025-03-18 03:07:34 [MainThread] [INFO] Processing batch 6/12...
+2025-03-18 03:07:41 [MainThread] [INFO] Processing batch 7/12...
+2025-03-18 03:07:47 [MainThread] [INFO] Processing batch 8/12...
+2025-03-18 03:07:54 [MainThread] [INFO] Enqueuing activations for shard 2...
+2025-03-18 03:07:54 [MainThread] [INFO] Processing batch 9/12...
+2025-03-18 03:07:58 [ActivationConsumer] [INFO] Consumer successfully processed shard 2
+2025-03-18 03:08:02 [MainThread] [INFO] Processing batch 10/12...
+2025-03-18 03:08:08 [MainThread] [INFO] Processing batch 11/12...
+2025-03-18 03:08:15 [MainThread] [INFO] Processing batch 12/12...
+2025-03-18 03:08:20 [MainThread] [INFO] Enqueuing activations for shard 3...
+2025-03-18 03:08:21 [ActivationConsumer] [INFO] Consumer successfully processed shard 3
+2025-03-18 03:08:21 [ActivationConsumer] [INFO] Got sentinel for dataset 11. Finishing up.
+2025-03-18 03:08:21 [ActivationConsumer] [INFO] Aggregating traditional metrics for 11
+2025-03-18 03:08:21 [ActivationConsumer] [INFO] Received 1 binary probes for dataset 11.
+2025-03-18 03:08:21 [ActivationConsumer] [INFO] Probes Received for dataset 11: ['wikidata_gender_1female_0male']
+2025-03-18 03:08:21 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_gender_1female_0male, layer=0
+2025-03-18 03:08:22 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_gender_1female_0male, layer=1
+2025-03-18 03:08:24 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_gender_1female_0male, layer=2
+2025-03-18 03:08:28 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_gender_1female_0male, layer=3
+2025-03-18 03:08:40 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_gender_1female_0male, layer=4
+2025-03-18 03:08:51 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_gender_1female_0male, layer=5
+2025-03-18 03:09:06 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_gender_1female_0male, layer=6
+2025-03-18 03:09:18 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_gender_1female_0male, layer=7
+2025-03-18 03:09:31 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_gender_1female_0male, layer=8
+2025-03-18 03:09:44 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_gender_1female_0male, layer=9
+2025-03-18 03:09:56 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_gender_1female_0male, layer=10
+2025-03-18 03:10:04 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_gender_1female_0male, layer=11
+[2025-03-18 03:10:26.087] [CUML] [warning] L-BFGS stopped, because the line search failed to advance (step delta = 0.000000)
+2025-03-18 03:10:26 [ActivationConsumer] [INFO] Wrote delta selectivity results to results_160m/EleutherAI_pythia-160m_wikidata_gender.json for dataset 11.
+2025-03-18 03:10:26 [MainThread] [INFO] Dataset 11 is fully processed.
+
+2025-03-18 03:10:27 [MainThread] [INFO] All datasets processed. Exiting.

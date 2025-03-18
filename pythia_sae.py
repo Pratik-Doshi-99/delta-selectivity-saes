@@ -18,13 +18,15 @@ class SAE:
     def load_many(self, sae_name:str, layers: List[int]):
         print('Loading SAEs')
         saes = Sae.load_many(sae_name, device=self.device)
-        print('Finished Loading SAEs')
+        
         sae_keys = [(layer, re.sub("<layer>",str(layer),self.sae_layer_template)) for layer in layers]
         for key in sae_keys:
             if key[1] not in saes:
                 raise ValueError(f"SAE for layer {key[1]} not found in {sae_name}")
             self.sae_layers[key[0]] = saes[key[1]].to(self.device)
-            print(f'Layer {key[0]} laoded')
+            #print(f'Layer {key[0]} laoded')
+
+        print('Finished Loading SAEs')
         
 
 
