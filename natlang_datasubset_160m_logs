@@ -1,0 +1,14 @@
+2025-03-18 03:47:03 [MainThread] [INFO] Computing selectivity with the following arguments:
+2025-03-18 03:47:03 [MainThread] [INFO] Namespace(device1=None, device2=None, output_directory='results_160m', model_name='EleutherAI/pythia-160m', sae_name='EleutherAI/sae-pythia-160m-32k', datasets='1,4', start_index=0, n_samples=None, batch_size=256, layers='0,1,2,3,4,5,6,7,8,9,10,11', output_size=2048, num_workers=2, model_hook_template='blocks.<layer>.hook_resid_post', sae_layer_template='layers.<layer>')
+2025-03-18 03:47:03 [MainThread] [INFO] Will process dataset indices: [1, 4]
+2025-03-18 03:47:03 [MainThread] [INFO] Starting dataset 1...
+2025-03-18 03:47:03 [MainThread] [INFO] Validating Arguments...
+2025-03-18 03:47:03 [MainThread] [INFO] Computing activations with the following arguments:
+2025-03-18 03:47:03 [MainThread] [INFO] Namespace(model_name='EleutherAI/pythia-160m', sae_name='EleutherAI/sae-pythia-160m-32k', dataset_idx=1, start_index=0, n_samples=None, device='cuda:0', batch_size=256, layers='0,1,2,3,4,5,6,7,8,9,10,11', output_size=2048, output_directory='results_160m', num_workers=2, model_hook_template='blocks.<layer>.hook_resid_post', sae_layer_template='layers.<layer>')
+2025-03-18 03:47:03 [MainThread] [INFO] Configured Model Hook Points:
+2025-03-18 03:47:03 [MainThread] [INFO] ['blocks.0.hook_resid_post', 'blocks.1.hook_resid_post', 'blocks.2.hook_resid_post', 'blocks.3.hook_resid_post', 'blocks.4.hook_resid_post', 'blocks.5.hook_resid_post', 'blocks.6.hook_resid_post', 'blocks.7.hook_resid_post', 'blocks.8.hook_resid_post', 'blocks.9.hook_resid_post', 'blocks.10.hook_resid_post', 'blocks.11.hook_resid_post']
+2025-03-18 03:47:03 [MainThread] [INFO] Configured SAEs:
+2025-03-18 03:47:03 [MainThread] [INFO] ['layers.0', 'layers.1', 'layers.2', 'layers.3', 'layers.4', 'layers.5', 'layers.6', 'layers.7', 'layers.8', 'layers.9', 'layers.10', 'layers.11']
+2025-03-18 03:47:03 [MainThread] [INFO] Loading Dataset...
+2025-03-18 03:47:03 [MainThread] [INFO] Loading Model...
+2025-03-18 03:47:08 [ActivationConsumer] [INFO] Running consumer on cuda:1

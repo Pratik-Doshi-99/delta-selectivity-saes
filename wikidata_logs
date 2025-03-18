@@ -1,0 +1,807 @@
+2025-03-18 00:56:54 [MainThread] [INFO] Computing selectivity with the following arguments:
+2025-03-18 00:56:54 [MainThread] [INFO] Namespace(device1=None, device2=None, output_directory='results', model_name='EleutherAI/pythia-160m', sae_name='EleutherAI/sae-pythia-160m-32k', datasets='7,8,9,10,11', start_index=0, n_samples=None, batch_size=512, layers='0,1,2,3,4,5,6,7,8,9,10,11', output_size=2048, num_workers=2, model_hook_template='blocks.<layer>.hook_resid_post', sae_layer_template='layers.<layer>')
+2025-03-18 00:56:54 [MainThread] [INFO] Will process dataset indices: [7, 8, 9, 10, 11]
+2025-03-18 00:56:54 [MainThread] [INFO] Starting dataset 7...
+2025-03-18 00:56:54 [MainThread] [INFO] Validating Arguments...
+2025-03-18 00:56:54 [MainThread] [INFO] Computing activations with the following arguments:
+2025-03-18 00:56:54 [MainThread] [INFO] Namespace(model_name='EleutherAI/pythia-160m', sae_name='EleutherAI/sae-pythia-160m-32k', dataset_idx=7, start_index=0, n_samples=None, device='cuda:0', batch_size=512, layers='0,1,2,3,4,5,6,7,8,9,10,11', output_size=2048, output_directory='results', num_workers=2, model_hook_template='blocks.<layer>.hook_resid_post', sae_layer_template='layers.<layer>')
+2025-03-18 00:56:54 [MainThread] [INFO] Configured Model Hook Points:
+2025-03-18 00:56:54 [MainThread] [INFO] ['blocks.0.hook_resid_post', 'blocks.1.hook_resid_post', 'blocks.2.hook_resid_post', 'blocks.3.hook_resid_post', 'blocks.4.hook_resid_post', 'blocks.5.hook_resid_post', 'blocks.6.hook_resid_post', 'blocks.7.hook_resid_post', 'blocks.8.hook_resid_post', 'blocks.9.hook_resid_post', 'blocks.10.hook_resid_post', 'blocks.11.hook_resid_post']
+2025-03-18 00:56:54 [MainThread] [INFO] Configured SAEs:
+2025-03-18 00:56:54 [MainThread] [INFO] ['layers.0', 'layers.1', 'layers.2', 'layers.3', 'layers.4', 'layers.5', 'layers.6', 'layers.7', 'layers.8', 'layers.9', 'layers.10', 'layers.11']
+2025-03-18 00:56:54 [MainThread] [INFO] Loading Dataset...
+2025-03-18 00:56:54 [MainThread] [INFO] Loading Model...
+2025-03-18 00:57:09 [ActivationConsumer] [INFO] Running consumer on cuda:1
+Loaded pretrained model EleutherAI/pythia-160m into HookedTransformer
+Moving model to device:  cuda:0
+2025-03-18 00:57:32 [MainThread] [INFO] Loading SAE...
+Loading SAEs
+Fetching 50 files:   0%|          | 0/50 [00:00<?, ?it/s]Fetching 50 files: 100%|██████████| 50/50 [00:00<00:00, 6055.88it/s]
+2025-03-18 00:57:32 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 00:57:32 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 00:57:32 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 00:57:33 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 00:57:33 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 00:57:33 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 00:57:33 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 00:57:33 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 00:57:33 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 00:57:33 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 00:57:33 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 00:57:33 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 00:57:33 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 00:57:33 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 00:57:34 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 00:57:34 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 00:57:34 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 00:57:34 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 00:57:34 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 00:57:34 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 00:57:34 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 00:57:34 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 00:57:34 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 00:57:34 [MainThread] [WARNING] Dropping extra args {'signed': False}
+Finished Loading SAEs
+Layer 0 laoded
+Layer 1 laoded
+Layer 2 laoded
+Layer 3 laoded
+Layer 4 laoded
+Layer 5 laoded
+Layer 6 laoded
+Layer 7 laoded
+Layer 8 laoded
+Layer 9 laoded
+Layer 10 laoded
+Layer 11 laoded
+2025-03-18 00:57:35 [MainThread] [INFO] Starting Inference...
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+2025-03-18 00:57:35 [MainThread] [INFO] Processing batch 1/12...
+2025-03-18 00:57:44 [MainThread] [INFO] Processing batch 2/12...
+2025-03-18 00:57:51 [MainThread] [INFO] Processing batch 3/12...
+2025-03-18 00:57:58 [MainThread] [INFO] Processing batch 4/12...
+2025-03-18 00:58:06 [MainThread] [INFO] Enqueuing activations for shard 1...
+2025-03-18 00:58:06 [MainThread] [INFO] Processing batch 5/12...
+2025-03-18 00:58:11 [ActivationConsumer] [INFO] Consumer successfully processed shard 1
+2025-03-18 00:58:16 [MainThread] [INFO] Processing batch 6/12...
+2025-03-18 00:58:25 [MainThread] [INFO] Processing batch 7/12...
+2025-03-18 00:58:33 [MainThread] [INFO] Processing batch 8/12...
+2025-03-18 00:58:41 [MainThread] [INFO] Enqueuing activations for shard 2...
+2025-03-18 00:58:42 [MainThread] [INFO] Processing batch 9/12...
+2025-03-18 00:58:45 [ActivationConsumer] [INFO] Consumer successfully processed shard 2
+2025-03-18 00:58:51 [MainThread] [INFO] Processing batch 10/12...
+2025-03-18 00:58:58 [MainThread] [INFO] Processing batch 11/12...
+2025-03-18 00:59:06 [MainThread] [INFO] Processing batch 12/12...
+2025-03-18 00:59:12 [MainThread] [INFO] Enqueuing activations for shard 3...
+2025-03-18 00:59:14 [ActivationConsumer] [INFO] Consumer successfully processed shard 3
+2025-03-18 00:59:14 [ActivationConsumer] [INFO] Got sentinel for dataset 7. Finishing up.
+2025-03-18 00:59:14 [ActivationConsumer] [INFO] Aggregating traditional metrics for 7
+2025-03-18 00:59:14 [ActivationConsumer] [INFO] Received 1 binary probes for dataset 7.
+2025-03-18 00:59:14 [ActivationConsumer] [INFO] Probes Received for dataset 7: ['wikidata_1alive_0dead']
+2025-03-18 00:59:15 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_1alive_0dead, layer=0
+2025-03-18 00:59:17 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_1alive_0dead, layer=1
+2025-03-18 00:59:20 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_1alive_0dead, layer=2
+2025-03-18 00:59:25 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_1alive_0dead, layer=3
+2025-03-18 00:59:36 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_1alive_0dead, layer=4
+[2025-03-18 00:59:43.729] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 00:59:43.735] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 00:59:49 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_1alive_0dead, layer=5
+2025-03-18 01:00:00 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_1alive_0dead, layer=6
+[2025-03-18 01:00:07.044] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:00:07.047] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+[2025-03-18 01:00:12.763] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:00:12.765] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:00:13 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_1alive_0dead, layer=7
+[2025-03-18 01:00:19.012] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:00:19.015] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+[2025-03-18 01:00:24.858] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:00:24.860] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:00:25 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_1alive_0dead, layer=8
+[2025-03-18 01:00:35.444] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:00:35.447] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:00:35 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_1alive_0dead, layer=9
+[2025-03-18 01:00:46.921] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:00:46.924] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:00:47 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_1alive_0dead, layer=10
+2025-03-18 01:00:56 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_1alive_0dead, layer=11
+[2025-03-18 01:01:02.541] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:01:02.544] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+[2025-03-18 01:01:08.821] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:01:08.824] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:01:08 [ActivationConsumer] [INFO] Wrote delta selectivity results to results/EleutherAI_pythia-160m_wikidata_is_alive.json for dataset 7.
+2025-03-18 01:01:08 [MainThread] [INFO] Dataset 7 is fully processed.
+
+2025-03-18 01:01:08 [MainThread] [INFO] Starting dataset 8...
+2025-03-18 01:01:08 [ActivationConsumer] [INFO] Running consumer on cuda:1
+2025-03-18 01:01:08 [MainThread] [INFO] Validating Arguments...
+2025-03-18 01:01:08 [MainThread] [INFO] Computing activations with the following arguments:
+2025-03-18 01:01:08 [MainThread] [INFO] Namespace(model_name='EleutherAI/pythia-160m', sae_name='EleutherAI/sae-pythia-160m-32k', dataset_idx=8, start_index=0, n_samples=None, device='cuda:0', batch_size=512, layers='0,1,2,3,4,5,6,7,8,9,10,11', output_size=2048, output_directory='results', num_workers=2, model_hook_template='blocks.<layer>.hook_resid_post', sae_layer_template='layers.<layer>')
+2025-03-18 01:01:08 [MainThread] [INFO] Configured Model Hook Points:
+2025-03-18 01:01:08 [MainThread] [INFO] ['blocks.0.hook_resid_post', 'blocks.1.hook_resid_post', 'blocks.2.hook_resid_post', 'blocks.3.hook_resid_post', 'blocks.4.hook_resid_post', 'blocks.5.hook_resid_post', 'blocks.6.hook_resid_post', 'blocks.7.hook_resid_post', 'blocks.8.hook_resid_post', 'blocks.9.hook_resid_post', 'blocks.10.hook_resid_post', 'blocks.11.hook_resid_post']
+2025-03-18 01:01:08 [MainThread] [INFO] Configured SAEs:
+2025-03-18 01:01:08 [MainThread] [INFO] ['layers.0', 'layers.1', 'layers.2', 'layers.3', 'layers.4', 'layers.5', 'layers.6', 'layers.7', 'layers.8', 'layers.9', 'layers.10', 'layers.11']
+2025-03-18 01:01:08 [MainThread] [INFO] Loading Dataset...
+2025-03-18 01:01:08 [MainThread] [INFO] Loading Model...
+Loaded pretrained model EleutherAI/pythia-160m into HookedTransformer
+Moving model to device:  cuda:0
+2025-03-18 01:01:46 [MainThread] [INFO] Loading SAE...
+Loading SAEs
+Fetching 50 files:   0%|          | 0/50 [00:00<?, ?it/s]Fetching 50 files: 100%|██████████| 50/50 [00:00<00:00, 12193.45it/s]
+2025-03-18 01:01:46 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:01:46 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:01:46 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:01:47 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:01:47 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:01:47 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:01:47 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:01:47 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:01:47 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:01:47 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:01:47 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:01:47 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:01:47 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:01:47 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:01:47 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:01:47 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:01:47 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:01:47 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:01:47 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:01:48 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:01:48 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:01:48 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:01:48 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:01:48 [MainThread] [WARNING] Dropping extra args {'signed': False}
+Finished Loading SAEs
+Layer 0 laoded
+Layer 1 laoded
+Layer 2 laoded
+Layer 3 laoded
+Layer 4 laoded
+Layer 5 laoded
+Layer 6 laoded
+Layer 7 laoded
+Layer 8 laoded
+Layer 9 laoded
+Layer 10 laoded
+Layer 11 laoded
+2025-03-18 01:01:48 [MainThread] [INFO] Starting Inference...
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+2025-03-18 01:01:48 [MainThread] [INFO] Processing batch 1/12...
+2025-03-18 01:01:57 [MainThread] [INFO] Processing batch 2/12...
+2025-03-18 01:02:05 [MainThread] [INFO] Processing batch 3/12...
+2025-03-18 01:02:12 [MainThread] [INFO] Processing batch 4/12...
+2025-03-18 01:02:20 [MainThread] [INFO] Enqueuing activations for shard 1...
+2025-03-18 01:02:20 [MainThread] [INFO] Processing batch 5/12...
+2025-03-18 01:02:24 [ActivationConsumer] [INFO] Consumer successfully processed shard 1
+2025-03-18 01:02:29 [MainThread] [INFO] Processing batch 6/12...
+2025-03-18 01:02:37 [MainThread] [INFO] Processing batch 7/12...
+2025-03-18 01:02:44 [MainThread] [INFO] Processing batch 8/12...
+2025-03-18 01:02:51 [MainThread] [INFO] Enqueuing activations for shard 2...
+2025-03-18 01:02:52 [MainThread] [INFO] Processing batch 9/12...
+2025-03-18 01:02:55 [ActivationConsumer] [INFO] Consumer successfully processed shard 2
+2025-03-18 01:03:00 [MainThread] [INFO] Processing batch 10/12...
+2025-03-18 01:03:08 [MainThread] [INFO] Processing batch 11/12...
+2025-03-18 01:03:16 [MainThread] [INFO] Processing batch 12/12...
+2025-03-18 01:03:22 [MainThread] [INFO] Enqueuing activations for shard 3...
+2025-03-18 01:03:24 [ActivationConsumer] [INFO] Consumer successfully processed shard 3
+2025-03-18 01:03:24 [ActivationConsumer] [INFO] Got sentinel for dataset 8. Finishing up.
+2025-03-18 01:03:24 [ActivationConsumer] [INFO] Aggregating traditional metrics for 8
+2025-03-18 01:03:25 [ActivationConsumer] [INFO] Received 6 binary probes for dataset 8.
+2025-03-18 01:03:25 [ActivationConsumer] [INFO] Probes Received for dataset 8: ['wikidata_occupation_is_singer', 'wikidata_athlete_is_actor', 'wikidata_athlete_is_politician', 'wikidata_athlete_is_journalist', 'wikidata_athlete_is_athlete', 'wikidata_athlete_is_researcher']
+2025-03-18 01:03:25 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_occupation_is_singer, layer=0
+2025-03-18 01:03:26 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_actor, layer=0
+2025-03-18 01:03:26 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_politician, layer=0
+2025-03-18 01:03:27 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_journalist, layer=0
+2025-03-18 01:03:28 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_athlete, layer=0
+2025-03-18 01:03:28 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_researcher, layer=0
+2025-03-18 01:03:29 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_occupation_is_singer, layer=1
+2025-03-18 01:03:30 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_actor, layer=1
+2025-03-18 01:03:32 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_politician, layer=1
+2025-03-18 01:03:33 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_journalist, layer=1
+2025-03-18 01:03:34 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_athlete, layer=1
+2025-03-18 01:03:36 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_researcher, layer=1
+2025-03-18 01:03:37 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_occupation_is_singer, layer=2
+2025-03-18 01:03:39 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_actor, layer=2
+2025-03-18 01:03:42 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_politician, layer=2
+2025-03-18 01:03:44 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_journalist, layer=2
+2025-03-18 01:03:47 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_athlete, layer=2
+2025-03-18 01:03:49 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_researcher, layer=2
+2025-03-18 01:03:51 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_occupation_is_singer, layer=3
+2025-03-18 01:03:59 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_actor, layer=3
+[2025-03-18 01:04:03.717] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:04:03.721] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:04:07 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_politician, layer=3
+[2025-03-18 01:04:12.903] [CUML] [warning] L-BFGS stopped, because the line search failed to advance (step delta = 0.000000)
+2025-03-18 01:04:12 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_journalist, layer=3
+2025-03-18 01:04:21 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_athlete, layer=3
+[2025-03-18 01:04:26.165] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:04:26.169] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:04:29 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_researcher, layer=3
+2025-03-18 01:04:38 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_occupation_is_singer, layer=4
+[2025-03-18 01:04:45.959] [CUML] [warning] L-BFGS stopped, because the line search failed to advance (step delta = 0.000000)
+2025-03-18 01:04:45 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_actor, layer=4
+2025-03-18 01:04:52 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_politician, layer=4
+[2025-03-18 01:04:55.778] [CUML] [warning] L-BFGS stopped, because the line search failed to advance (step delta = 0.000000)
+2025-03-18 01:04:59 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_journalist, layer=4
+2025-03-18 01:05:06 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_athlete, layer=4
+2025-03-18 01:05:12 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_researcher, layer=4
+2025-03-18 01:05:18 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_occupation_is_singer, layer=5
+2025-03-18 01:05:25 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_actor, layer=5
+[2025-03-18 01:05:30.169] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:05:30.172] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:05:33 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_politician, layer=5
+[2025-03-18 01:05:39.749] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:05:39.754] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:05:39 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_journalist, layer=5
+2025-03-18 01:05:46 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_athlete, layer=5
+[2025-03-18 01:05:50.863] [CUML] [warning] L-BFGS stopped, because the line search failed to advance (step delta = 0.000000)
+2025-03-18 01:05:53 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_researcher, layer=5
+2025-03-18 01:05:59 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_occupation_is_singer, layer=6
+[2025-03-18 01:06:03.740] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:06:03.742] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:06:07 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_actor, layer=6
+[2025-03-18 01:06:11.366] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:06:11.369] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+[2025-03-18 01:06:15.135] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:06:15.138] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:06:15 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_politician, layer=6
+[2025-03-18 01:06:20.056] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:06:20.059] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:06:23 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_journalist, layer=6
+[2025-03-18 01:06:27.897] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:06:27.899] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:06:31 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_athlete, layer=6
+[2025-03-18 01:06:35.680] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:06:35.683] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:06:39 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_researcher, layer=6
+[2025-03-18 01:06:46.736] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:06:46.738] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:06:46 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_occupation_is_singer, layer=7
+[2025-03-18 01:06:51.252] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:06:51.254] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+[2025-03-18 01:06:54.769] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:06:54.771] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:06:54 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_actor, layer=7
+[2025-03-18 01:06:58.722] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:06:58.726] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:07:01 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_politician, layer=7
+[2025-03-18 01:07:09.277] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:07:09.279] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:07:09 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_journalist, layer=7
+[2025-03-18 01:07:13.055] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:07:13.057] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+[2025-03-18 01:07:16.533] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:07:16.536] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:07:16 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_athlete, layer=7
+[2025-03-18 01:07:20.847] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:07:20.850] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+[2025-03-18 01:07:24.495] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:07:24.497] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:07:24 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_researcher, layer=7
+[2025-03-18 01:07:32.052] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:07:32.054] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:07:32 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_occupation_is_singer, layer=8
+[2025-03-18 01:07:36.174] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:07:36.176] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+[2025-03-18 01:07:39.760] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:07:39.762] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:07:39 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_actor, layer=8
+[2025-03-18 01:07:44.188] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:07:44.193] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+[2025-03-18 01:07:47.740] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:07:47.753] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:07:47 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_politician, layer=8
+[2025-03-18 01:07:54.707] [CUML] [warning] L-BFGS stopped, because the line search failed to advance (step delta = 0.000000)
+2025-03-18 01:07:54 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_journalist, layer=8
+[2025-03-18 01:07:58.487] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:07:58.490] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:08:01 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_athlete, layer=8
+[2025-03-18 01:08:06.049] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:08:06.052] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+[2025-03-18 01:08:09.649] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:08:09.653] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:08:09 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_researcher, layer=8
+[2025-03-18 01:08:18.138] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:08:18.142] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:08:18 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_occupation_is_singer, layer=9
+[2025-03-18 01:08:25.110] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:08:25.114] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:08:25 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_actor, layer=9
+[2025-03-18 01:08:28.833] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:08:28.839] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:08:33 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_politician, layer=9
+[2025-03-18 01:08:40.218] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:08:40.222] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:08:40 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_journalist, layer=9
+[2025-03-18 01:08:44.103] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:08:44.106] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:08:46 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_athlete, layer=9
+[2025-03-18 01:08:50.804] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:08:50.807] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:08:54 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_researcher, layer=9
+2025-03-18 01:09:01 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_occupation_is_singer, layer=10
+2025-03-18 01:09:05 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_actor, layer=10
+2025-03-18 01:09:10 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_politician, layer=10
+2025-03-18 01:09:14 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_journalist, layer=10
+2025-03-18 01:09:19 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_athlete, layer=10
+2025-03-18 01:09:23 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_researcher, layer=10
+2025-03-18 01:09:28 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_occupation_is_singer, layer=11
+[2025-03-18 01:09:32.218] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:09:32.221] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+[2025-03-18 01:09:36.678] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:09:36.682] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:09:36 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_actor, layer=11
+[2025-03-18 01:09:41.096] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:09:41.097] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+[2025-03-18 01:09:45.573] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:09:45.576] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:09:45 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_politician, layer=11
+[2025-03-18 01:09:49.783] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:09:49.786] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+[2025-03-18 01:09:53.766] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:09:53.770] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:09:53 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_journalist, layer=11
+[2025-03-18 01:09:57.841] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:09:57.851] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+[2025-03-18 01:10:01.829] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:10:01.833] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:10:01 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_athlete, layer=11
+[2025-03-18 01:10:06.760] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:10:06.765] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+[2025-03-18 01:10:10.324] [CUML] [warning] L-BFGS stopped, because the line search failed to advance (step delta = 0.000000)
+2025-03-18 01:10:10 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_researcher, layer=11
+[2025-03-18 01:10:15.126] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:10:15.131] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+[2025-03-18 01:10:19.766] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:10:19.770] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:10:19 [ActivationConsumer] [INFO] Wrote delta selectivity results to results/EleutherAI_pythia-160m_wikidata_occupation.json for dataset 8.
+2025-03-18 01:10:20 [MainThread] [INFO] Dataset 8 is fully processed.
+
+2025-03-18 01:10:20 [MainThread] [INFO] Starting dataset 9...
+2025-03-18 01:10:20 [ActivationConsumer] [INFO] Running consumer on cuda:1
+2025-03-18 01:10:21 [MainThread] [INFO] Validating Arguments...
+2025-03-18 01:10:21 [MainThread] [INFO] Computing activations with the following arguments:
+2025-03-18 01:10:21 [MainThread] [INFO] Namespace(model_name='EleutherAI/pythia-160m', sae_name='EleutherAI/sae-pythia-160m-32k', dataset_idx=9, start_index=0, n_samples=None, device='cuda:0', batch_size=512, layers='0,1,2,3,4,5,6,7,8,9,10,11', output_size=2048, output_directory='results', num_workers=2, model_hook_template='blocks.<layer>.hook_resid_post', sae_layer_template='layers.<layer>')
+2025-03-18 01:10:21 [MainThread] [INFO] Configured Model Hook Points:
+2025-03-18 01:10:21 [MainThread] [INFO] ['blocks.0.hook_resid_post', 'blocks.1.hook_resid_post', 'blocks.2.hook_resid_post', 'blocks.3.hook_resid_post', 'blocks.4.hook_resid_post', 'blocks.5.hook_resid_post', 'blocks.6.hook_resid_post', 'blocks.7.hook_resid_post', 'blocks.8.hook_resid_post', 'blocks.9.hook_resid_post', 'blocks.10.hook_resid_post', 'blocks.11.hook_resid_post']
+2025-03-18 01:10:21 [MainThread] [INFO] Configured SAEs:
+2025-03-18 01:10:21 [MainThread] [INFO] ['layers.0', 'layers.1', 'layers.2', 'layers.3', 'layers.4', 'layers.5', 'layers.6', 'layers.7', 'layers.8', 'layers.9', 'layers.10', 'layers.11']
+2025-03-18 01:10:21 [MainThread] [INFO] Loading Dataset...
+2025-03-18 01:10:21 [MainThread] [INFO] Loading Model...
+Loaded pretrained model EleutherAI/pythia-160m into HookedTransformer
+Moving model to device:  cuda:0
+2025-03-18 01:10:57 [MainThread] [INFO] Loading SAE...
+Loading SAEs
+Fetching 50 files:   0%|          | 0/50 [00:00<?, ?it/s]Fetching 50 files: 100%|██████████| 50/50 [00:00<00:00, 5770.76it/s]
+2025-03-18 01:10:57 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:10:57 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:10:57 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:10:57 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:10:57 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:10:58 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:10:58 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:10:58 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:10:58 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:10:58 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:10:58 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:10:58 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:10:58 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:10:58 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:10:58 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:10:58 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:10:58 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:10:59 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:10:59 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:10:59 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:10:59 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:10:59 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:10:59 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:10:59 [MainThread] [WARNING] Dropping extra args {'signed': False}
+Finished Loading SAEs
+Layer 0 laoded
+Layer 1 laoded
+Layer 2 laoded
+Layer 3 laoded
+Layer 4 laoded
+Layer 5 laoded
+Layer 6 laoded
+Layer 7 laoded
+Layer 8 laoded
+Layer 9 laoded
+Layer 10 laoded
+Layer 11 laoded
+2025-03-18 01:10:59 [MainThread] [INFO] Starting Inference...
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+2025-03-18 01:11:00 [MainThread] [INFO] Processing batch 1/10...
+2025-03-18 01:11:08 [MainThread] [INFO] Processing batch 2/10...
+2025-03-18 01:11:15 [MainThread] [INFO] Processing batch 3/10...
+2025-03-18 01:11:23 [MainThread] [INFO] Processing batch 4/10...
+2025-03-18 01:11:31 [MainThread] [INFO] Enqueuing activations for shard 1...
+2025-03-18 01:11:31 [MainThread] [INFO] Processing batch 5/10...
+2025-03-18 01:11:33 [ActivationConsumer] [INFO] Consumer successfully processed shard 1
+2025-03-18 01:11:39 [MainThread] [INFO] Processing batch 6/10...
+2025-03-18 01:11:47 [MainThread] [INFO] Processing batch 7/10...
+2025-03-18 01:11:55 [MainThread] [INFO] Processing batch 8/10...
+2025-03-18 01:12:02 [MainThread] [INFO] Enqueuing activations for shard 2...
+2025-03-18 01:12:02 [MainThread] [INFO] Processing batch 9/10...
+2025-03-18 01:12:06 [ActivationConsumer] [INFO] Consumer successfully processed shard 2
+2025-03-18 01:12:10 [MainThread] [INFO] Processing batch 10/10...
+2025-03-18 01:12:17 [MainThread] [INFO] Enqueuing activations for shard 3...
+2025-03-18 01:12:18 [ActivationConsumer] [INFO] Consumer successfully processed shard 3
+2025-03-18 01:12:18 [ActivationConsumer] [INFO] Got sentinel for dataset 9. Finishing up.
+2025-03-18 01:12:18 [ActivationConsumer] [INFO] Aggregating traditional metrics for 9
+2025-03-18 01:12:18 [ActivationConsumer] [INFO] Received 5 binary probes for dataset 9.
+2025-03-18 01:12:18 [ActivationConsumer] [INFO] Probes Received for dataset 9: ['wikidata_athlete_is_football', 'wikidata_athlete_is_basketball', 'wikidata_athlete_is_baseball', 'wikidata_athlete_is_american_football', 'wikidata_athlete_is_icehockey']
+2025-03-18 01:12:19 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_football, layer=0
+2025-03-18 01:12:19 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_basketball, layer=0
+2025-03-18 01:12:20 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_baseball, layer=0
+2025-03-18 01:12:21 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_american_football, layer=0
+2025-03-18 01:12:21 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_icehockey, layer=0
+2025-03-18 01:12:22 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_football, layer=1
+2025-03-18 01:12:24 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_basketball, layer=1
+2025-03-18 01:12:25 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_baseball, layer=1
+2025-03-18 01:12:26 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_american_football, layer=1
+2025-03-18 01:12:27 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_icehockey, layer=1
+2025-03-18 01:12:29 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_football, layer=2
+2025-03-18 01:12:31 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_basketball, layer=2
+2025-03-18 01:12:33 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_baseball, layer=2
+2025-03-18 01:12:35 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_american_football, layer=2
+2025-03-18 01:12:38 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_icehockey, layer=2
+2025-03-18 01:12:40 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_football, layer=3
+[2025-03-18 01:12:45.263] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:12:45.267] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:12:48 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_basketball, layer=3
+[2025-03-18 01:12:56.401] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:12:56.402] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:12:56 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_baseball, layer=3
+2025-03-18 01:13:02 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_american_football, layer=3
+[2025-03-18 01:13:09.300] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:13:09.301] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:13:09 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_icehockey, layer=3
+2025-03-18 01:13:16 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_football, layer=4
+2025-03-18 01:13:22 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_basketball, layer=4
+2025-03-18 01:13:28 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_baseball, layer=4
+2025-03-18 01:13:33 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_american_football, layer=4
+2025-03-18 01:13:39 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_icehockey, layer=4
+2025-03-18 01:13:47 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_football, layer=5
+[2025-03-18 01:13:54.305] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:13:54.307] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:13:54 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_basketball, layer=5
+2025-03-18 01:14:00 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_baseball, layer=5
+2025-03-18 01:14:09 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_american_football, layer=5
+2025-03-18 01:14:15 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_icehockey, layer=5
+[2025-03-18 01:14:18.066] [CUML] [warning] L-BFGS stopped, because the line search failed to advance (step delta = 0.000000)
+[2025-03-18 01:14:21.593] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:14:21.595] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:14:21 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_football, layer=6
+2025-03-18 01:14:29 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_basketball, layer=6
+2025-03-18 01:14:35 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_baseball, layer=6
+[2025-03-18 01:14:39.018] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:14:39.020] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:14:41 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_american_football, layer=6
+[2025-03-18 01:14:45.099] [CUML] [warning] L-BFGS stopped, because the line search failed to advance (step delta = 0.000000)
+[2025-03-18 01:14:48.566] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:14:48.568] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:14:48 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_icehockey, layer=6
+2025-03-18 01:14:56 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_football, layer=7
+[2025-03-18 01:15:00.003] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:15:00.005] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+[2025-03-18 01:15:03.171] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:15:03.173] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:15:03 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_basketball, layer=7
+[2025-03-18 01:15:06.809] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:15:06.811] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:15:10 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_baseball, layer=7
+[2025-03-18 01:15:14.454] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:15:14.456] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+[2025-03-18 01:15:18.056] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:15:18.059] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:15:18 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_american_football, layer=7
+[2025-03-18 01:15:24.604] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:15:24.606] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:15:24 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_icehockey, layer=7
+[2025-03-18 01:15:31.589] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:15:31.591] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:15:31 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_football, layer=8
+[2025-03-18 01:15:36.996] [CUML] [warning] L-BFGS stopped, because the line search failed to advance (step delta = 0.000000)
+2025-03-18 01:15:39 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_basketball, layer=8
+[2025-03-18 01:15:43.686] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:15:43.688] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:15:46 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_baseball, layer=8
+[2025-03-18 01:15:50.144] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:15:50.152] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+[2025-03-18 01:15:53.318] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:15:53.321] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:15:53 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_american_football, layer=8
+[2025-03-18 01:15:59.311] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:15:59.313] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:15:59 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_icehockey, layer=8
+[2025-03-18 01:16:06.041] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:16:06.043] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:16:06 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_football, layer=9
+[2025-03-18 01:16:10.055] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:16:10.057] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+[2025-03-18 01:16:13.261] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:16:13.263] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:16:13 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_basketball, layer=9
+[2025-03-18 01:16:16.727] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:16:16.729] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:16:20 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_baseball, layer=9
+2025-03-18 01:16:27 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_american_football, layer=9
+[2025-03-18 01:16:32.806] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:16:32.808] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:16:32 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_icehockey, layer=9
+2025-03-18 01:16:39 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_football, layer=10
+2025-03-18 01:16:44 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_basketball, layer=10
+2025-03-18 01:16:48 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_baseball, layer=10
+2025-03-18 01:16:53 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_american_football, layer=10
+2025-03-18 01:16:57 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_icehockey, layer=10
+2025-03-18 01:17:01 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_football, layer=11
+[2025-03-18 01:17:06.461] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:17:06.463] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+[2025-03-18 01:17:09.913] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:17:09.915] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:17:09 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_basketball, layer=11
+[2025-03-18 01:17:14.216] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:17:14.219] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+[2025-03-18 01:17:17.747] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:17:17.749] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:17:17 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_baseball, layer=11
+[2025-03-18 01:17:21.837] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:17:21.839] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+[2025-03-18 01:17:26.621] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:17:26.625] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:17:26 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_american_football, layer=11
+[2025-03-18 01:17:30.679] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:17:30.681] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+[2025-03-18 01:17:34.015] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:17:34.017] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:17:34 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_athlete_is_icehockey, layer=11
+[2025-03-18 01:17:37.817] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:17:37.819] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+[2025-03-18 01:17:41.201] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:17:41.203] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:17:41 [ActivationConsumer] [INFO] Wrote delta selectivity results to results/EleutherAI_pythia-160m_wikidata_athlete.json for dataset 9.
+2025-03-18 01:17:41 [MainThread] [INFO] Dataset 9 is fully processed.
+
+2025-03-18 01:17:41 [MainThread] [INFO] Starting dataset 10...
+2025-03-18 01:17:41 [ActivationConsumer] [INFO] Running consumer on cuda:1
+2025-03-18 01:17:41 [MainThread] [INFO] Validating Arguments...
+2025-03-18 01:17:41 [MainThread] [INFO] Computing activations with the following arguments:
+2025-03-18 01:17:41 [MainThread] [INFO] Namespace(model_name='EleutherAI/pythia-160m', sae_name='EleutherAI/sae-pythia-160m-32k', dataset_idx=10, start_index=0, n_samples=None, device='cuda:0', batch_size=512, layers='0,1,2,3,4,5,6,7,8,9,10,11', output_size=2048, output_directory='results', num_workers=2, model_hook_template='blocks.<layer>.hook_resid_post', sae_layer_template='layers.<layer>')
+2025-03-18 01:17:41 [MainThread] [INFO] Configured Model Hook Points:
+2025-03-18 01:17:41 [MainThread] [INFO] ['blocks.0.hook_resid_post', 'blocks.1.hook_resid_post', 'blocks.2.hook_resid_post', 'blocks.3.hook_resid_post', 'blocks.4.hook_resid_post', 'blocks.5.hook_resid_post', 'blocks.6.hook_resid_post', 'blocks.7.hook_resid_post', 'blocks.8.hook_resid_post', 'blocks.9.hook_resid_post', 'blocks.10.hook_resid_post', 'blocks.11.hook_resid_post']
+2025-03-18 01:17:41 [MainThread] [INFO] Configured SAEs:
+2025-03-18 01:17:41 [MainThread] [INFO] ['layers.0', 'layers.1', 'layers.2', 'layers.3', 'layers.4', 'layers.5', 'layers.6', 'layers.7', 'layers.8', 'layers.9', 'layers.10', 'layers.11']
+2025-03-18 01:17:41 [MainThread] [INFO] Loading Dataset...
+2025-03-18 01:17:41 [MainThread] [INFO] Loading Model...
+Loaded pretrained model EleutherAI/pythia-160m into HookedTransformer
+Moving model to device:  cuda:0
+2025-03-18 01:18:20 [MainThread] [INFO] Loading SAE...
+Loading SAEs
+Fetching 50 files:   0%|          | 0/50 [00:00<?, ?it/s]Fetching 50 files: 100%|██████████| 50/50 [00:00<00:00, 5936.90it/s]
+2025-03-18 01:18:20 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:18:20 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:18:20 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:18:20 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:18:20 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:18:20 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:18:20 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:18:20 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:18:20 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:18:20 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:18:21 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:18:21 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:18:21 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:18:21 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:18:21 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:18:21 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:18:21 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:18:21 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:18:21 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:18:21 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:18:21 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:18:21 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:18:21 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:18:22 [MainThread] [WARNING] Dropping extra args {'signed': False}
+Finished Loading SAEs
+Layer 0 laoded
+Layer 1 laoded
+Layer 2 laoded
+Layer 3 laoded
+Layer 4 laoded
+Layer 5 laoded
+Layer 6 laoded
+Layer 7 laoded
+Layer 8 laoded
+Layer 9 laoded
+Layer 10 laoded
+Layer 11 laoded
+2025-03-18 01:18:22 [MainThread] [INFO] Starting Inference...
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+2025-03-18 01:18:22 [MainThread] [INFO] Processing batch 1/6...
+2025-03-18 01:18:30 [MainThread] [INFO] Processing batch 2/6...
+2025-03-18 01:18:38 [MainThread] [INFO] Processing batch 3/6...
+2025-03-18 01:18:46 [MainThread] [INFO] Processing batch 4/6...
+2025-03-18 01:18:54 [MainThread] [INFO] Enqueuing activations for shard 1...
+2025-03-18 01:18:54 [MainThread] [INFO] Processing batch 5/6...
+2025-03-18 01:18:57 [ActivationConsumer] [INFO] Consumer successfully processed shard 1
+2025-03-18 01:19:02 [MainThread] [INFO] Processing batch 6/6...
+2025-03-18 01:19:09 [MainThread] [INFO] Enqueuing activations for shard 2...
+2025-03-18 01:19:11 [ActivationConsumer] [INFO] Consumer successfully processed shard 2
+2025-03-18 01:19:11 [ActivationConsumer] [INFO] Got sentinel for dataset 10. Finishing up.
+2025-03-18 01:19:11 [ActivationConsumer] [INFO] Aggregating traditional metrics for 10
+2025-03-18 01:19:11 [ActivationConsumer] [INFO] Received 1 binary probes for dataset 10.
+2025-03-18 01:19:11 [ActivationConsumer] [INFO] Probes Received for dataset 10: ['wikidata_politics_1democratic_0republic']
+2025-03-18 01:19:11 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_politics_1democratic_0republic, layer=0
+2025-03-18 01:19:11 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_politics_1democratic_0republic, layer=1
+2025-03-18 01:19:12 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_politics_1democratic_0republic, layer=2
+2025-03-18 01:19:14 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_politics_1democratic_0republic, layer=3
+2025-03-18 01:19:18 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_politics_1democratic_0republic, layer=4
+2025-03-18 01:19:21 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_politics_1democratic_0republic, layer=5
+2025-03-18 01:19:25 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_politics_1democratic_0republic, layer=6
+2025-03-18 01:19:29 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_politics_1democratic_0republic, layer=7
+[2025-03-18 01:19:31.884] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:19:31.887] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+[2025-03-18 01:19:33.878] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:19:33.879] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:19:34 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_politics_1democratic_0republic, layer=8
+[2025-03-18 01:19:36.330] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:19:36.332] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:19:38 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_politics_1democratic_0republic, layer=9
+2025-03-18 01:19:42 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_politics_1democratic_0republic, layer=10
+2025-03-18 01:19:45 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_politics_1democratic_0republic, layer=11
+[2025-03-18 01:19:48.344] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:19:48.346] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+[2025-03-18 01:19:50.949] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:19:50.951] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:19:50 [ActivationConsumer] [INFO] Wrote delta selectivity results to results/EleutherAI_pythia-160m_wikidata_politics.json for dataset 10.
+2025-03-18 01:19:51 [MainThread] [INFO] Dataset 10 is fully processed.
+
+2025-03-18 01:19:51 [MainThread] [INFO] Starting dataset 11...
+2025-03-18 01:19:51 [ActivationConsumer] [INFO] Running consumer on cuda:1
+2025-03-18 01:19:51 [MainThread] [INFO] Validating Arguments...
+2025-03-18 01:19:51 [MainThread] [INFO] Computing activations with the following arguments:
+2025-03-18 01:19:51 [MainThread] [INFO] Namespace(model_name='EleutherAI/pythia-160m', sae_name='EleutherAI/sae-pythia-160m-32k', dataset_idx=11, start_index=0, n_samples=None, device='cuda:0', batch_size=512, layers='0,1,2,3,4,5,6,7,8,9,10,11', output_size=2048, output_directory='results', num_workers=2, model_hook_template='blocks.<layer>.hook_resid_post', sae_layer_template='layers.<layer>')
+2025-03-18 01:19:51 [MainThread] [INFO] Configured Model Hook Points:
+2025-03-18 01:19:51 [MainThread] [INFO] ['blocks.0.hook_resid_post', 'blocks.1.hook_resid_post', 'blocks.2.hook_resid_post', 'blocks.3.hook_resid_post', 'blocks.4.hook_resid_post', 'blocks.5.hook_resid_post', 'blocks.6.hook_resid_post', 'blocks.7.hook_resid_post', 'blocks.8.hook_resid_post', 'blocks.9.hook_resid_post', 'blocks.10.hook_resid_post', 'blocks.11.hook_resid_post']
+2025-03-18 01:19:51 [MainThread] [INFO] Configured SAEs:
+2025-03-18 01:19:51 [MainThread] [INFO] ['layers.0', 'layers.1', 'layers.2', 'layers.3', 'layers.4', 'layers.5', 'layers.6', 'layers.7', 'layers.8', 'layers.9', 'layers.10', 'layers.11']
+2025-03-18 01:19:51 [MainThread] [INFO] Loading Dataset...
+2025-03-18 01:19:51 [MainThread] [INFO] Loading Model...
+Loaded pretrained model EleutherAI/pythia-160m into HookedTransformer
+Moving model to device:  cuda:0
+2025-03-18 01:20:28 [MainThread] [INFO] Loading SAE...
+Loading SAEs
+Fetching 50 files:   0%|          | 0/50 [00:00<?, ?it/s]Fetching 50 files: 100%|██████████| 50/50 [00:00<00:00, 9039.84it/s]
+2025-03-18 01:20:28 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:20:28 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:20:28 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:20:28 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:20:28 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:20:28 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:20:28 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:20:28 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:20:28 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:20:29 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:20:29 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:20:29 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:20:29 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:20:29 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:20:29 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:20:29 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:20:29 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:20:29 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:20:29 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:20:29 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:20:30 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:20:30 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:20:30 [MainThread] [WARNING] Dropping extra args {'signed': False}
+2025-03-18 01:20:30 [MainThread] [WARNING] Dropping extra args {'signed': False}
+Finished Loading SAEs
+Layer 0 laoded
+Layer 1 laoded
+Layer 2 laoded
+Layer 3 laoded
+Layer 4 laoded
+Layer 5 laoded
+Layer 6 laoded
+Layer 7 laoded
+Layer 8 laoded
+Layer 9 laoded
+Layer 10 laoded
+Layer 11 laoded
+2025-03-18 01:20:30 [MainThread] [INFO] Starting Inference...
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+2025-03-18 01:20:30 [MainThread] [INFO] Processing batch 1/12...
+2025-03-18 01:20:39 [MainThread] [INFO] Processing batch 2/12...
+2025-03-18 01:20:48 [MainThread] [INFO] Processing batch 3/12...
+2025-03-18 01:20:56 [MainThread] [INFO] Processing batch 4/12...
+2025-03-18 01:21:05 [MainThread] [INFO] Enqueuing activations for shard 1...
+2025-03-18 01:21:05 [MainThread] [INFO] Processing batch 5/12...
+2025-03-18 01:21:08 [ActivationConsumer] [INFO] Consumer successfully processed shard 1
+2025-03-18 01:21:13 [MainThread] [INFO] Processing batch 6/12...
+2025-03-18 01:21:22 [MainThread] [INFO] Processing batch 7/12...
+2025-03-18 01:21:31 [MainThread] [INFO] Processing batch 8/12...
+2025-03-18 01:21:38 [MainThread] [INFO] Enqueuing activations for shard 2...
+2025-03-18 01:21:38 [MainThread] [INFO] Processing batch 9/12...
+2025-03-18 01:21:43 [ActivationConsumer] [INFO] Consumer successfully processed shard 2
+2025-03-18 01:21:48 [MainThread] [INFO] Processing batch 10/12...
+2025-03-18 01:21:55 [MainThread] [INFO] Processing batch 11/12...
+2025-03-18 01:22:03 [MainThread] [INFO] Processing batch 12/12...
+2025-03-18 01:22:09 [MainThread] [INFO] Enqueuing activations for shard 3...
+2025-03-18 01:22:11 [ActivationConsumer] [INFO] Consumer successfully processed shard 3
+2025-03-18 01:22:11 [ActivationConsumer] [INFO] Got sentinel for dataset 11. Finishing up.
+2025-03-18 01:22:11 [ActivationConsumer] [INFO] Aggregating traditional metrics for 11
+2025-03-18 01:22:11 [ActivationConsumer] [INFO] Received 1 binary probes for dataset 11.
+2025-03-18 01:22:11 [ActivationConsumer] [INFO] Probes Received for dataset 11: ['wikidata_gender_1female_0male']
+2025-03-18 01:22:11 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_gender_1female_0male, layer=0
+2025-03-18 01:22:12 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_gender_1female_0male, layer=1
+2025-03-18 01:22:15 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_gender_1female_0male, layer=2
+2025-03-18 01:22:19 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_gender_1female_0male, layer=3
+2025-03-18 01:22:28 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_gender_1female_0male, layer=4
+[2025-03-18 01:22:34.529] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:22:34.533] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+[2025-03-18 01:22:40.376] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:22:40.379] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:22:40 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_gender_1female_0male, layer=5
+2025-03-18 01:22:49 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_gender_1female_0male, layer=6
+[2025-03-18 01:22:56.500] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:22:56.502] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+[2025-03-18 01:23:02.161] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:23:02.164] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:23:02 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_gender_1female_0male, layer=7
+[2025-03-18 01:23:08.926] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:23:08.929] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+[2025-03-18 01:23:14.345] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:23:14.347] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:23:14 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_gender_1female_0male, layer=8
+2025-03-18 01:23:26 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_gender_1female_0male, layer=9
+[2025-03-18 01:23:32.420] [CUML] [warning] L-BFGS stopped, because the line search failed to advance (step delta = 0.000000)
+[2025-03-18 01:23:37.796] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:23:37.798] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:23:38 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_gender_1female_0male, layer=10
+2025-03-18 01:23:46 [ActivationConsumer] [INFO] Computing delta  selectivity for wikidata_gender_1female_0male, layer=11
+[2025-03-18 01:23:53.268] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:23:53.271] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+[2025-03-18 01:23:59.312] [CUML] [warning] L-BFGS: max iterations reached
+[2025-03-18 01:23:59.314] [CUML] [warning] Maximum iterations reached before solver is converged. To increase model accuracy you can increase the number of iterations (max_iter) or improve the scaling of the input data.
+2025-03-18 01:23:59 [ActivationConsumer] [INFO] Wrote delta selectivity results to results/EleutherAI_pythia-160m_wikidata_gender.json for dataset 11.
+2025-03-18 01:24:00 [MainThread] [INFO] Dataset 11 is fully processed.
+
+2025-03-18 01:24:00 [MainThread] [INFO] All datasets processed. Exiting.
