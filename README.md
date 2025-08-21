@@ -26,13 +26,6 @@ delta-selectivity-saes/
 ├── pythia_sae.py               # SAE-specific utilities
 ├── sparse_tensor.py            # Sparse tensor handling utilities
 │
-├── explore/                     # Exploratory Jupyter notebooks
-│   ├── Explore1.ipynb
-│   ├── Explore2.ipynb
-│   ├── ExploreActivations.ipynb
-│   ├── Explore_cuML.ipynb
-│   ├── Torch_cuML.ipynb
-│   └── analyze_results.ipynb
 │
 ├── scripts/                     # Batch processing scripts
 │   ├── compute_pythia160_*.sh   # Scripts for Pythia-160M experiments
@@ -75,12 +68,40 @@ delta-selectivity-saes/
 
 ### Datasets
 
-The project evaluates on WikiData-derived binary classification tasks:
-- Gender classification
-- Occupation prediction  
-- Political affiliation
-- Athletic status
-- Life status (alive/deceased)
+The project evaluates on WikiData-derived binary classification tasks from [Marks & Tegmark (2023)](https://arxiv.org/pdf/2305.01610). Dataset download instructions are available in their [GitHub repository](https://github.com/wesg52/sparse-probing-paper). Each dataset consists of text documents mentioning names of popular people, with probes applied at the person's name positions.
+
+**Data Directory Setup:**
+The datasets should be placed in a `data/` directory with the following structure:
+```
+data/
+├── wikidata_sorted_sex_or_gender.pyth.128.6000      # Gender classification
+├── wikidata_sorted_political_party.pyth.128.3000   # Political affiliation  
+├── wikidata_sorted_occupation_athlete.pyth.128.5000 # Athletic specialization
+├── wikidata_sorted_is_alive.pyth.128.6000          # Life status
+├── wikidata_sorted_occupation.pyth.128.6000        # General occupation
+├── natural_lang_id.pyth.512.-1                     # Natural language identification
+├── distribution_id.pyth.512.-1                     # Data distribution identification
+└── ... (additional datasets)
+```
+
+Update the data paths in `utils.py` to match your local data directory structure.
+
+| Feature | Dataset | Description |
+|---------|---------|-------------|
+| is_football | wikidata athlete | A dataset of text documents mentioning names of popular sports persons, probed at the names of those persons. The target class represents whether the person is a football player or not. |
+| is_basketball | wikidata athlete | The target class represents whether the person is a basketball player or not. |
+| is_baseball | wikidata athlete | The target class represents whether the person is a baseball player or not. |
+| is_american_football | wikidata athlete | The target class represents whether the person is an American football player or not. |
+| is_icehockey | wikidata athlete | The target class represents whether the person is an ice hockey player or not. |
+| is_female | wikidata sex or gender | A dataset of text documents mentioning names of popular celebrities, probed at the names of those persons. The target class represents whether the person is a female (1) or male (0). |
+| is_alive | wikidata is alive | A dataset of text documents mentioning names of popular celebrities, probed at the names of those persons. The target class represents whether the person is alive or not. |
+| is_democratic | wikidata political party | A dataset of text documents mentioning names of popular political persons, probed at the names of those persons. The target class represents whether the person is a Democrat (1) or Republican (0). |
+| is_singer | wikidata occupation | A dataset of text documents mentioning names of popular celebrities, probed at the names of those persons. The target class represents whether the person is a singer or not. |
+| is_actor | wikidata occupation | The target class represents whether the person is an actor or not. |
+| is_politician | wikidata occupation | The target class represents whether the person is a politician or not. |
+| is_journalist | wikidata occupation | The target class represents whether the person is a journalist or not. |
+| is_athlete | wikidata occupation | The target class represents whether the person is an athlete or not. |
+| is_researcher | wikidata occupation | The target class represents whether the person is a researcher or not. |
 
 ## Installation
 
@@ -129,7 +150,10 @@ Use scripts in `scripts/` directory for systematic evaluation:
 
 ## Results
 
-Results are saved as JSON files containing selectivity metrics:
+Results are saved as JSON files in the specified `--output_directory` with the naming convention:
+`{model_name}_{dataset_name}.json`
+
+Example output file `EleutherAI_pythia-160m_wikidata_gender.json`:
 
 ```json
 {
@@ -146,25 +170,9 @@ Results are saved as JSON files containing selectivity metrics:
 }
 ```
 
-- `mse_pos/mse_whole`: Reconstruction error metrics
-- `l0/l1`: Sparsity metrics
-- `{probe_name}`: Delta selectivity results per probe
-
-## Analysis
-
-Exploratory notebooks in `explore/` provide:
-- Result visualization and analysis
-- Activation space exploration  
-- Performance comparisons across models/layers
-- Statistical significance testing
-
-## Contributing
-
-1. Follow existing code style and structure
-2. Add new datasets via `utils.py` functions
-3. Test changes with small model/dataset combinations first
-4. Update documentation for new features
-
-## Citation
-
-If you use this code, please cite the Delta Selectivity paper [citation details to be added].
+**Metrics Explanation:**
+- `mse_pos/mse_whole`: Reconstruction error metrics for SAE
+- `l0/l1`: Sparsity metrics (L0 norm = number of active features, L1 norm = activation magnitude)
+- `{probe_name}`: Delta selectivity results per binary classification probe
+  - `model_sel`: Classification accuracy using original model activations
+  - `sae_sel`: Classification accuracy using SAE-reconstructed activations
