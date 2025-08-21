@@ -2,6 +2,8 @@
 
 The official repository for the **Delta Selectivity Metric**, a method to evaluate the feature reconstruction capability of Sparse Autoencoders (SAEs) on large language models.
 
+**Paper**: [Delta Selectivity: Evaluating SAE Feature Reconstruction](https://pratik-doshi-99.github.io/files/Pratik_Doshi_Capstone.pdf)
+
 ## Overview
 
 This project measures how well SAEs preserve semantic information when reconstructing neural network activations. The key insight is to compare classification performance on binary probing tasks using:
